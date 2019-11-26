@@ -1,3 +1,4 @@
+
 # Users
 puts "==========================="
 puts "Creating Users"
@@ -112,5 +113,24 @@ option_7.save!
 option_8.save!
 
 puts "==========================="
+puts "Creating recommendations"
+puts "==========================="
+
+recommendation_1 = Recommendation.new(wine: margaux, sender: alice, recipient: bob)
+recommendation_2 = Recommendation.new(wine: yquem, sender: bob, recipient: dede)
+recommendation_3 = Recommendation.new(wine: perrotminot, sender: alice, recipient: eric)
+recommendation_4 = Recommendation.new(wine: rochesneuves, sender: charlie, recipient: alice)
+recommendation_5 = Recommendation.new(wine: masdecadenet, sender: alice, recipient: charlie)
+
+
+recommendation_1.save!
+recommendation_2.save!
+recommendation_3.save!
+recommendation_4.save!
+recommendation_5.save!
+
+
+puts "==========================="
 puts "Tout bon !!!!!"
 puts "==========================="
+
