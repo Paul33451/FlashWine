@@ -1,0 +1,7 @@
+<p>Note : <%= review.rating %></p>
+<p>Commentaire : <%= review.content %></p>
+
+<% if review.user = current_user %>
+  <%= link_to "Modifier cet avis", edit_wine_review_path(@wine, review), class:"btn-ghost" %>
+  <%= link_to "Supprimer cet avis", review, method: :delete, class:"btn-ghost" %>
+<% end %>
