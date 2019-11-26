@@ -1,5 +1,5 @@
-<%= simple_form_for [@wine, @review] do |f| %>
+<%= simple_form_for([ wine, review ]) do |f| %>
   <%= f.input :rating %>
   <%= f.input :content %>
-  <%= f.submit "Ajouter un avis", class: "btn-flat" %>
+  <%= f.button :submit, class: "btn-flat" %>
 <% end %>
