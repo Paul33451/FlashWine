@@ -28,7 +28,16 @@ charlie.save!
 dede.save!
 eric.save!
 
-# Users
+# Wines
 puts "==========================="
-puts "Creating Users"
+puts "Creating wines"
+puts "==========================="
+
+chateau_margaux = Wine.new(region:"Bordeaux", appellation:"Margaux",cepage:"Cabernet Sauvignon / Merlot / Cabernet Franc / Petit Verdot",color:"Rouge", name:"Château Margaux", flavour:" robe rouge violacée, profonde et très colorée. Le nez est incroyable de complexité et de fraîcheur : réglisse, vanille, framboise sauvage, cassis, poivre s’y entremêlent dans un tourbillon de gourmandise. Au palais, Château Margaux 2016 est intense, marqué par des tannins mûrs et très bien intégrés.La finale est surprenante de vivacité et de longueur, avec une buvabilité étonnante pour un vin si jeune", year:"2016")
+
+chateau_margaux.save!
+
+# Wines
+puts "==========================="
+puts "Creating wines"
 puts "==========================="
