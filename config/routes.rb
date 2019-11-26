@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   resources :reviews, only: [:show, :edit, :update, :destroy]
 
   # quizz realated routes:
+  resources :quizzes, only: [:index, :show]
+  resources :questions, only: [] do
+    resources :answers, only: [:new, :create]
+  end
 
   # user realated routes:
   resources :users, only: [:show, :index] do
