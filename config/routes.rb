@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  # wine related routes:
+
+  # quizz realated routes:
+
+  # user realated routes:
+  resources :users, only: [:show, :index] do
+    resources :user_connections, only: [:create]
+  end
+  resources :connections, only: [:index, :create, :update, :destroy]
+  get "dashboard", to: "pages#dashboard", as: 'dashboard'
+  #user related namespaced routes:
+  namespace :user do
+    resources :answers, only: [:index]
+    resources :reviews, only: [:index]
+    resources :connections, only: [:index]
+  end
 end
