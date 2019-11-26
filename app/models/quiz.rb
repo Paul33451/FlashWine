@@ -1,3 +1,4 @@
 class Quiz < ApplicationRecord
-  belongs_to :wine
+  belongs_to :wine, optional: true
+  has_many :questions
 end
