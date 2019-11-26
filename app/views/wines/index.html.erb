@@ -1,0 +1,11 @@
+<h1>Wines#index</h1>
+
+<% @wines.each do |wine| %>
+  <h2><%= link_to wine.name, wine_path(wine) %></h2>
+  <p>Années :<%= wine.year %></p>
+  <p>Région :><%= wine.region %></p>
+  <p>Appellation : <%= wine.appellation %></p>
+  <p>Cépage :<%= wine.cepage %></p>
+  <p>Couleur :<%= wine.color %></p>
+  <p>Saveurs : <%= wine.flavour %></p>
+<% end %>

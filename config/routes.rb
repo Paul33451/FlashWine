@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
+  get 'reviews/show'
+  get 'reviews/edit'
+  get 'reviews/update'
+  get 'reviews/destroy'
+  get 'wines/index'
+  get 'wines/show'
   devise_for :users
   root to: 'pages#home'
 
-  # wine related routes:
+  # wine and reviews related routes:
+  resources :wines, only: [:index, :show] do
+    resources :reviews, only: [:index, :new, :create]
+  end
+  resources :reviews, only: [:show, :edit, :update, :destroy]
 
   # quizz realated routes:
 
