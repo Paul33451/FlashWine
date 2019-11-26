@@ -1,0 +1,7 @@
+<h2>vous êtes mes amis</h2>
+<% if @connections == [] %>
+  <p>Tu n'as pas d'amis</p>
+<% else %>
+  <p><%= @connections.users %></p>
+<% end %>
+<%= link_to 'Ajouter un amis', users_path %>

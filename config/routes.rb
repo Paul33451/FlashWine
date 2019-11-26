@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  namespace :user do
+    resources :answers, only: [:index]
+    resources :reviews, only: [:index]
+    resources :connections, only: [:index]
+  end
+
   # wine related routes:
 
   # quizz realated routes:
@@ -13,9 +19,5 @@ Rails.application.routes.draw do
   resources :connections, only: [:index, :create, :update, :destroy]
   get "dashboard", to: "pages#dashboard", as: 'dashboard'
   #user related namespaced routes:
-  namespace :user do
-    resources :answers, only: [:index]
-    resources :reviews, only: [:index]
-    resources :connections, only: [:index]
-  end
+
 end

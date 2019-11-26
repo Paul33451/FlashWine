@@ -1,0 +1,9 @@
+<h2>Regarde tous les gens</h2>
+<ul>
+<% @users.each do |user| %>
+  <li>
+    <%= user.email %>
+    <%= link_to 'Ajouter', user_user_connections_path(user), method: :post %>
+  </li>
+<% end %>
+</ul>

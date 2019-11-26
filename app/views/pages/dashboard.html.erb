@@ -1,1 +1,5 @@
-<h2>coucou c'est moi</h2>
+<h2>Welcome <%= @user.first_name %></h2>
+<p>Tu as <%= @user.connections.size %> amis</p>
+<%= link_to 'Mes amis', user_connections_path %>
+<p>Tu es niveau <%= @user.score %>points</p>
+<%= link_to 'Gens possibles en amis', connections_path %>
