@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_105308) do
 
   create_table "questions", force: :cascade do |t|
     t.integer "position"
+    t.string "content"
     t.bigint "quiz_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
