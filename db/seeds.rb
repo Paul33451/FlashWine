@@ -44,21 +44,72 @@ rochesneuves.save!
 masdecadenet.save!
 
 
-# Tastings
+# Reviews
 puts "==========================="
-puts "Creating tastings"
+puts "Creating Reviews"
 puts "==========================="
 
-review_1 = Review.new(wine_id: 1, content:"Préparez vos papilles et allez déguster un le Château Margaux 2016, Premier Grand Cru Classé du Médoc.", user_id: 1, rating: 5)
+review_1 = Review.new(wine: margaux, content:"Préparez vos papilles et allez déguster un le Château Margaux 2016, Premier Grand Cru Classé du Médoc.", user: alice, rating: 5)
 
-review_2 = Review.new(wine_id: 2, content:"Si vous avez 60000€ dans vos poches, allez déguster le Château Yquem 1892. Bonne chance pour trouver la bouteille.", user_id: 2, rating: 4)
+review_2 = Review.new(wine: rochesneuves, content:"Si vous avez 60000€ dans vos poches, allez déguster le Château Yquem 1892. Bonne chance pour trouver la bouteille.", user: bob, rating: 4)
 
-review_3 = Review.new(wine_id: 3, content:"Si vous avez 60000€ dans vos poches, allez déguster le Château Yquem 1892. Bonne chance pour trouver la bouteille.", user_id: 3, rating: 3)
+review_3 = Review.new(wine: masdecadenet, content:"Si vous avez 60000€ dans vos poches, allez déguster le Château Yquem 1892. Bonne chance pour trouver la bouteille.", user: charlie, rating: 3)
 
 review_1.save!
 review_2.save!
 review_3.save!
 
+
+
+# Quiz
+puts "==========================="
+puts "Creating Quiz"
+puts "==========================="
+
+quiz_1 = Quiz.new(title: "Quizz du niveau 1", wine: margaux)
+
+quiz_1.save!
+
+# Question
+puts "==========================="
+puts "Creating Questions"
+puts "==========================="
+
+question_1 = Question.new(content: "Quel vin n'est pas un vrai vin ?", position: 1, quiz: quiz_1)
+question_2 = Question.new(content: "Pourquoi le vin c'est bon ?", position: 2, quiz: quiz_1)
+question_3 = Question.new(content: "En moyenne quel est le degres d'alcool contenu dans un teille de vin ?", position: 3, quiz: quiz_1)
+question_4 = Question.new(content: "Comment trouvez vous les questions ?", position: 4, quiz: quiz_1)
+question_5 = Question.new(content: "J'ai plus trop d'idée de question la ...", position: 5, quiz: quiz_1)
+
+question_1.save!
+question_2.save!
+question_3.save!
+question_4.save!
+question_5.save!
+
+
+# Options
+puts "==========================="
+puts "Creating Options"
+puts "==========================="
+
+option_1 = Option.new(title: "Rouge", right: false, question: question_1)
+option_2 = Option.new(title: "Gris", right: false, question: question_1)
+option_3 = Option.new(title: "Blanc", right: false, question: question_1)
+option_4 = Option.new(title: "Violet", right: true, question: question_1)
+option_5 = Option.new(title: "Parce que le raisin c'est bon", right: true, question: question_2)
+option_6 = Option.new(title: "Parce que c'est de toute les couleurs", right: false, question: question_2)
+option_7 = Option.new(title: "Je n'aime pas le vin", right: false, question: question_2)
+option_8 = Option.new(title: "C'est pas la bonne réponse alors la choisis pas", right: false, question: question_2)
+
+option_1.save!
+option_2.save!
+option_3.save!
+option_4.save!
+option_5.save!
+option_6.save!
+option_7.save!
+option_8.save!
 
 puts "==========================="
 puts "Tout bon !!!!!"
