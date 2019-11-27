@@ -1,9 +1,0 @@
-<h2>Je suis tes amis</h2>
-<% if @friends == [] %>
-  <p>Tu n'as pas d'amis</p>
-<% else %>
-  <% @friends.each do |friend| %>
-    <p><%= friend.email %></p>
-  <% end %>
-<% end %>
-<%= link_to 'Ajouter un amis', users_path %>
