@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="form-group">
+    <h1><%= @question.content %></h1>
+
+    <%= simple_form_for [@question, @answer] do |f| %>
+          <%= f.association :option, :collection => @options, as: :radio_buttons %>
+
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>
