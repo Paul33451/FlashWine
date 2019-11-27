@@ -1,0 +1,2 @@
+      invoke  active_record
+   identical    db/migrate/20191127122727_remove_year_from.rb

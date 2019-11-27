@@ -5,10 +5,13 @@
     <%=link_to wine_path(wine), class:"card-product" do%>
       <img src="https://images.unsplash.com/photo-1549873916-b1bb7dc758c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80">
       <div class="card-product-infos">
-        <h2><%=wine.name%><%= wine.year%></h2>
+        <h2><%=wine.name%> <%= wine.year%></h2>
         <p>Région : <%= wine.region %></p>
         <p>Appellation : <%= wine.appellation %></p>
-        <p>Couleur : <%= wine.color %></p>
+        <div class="d-flex justify-content-between">
+          <div><p>Couleur : <%= wine.color %></p></div>
+          <div><p><%= wine.reviews.count %> avis </p></div>
+        </div>
       </div>
     <% end %>
   </div>
