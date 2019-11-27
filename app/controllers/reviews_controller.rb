@@ -1,17 +1,30 @@
 class ReviewsController < ApplicationController
+
+  def index
+    @wine = Wine.find(params[:wine_id])
+    @review = Review.all
+  end
+
   def new
     @wine = Wine.find(params[:wine_id])
     @review = Review.new
   end
 
   def create
-    @review = Review.new(review_params)
     @wine = Wine.find(params[:wine_id])
+    @review = Review.new(review_params)
     @review.wine = @wine
+    @review.user = current_user
     if @review.save
-      redirect_to wine_path(@wine)
+      respond_to do |format|
+        format.html {redirect_to wine_path(@wine)}
+        format.js
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html {render 'wines/show'}
+        format.js
+      end
     end
   end
 
@@ -20,20 +33,25 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    @review = Review.find(params[:id])
+    @wine = @review.wine
   end
 
   def update
-    @review = Review.find(params[:id])
+  raise
     if @review.update(review_params)
       redirect_to wine_path(@wine)
     else
       render :edit
+    end
   end
 
   def destroy
     @review = Review.find(params[:id])
+    @wine = @review.wine
+    @review.user = current_user
     @review.destroy
-    redirect_to wines_path
+    redirect_to wine_path(@wine)
   end
 
   private
