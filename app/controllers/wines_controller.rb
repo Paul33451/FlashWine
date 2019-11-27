@@ -1,5 +1,6 @@
 class WinesController < ApplicationController
   def index
+    raise
     @wines = Wine.all
   end
 
