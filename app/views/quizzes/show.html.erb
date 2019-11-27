@@ -1,0 +1,11 @@
+<h1><%= @quiz.title %> finish</h1>
+
+<ul>
+  <% @answers.each do |answer| %>
+    <li><%= answer.option.question.content %></li>
+
+    <p>Ta réponse : <%= answer.option.title %></p>
+    <p>La bonne réponse : <%= answer.option.question.options.where(right: true).first.title %></p>
+
+  <% end %>
+</ul>

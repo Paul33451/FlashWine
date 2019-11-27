@@ -10,16 +10,16 @@ class AnswersController < ApplicationController
     @answer = Answer.new(answer_params)
     @answer.user = current_user
     @answer.save!
+    @quiz = current_user.answers.last.option.question.quiz
 
     if @question.id < 2
       redirect_to new_question_answer_path(@question.id + 1)
     else
-      redirect_to root_path
+      redirect_to quiz_path(@quiz)
     end
-    raise
   end
 
-    private
+  private
 
   def answer_params
     params.require(:answer).permit(:option_id)
