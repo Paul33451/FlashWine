@@ -6,8 +6,8 @@
         <img src="https://cdn.pixabay.com/photo/2018/01/13/19/39/fashion-3080644_1280.jpg">
         <div class="card-product-infos">
         <p>devenez ami avec :</p>
-        <h2><%= user.email %></h2>
-          <%= link_to 'Ajouter', add_friend_path(user), method: :get, remote: true, class: "user-#{user.id} btn" %>
+        <h2><%= user.first_name + " " + user.last_name %></h2>
+          <%= link_to 'Ajouter', add_friend_path(user), method: :get, remote: true, class: "user-#{user.id} btn-ghost" %>
         </div>
       </div>
     <% end %>

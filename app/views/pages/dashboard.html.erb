@@ -1,4 +1,4 @@
-<h2>Bonjour <%= @user.email %></h2>
+<h2>Bonjour <%= @user.first_name %></h2>
 <% if @user.requested_friends.size > 0 %>
   <div class="cards">
     <p>Tu as <%= @user.requested_friends.size %> demande(s) en attente</p>
@@ -6,11 +6,11 @@
       <div class="card-product user-<%=request.id%>">
         <img src="https://cdn.pixabay.com/photo/2018/01/13/19/39/fashion-3080644_1280.jpg">
         <div class="card-product-infos">
-          <h2><%= request.email %></h2>
+          <h2><%= request.first_name %></h2>
           <p>souhaite devenir votre ami</p>
           <span class="justify-content-around">
-            <%= link_to "Accepter", accept_friend_path(request), remote: true, class: "btn" %>
-            <%= link_to "Refuser", reject_friend_path(request), remote: true, class: "btn" %>
+            <%= link_to "Accepter", accept_friend_path(request), remote: true, class: "btn-ghost" %>
+            <%= link_to "Refuser", reject_friend_path(request), remote: true, class: "btn-ghost" %>
           </span>
         </div>
       </div>
@@ -27,10 +27,10 @@
   <div class="card-product user-<%=friend.id%>">
     <img src="https://cdn.pixabay.com/photo/2018/01/13/19/39/fashion-3080644_1280.jpg">
     <div class="card-product-infos">
-      <h2><%= friend.email %></h2>
+      <h2><%= friend.first_name + " " + friend.last_name %></h2>
       <p>souhaite devenir votre ami</p>
       <span class="justify-content-around">
-        <%= link_to "Supprimer", delete_friend_path(friend), remote: true, class: "btn" %>
+        <%= link_to "Supprimer", delete_friend_path(friend), remote: true, class: "btn-ghost" %>
       </span>
     </div>
   </div>
