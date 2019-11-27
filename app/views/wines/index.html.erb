@@ -8,9 +8,23 @@
         <h2><%=wine.name%> <%= wine.year%></h2>
         <p>Région : <%= wine.region %></p>
         <p>Appellation : <%= wine.appellation %></p>
-        <div class="d-flex justify-content-between">
-          <div><p>Couleur : <%= wine.color %></p></div>
-          <div><p><%= wine.reviews.count %> avis </p></div>
+        <p>Couleur : <%= wine.color %></p>
+        <div>
+          <%if wine.average_rating.nan? == false %>
+            <div class="d-flex justify-content-between">
+              <div><p><i class="far fa-comment"></i>  <%= wine.reviews.count %> avis </p></div>
+              <div class="star_card d-flex">
+                <%(wine.average_rating).round.times do %>
+                  <p><i class="fas fa-star"></i></p>
+                <% end %>
+                <% (5 - wine.average_rating).round.times do %>
+                  <p><i class="far fa-star"></i></p>
+                <% end %>
+              </div>
+            </div>
+           <%else %>
+            <p>Soyez le premier à donner votre avis !</p>
+          <% end %>
         </div>
       </div>
     <% end %>
