@@ -1,6 +1,8 @@
 .card-product {
   overflow: hidden;
   height: 120px;
+  width:85vw;
+  margin: 10px auto;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -19,6 +21,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  color: $pink;
 }
 
 .card-product p {
@@ -27,11 +30,15 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  text-decoration: none;
+  color: $dark-gray;
 }
 
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+#HOME PAGE SELECTORS :
 
 .picto-bloc{
   height:120px;
@@ -39,18 +46,16 @@
   text-align: center;
   padding-top:30px;
   margin-right:5px;
-
-
 }
 
 .picto-size{
   font-size:50px;
-
 }
 
 #quizz-color{
   background-color:$dark-yellow;
 }
+
 #cave-color{
   background-color:$green;
 }
@@ -59,5 +64,11 @@
 }
 #friend-color{
   background-color:$pink;
+}
+
+REVIEWS SELECTORS :
+
+.star_card {
+  width: 100px;
 }
 

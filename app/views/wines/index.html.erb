@@ -1,11 +1,32 @@
-<h1>Wines#index</h1>
+<h1>Ma cave</h1>
 
 <% @wines.each do |wine| %>
-  <h2><%= link_to wine.name, wine_path(wine) %></h2>
-  <p>Années :<%= wine.year %></p>
-  <p>Région :><%= wine.region %></p>
-  <p>Appellation : <%= wine.appellation %></p>
-  <p>Cépage :<%= wine.cepage %></p>
-  <p>Couleur :<%= wine.color %></p>
-  <p>Saveurs : <%= wine.flavour %></p>
+  <div class="card-product">
+    <%=link_to wine_path(wine), class:"card-product" do%>
+      <img src="https://images.unsplash.com/photo-1549873916-b1bb7dc758c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80">
+      <div class="card-product-infos">
+        <h2><%=wine.name%> <%= wine.year%></h2>
+        <p>Région : <%= wine.region %></p>
+        <p>Appellation : <%= wine.appellation %></p>
+        <p>Couleur : <%= wine.color %></p>
+        <div>
+          <%if wine.average_rating.nan? == false %>
+            <div class="d-flex justify-content-between">
+              <div><p><i class="far fa-comment"></i>  <%= wine.reviews.count %> avis </p></div>
+              <div class="star_card d-flex">
+                <%(wine.average_rating).round.times do %>
+                  <p><i class="fas fa-star"></i></p>
+                <% end %>
+                <% (5 - wine.average_rating).round.times do %>
+                  <p><i class="far fa-star"></i></p>
+                <% end %>
+              </div>
+            </div>
+           <%else %>
+            <p>Soyez le premier à donner votre avis !</p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 <% end %>
