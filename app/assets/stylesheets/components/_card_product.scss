@@ -5,6 +5,8 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin-bottom: 0;
+  margin-top: 8px;
 }
 
 .card-product img {
@@ -30,3 +32,32 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+.picto-bloc{
+  height:120px;
+  width:260px;
+  text-align: center;
+  padding-top:30px;
+  margin-right:5px;
+
+
+}
+
+.picto-size{
+  font-size:50px;
+
+}
+
+#quizz-color{
+  background-color:$dark-yellow;
+}
+#cave-color{
+  background-color:$green;
+}
+#db-color{
+  background-color:$light-yellow;
+}
+#friend-color{
+  background-color:$pink;
+}
+
