@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  namespace :user do
+  namespace :users do
     resources :answers, only: [:index]
     resources :reviews, only: [:index]
     resources :connections, only: [:index]
