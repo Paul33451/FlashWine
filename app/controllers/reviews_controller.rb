@@ -28,6 +28,7 @@ class ReviewsController < ApplicationController
       redirect_to wine_path(@wine)
     else
       render :edit
+    end
   end
 
   def destroy
