@@ -1,5 +1,40 @@
-<h2>Welcome <%= @user.first_name %></h2>
-<p>Tu as <%= @user.connections.size %> amis</p>
-<%= link_to 'Mes amis', users_connections_path %>
+<h2>Bonjour <%= @user.email %></h2>
+<% if @user.requested_friends.size > 0 %>
+  <div class="cards">
+    <p>Tu as <%= @user.requested_friends.size %> demande(s) en attente</p>
+    <% @user.requested_friends.each do |request| %>
+      <div class="card-product user-<%=request.id%>">
+        <img src="https://cdn.pixabay.com/photo/2018/01/13/19/39/fashion-3080644_1280.jpg">
+        <div class="card-product-infos">
+          <h2><%= request.email %></h2>
+          <p>souhaite devenir votre ami</p>
+          <span class="justify-content-around">
+            <%= link_to "Accepter", accept_friend_path(request), remote: true, class: "btn" %>
+            <%= link_to "Refuser", reject_friend_path(request), remote: true, class: "btn" %>
+          </span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<%= link_to 'Ajouter un ami', users_path, class: "btn-ghost" %>
 <p>Tu es niveau <%= @user.score %>points</p>
 <%#= link_to 'Gens possibles en amis', connections_path %>
+
+
+<% current_user.friends.each do |friend| %>
+  <div class="card-product user-<%=friend.id%>">
+    <img src="https://cdn.pixabay.com/photo/2018/01/13/19/39/fashion-3080644_1280.jpg">
+    <div class="card-product-infos">
+      <h2><%= friend.email %></h2>
+      <p>souhaite devenir votre ami</p>
+      <span class="justify-content-around">
+        <%= link_to "Supprimer", delete_friend_path(friend), remote: true, class: "btn" %>
+      </span>
+    </div>
+  </div>
+<% end %>
+
+
+

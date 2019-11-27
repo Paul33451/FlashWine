@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2019_11_27_123148) do
 
   # These are extensions that must be enabled in order to support this database
@@ -24,10 +25,15 @@ ActiveRecord::Schema.define(version: 2019_11_27_123148) do
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
-  create_table "connections", force: :cascade do |t|
-    t.boolean "progress"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "friendships", id: :serial, force: :cascade do |t|
+    t.string "friendable_type"
+    t.integer "friendable_id"
+    t.integer "friend_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer "blocker_id"
+    t.integer "status"
+    t.index ["friendable_id", "friend_id"], name: "index_friendships_on_friendable_id_and_friend_id", unique: true
   end
 
   create_table "options", force: :cascade do |t|
@@ -78,15 +84,6 @@ ActiveRecord::Schema.define(version: 2019_11_27_123148) do
     t.index ["wine_id"], name: "index_reviews_on_wine_id"
   end
 
-  create_table "user_connections", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "connection_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["connection_id"], name: "index_user_connections_on_connection_id"
-    t.index ["user_id"], name: "index_user_connections_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -125,6 +122,4 @@ ActiveRecord::Schema.define(version: 2019_11_27_123148) do
   add_foreign_key "recommendations", "wines"
   add_foreign_key "reviews", "users"
   add_foreign_key "reviews", "wines"
-  add_foreign_key "user_connections", "connections"
-  add_foreign_key "user_connections", "users"
 end

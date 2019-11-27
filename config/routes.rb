@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   namespace :users do
     resources :answers, only: [:index]
     resources :reviews, only: [:index]
-    resources :connections, only: [:index]
   end
 
   # wine related routes:
@@ -18,10 +17,11 @@ Rails.application.routes.draw do
   # quizz realated routes:
 
   # user realated routes:
-  resources :users, only: [:show, :index] do
-    resources :user_connections, only: [:create]
-  end
-  resources :connections, only: [:index, :create, :update, :destroy]
+  resources :users, only: [:show, :index]
+  get "/add/:user_id", to: "users#add", as: 'add_friend'
+  get "/accept/:user_id", to: "users#accept", as: 'accept_friend'
+  get "/reject/:user_id", to: "users#reject", as: 'reject_friend'
+  get "/delete/:user_id", to: "users#delete", as: 'delete_friend'
   get "dashboard", to: "pages#dashboard", as: 'dashboard'
   #user related namespaced routes:
 
