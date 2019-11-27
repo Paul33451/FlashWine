@@ -1,26 +1,46 @@
-<h2><%= @wine.name %></h2>
-<p>Années :<%= @wine.year %></p>
-<p>Région : <%= @wine.region %></p>
-<p>Appellation : <%= @wine.appellation %></p>
-<p>Cépage :<%= @wine.cepage %></p>
-<p>Couleur :<%= @wine.color %></p>
-<p>Saveurs : <%= @wine.flavour %></p>
+<h2><%= @wine.name %> <%= @wine.year %></h2>
 
-<div id="reviews">
-  <p>Avis :</p>
-  <% if @wine.reviews.blank? %>
-    Soyez le premier à laisser un avis sur <%= @wine.name %> !
-  <% else %>
-    <% @wine.reviews.each do |review| %>
-      <%= render 'reviews/show', review: review %>
-    <% end %>
-  <% end %>
+<div class="container">
+
+  <div class="card-wine-summary">
+    <img src="https://images.unsplash.com/photo-1549873916-b1bb7dc758c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80">
+    <div class="card-wine-infos">
+      <p>Région : <%= @wine.region %></p>
+      <p>Appellation : <%= @wine.appellation %></p>
+      <p>Cépage : <%= @wine.cepage %></p>
+      <p>Couleur : <%= @wine.color %></p>
+      <div>
+        <% if @wine.reviews.blank? == false %>
+          <p>Soyez le premier à donner votre avis sur <%= @wine.name %> ! !</p>
+        <% else %>
+          <%if @wine.average_rating.nan? == false %>
+            <div class="d-flex justify-content-between">
+              <div><p><i class="far fa-comment"></i>  <%= @wine.reviews.count %> avis </p></div>
+              <div class="star_card d-flex">
+                <%(@wine.average_rating).round.times do %>
+                  <p><i class="fas fa-star"></i></p>
+                <% end %>
+                <% (5 - @wine.average_rating).round.times do %>
+                  <p><i class="far fa-star"></i></p>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
-<p>Moyenne des avis : </p>
-<p><%= @wine.average_rating%></p>
+<% if @wine.reviews.blank? == false %>
+  <div class="container" id="reviews">
+    <% @wine.reviews.each do |review| %>
+      <%= render 'reviews/show', review: review %>
+      <% end %>
+  </div>
+<%end%>
 
-
-<%= render 'reviews/form', wine: @wine, review: @review, class:"btn-flat"%>
-
-
+<div class="container">
+  <p>Qu'avez-vous pensé de ce vin ?</p>
+  <%= render 'reviews/form', wine: @wine, review: @review, class:"btn-flat"%>
+</div>
