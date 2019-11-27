@@ -1,11 +1,17 @@
-<div>
-    <p>Note : <%= review.rating %></p>
-    <p>Commentaire : <%= review.content %></p>
+<div class="d-flex">
+  <div class="star_card d-flex">
+    <%(@wine.average_rating).round.times do %>
+      <p><i class="fas fa-star"></i></p>
+    <% end %>
+    <% (5 - @wine.average_rating).round.times do %>
+      <p><i class="far fa-star"></i></p>
+    <% end %>
+  </div>
 
-
-  <% if review.user = current_user %>
-    <%= link_to "Modifier cet avis", edit_wine_review_path(@wine, review), class:"btn-ghost" %>
-    <%= link_to "Supprimer cet avis", review, method: :delete, class:"btn-ghost" %>
-  <% end %>
-
+    <p><%= review.content %></p>
+    <% if review.user = current_user %>
+      <%= link_to "Modifier cet avis", edit_wine_review_path(@wine, review), class:"btn-ghost" %>
+      <%= link_to "Supprimer cet avis", review, method: :delete, class:"btn-ghost" %>
+    <% end %>
+  </div>
 </div>
