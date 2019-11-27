@@ -38,7 +38,6 @@ class ReviewsController < ApplicationController
   end
 
   def update
-  raise
     if @review.update(review_params)
       redirect_to wine_path(@wine)
     else

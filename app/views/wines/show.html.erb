@@ -1,5 +1,3 @@
-<h1>Wines#show</h1>
-
 <h2><%= @wine.name %></h2>
 <p>Années :<%= @wine.year %></p>
 <p>Région : <%= @wine.region %></p>
@@ -18,6 +16,10 @@
     <% end %>
   <% end %>
 </div>
+
+<p>Moyenne des avis : </p>
+<p><%= @wine.average_rating%></p>
+
 
 <%= render 'reviews/form', wine: @wine, review: @review, class:"btn-flat"%>
 
