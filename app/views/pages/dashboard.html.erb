@@ -1,4 +1,20 @@
-<h2>Bonjour <%= @user.first_name %></h2>
+<div class="dash-banner" >
+    <h2>Bonjour <%= @user.first_name %></h2>
+    <%= cl_image_tag current_user.photo, class: "w-25 rounded-circle" %>
+    <p>Niveau : <%= current_user.level %></p>
+<div class="progress">
+  <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<!--   <div class="level">
+    <i class="fas fa-wine-glass u"></i>
+    <i class="fas fa-wine-glass y"></i>
+    <i class="fas fa-wine-glass t"></i>
+    <i class="fas fa-wine-glass r"></i>
+    <i class="fas fa-wine-glass e"></i>
+    <i class="fas fa-wine-glass z"></i>
+    <i class="fas fa-wine-glass a"></i>
+  </div> -->
+</div>
 <% if @user.requested_friends.size > 0 %>
   <div class="cards">
     <p>Tu as <%= @user.requested_friends.size %> demande(s) en attente</p>
@@ -35,6 +51,9 @@
     </div>
   </div>
 <% end %>
+
+<%= render 'users/reviews/index' %>
+<%= render 'users/recommendations/index' %>
 
 
 

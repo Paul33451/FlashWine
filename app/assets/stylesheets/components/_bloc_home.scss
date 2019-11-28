@@ -1,0 +1,37 @@
+.bloc-cat-home {
+  background-color:white;
+  margin-top:50px;
+}
+
+#illustration-home{
+  height: 200px;
+  width: 80%;
+  object-fit: cover;
+}
+
+.h2-bloc-home{
+  font-size: 25px;
+  color:$dark-gray;
+  font-weight:bold;
+  font-family: Roboto;
+}
+
+.h3-bloc-home{
+  font-size: 18px;
+  color:$pink;
+  font-weight:bold;
+  font-family: Roboto;
+}
+
+.h4-bloc-home{
+  font-size: 16px;
+  color:$dark-gray;
+  font-weight:bold;
+  font-family: Roboto;
+}
+
+.p-bloc-home{
+  font-size: 14px;
+  color:#bfbfbf;
+  font-family: Roboto;
+}

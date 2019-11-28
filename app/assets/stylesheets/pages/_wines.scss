@@ -1,0 +1,29 @@
+.card-wine-summary {
+  overflow: hidden;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.card-wine-summary img {
+  height: 100%;
+  object-fit: cover;
+  width: 200px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px
+}
+
+.card-wine-infos{
+
+}
+
+.card-wine-summary .card-wine-infos{
+  padding: 16px;
+}
+
+h2 {
+  text-align: center;
+  color: $pink;
+  font-weight: bold;
+}
