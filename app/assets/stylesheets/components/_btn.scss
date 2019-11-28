@@ -24,3 +24,16 @@
   background: #1BCB7F;
   color: white;
 }
+
+.btn-pink {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $pink;
+  opacity: 0.6;
+  transition: background 0.3s ease;
+}
+
+.btn-pink:hover {
+   opacity: 1;
+}
