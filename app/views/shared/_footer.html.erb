@@ -1,0 +1,23 @@
+<div class="footer-container fixed-bottom row">
+    <%= link_to quizzes_path, class: "card col" do %>
+      <%= image_tag "chrono.svg"%>
+      <h5 class="card-title">Quiz</h5>
+    <% end %>
+
+    <%= link_to wines_path, class: "card col" do %>
+      <%= image_tag "cave_icone.svg" %>
+      <h5 class="card-title">Cave</h5>
+    <% end %>
+
+    <% if user_signed_in? %>
+      <%= link_to user_path(current_user), class: "card col" do %>
+      <%= image_tag "dashboard.svg" %>
+      <h5 class="card-title">Tableau de bord</h5>
+      <% end %>
+    <% else %>
+      <%= link_to new_user_session_path, class: "card col" do %>
+      <%= image_tag "dashboard.svg" %>
+      <h5 class="card-title">Connexion</h5>
+    <% end %>
+    <% end %>
+ </div>

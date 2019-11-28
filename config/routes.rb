@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  get "/home_v2", to: "pages#home_v2"
+
   namespace :users do
     resources :answers, only: [:index]
     resources :reviews, only: [:index]
