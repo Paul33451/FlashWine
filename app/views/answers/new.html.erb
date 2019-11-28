@@ -1,42 +1,47 @@
 <div class="container">
-  <div class="form-group">
-    <h1><%= @question.content %></h1>
 
-    <%= simple_form_for [@question, @answer] do |f| %>
-          <%= f.association :option, :collection => @options, as: :radio_buttons %>
+<!--   <div class="form-group">
+ -->    <%#= simple_form_for [@question, @answer] do |f| %>
 
-      <%= f.button :submit %>
-    <% end %>
-  </div>
-</div>
+          <%#= f.association :option, :collection => @options, as: :radio_buttons %>
 
+      <%#= f.button :submit %>
+    <%# end %>
+<!--   </div>
+</div> -->
 
-<div class="container-fluid bg-info">
-  <div class="modal-dialog">
-    <div class="modal-content">
+  <div class="container-fluid bg-info">
+    <div class="modal-dialog">
+      <div class="modal-content">
         <div class="modal-header">
           <h3>
             <span class="label label-warning" id="qid"><%= @question.position %></span><%= @question.content %>
           </h3>
         </div>
 
-        <% i = 1 %>
-        <div class="quiz" id="quiz" data-toggle="buttons">
-          <% @options.each do |option| %>
-            <label class="element-animation<%= i %> btn btn-lg btn-primary btn-block">
-              <span class="btn-label">
-                <i class="glyphicon glyphicon-chevron-right">
-                </i>
-              </span>
-              <input type="radio" name="q_answer" value="<%= i %>"><%= option.title %>
-            </label>
-            <% i += 1 %>
-          <% end %>
-        </div>
-    </div>
-    <div class="modal-footer text-muted">
-      <span id="answer"></span>
+        <%= simple_form_for [@question, @answer] do |f| %>
+          <fieldset class="form-group radio_buttons required answer_option">
+            <input type="hidden" name="answer[option_id]" value="">
+            <div class="quiz" id="quiz" >
+              <% @question.options.each_with_index do |option, i| %>
+                <div class="form-check">
+                  <input class="form-check-input radio_buttons required hidden" type="radio" value="<%= i + 1 %>" name="answer[option_id]" id="answer_option_id_<%= i + 1 %>">
+                  <label class="element-animation<%= i %> btn btn-lg btn-primary btn-block answer-quiz" for="answer_option_id_<%= i + 1 %>">
+                    <span class="btn-label">
+                      <i class="glyphicon glyphicon-chevron-right"></i>
+                    </span>
+                      <%= option.title %>
+                  </label>
+                </div>
+              <% end %>
+            </div>
+          </fieldset>
+          <%= f.button :submit, value: "Valider" %>
+        <% end %>
+      </div>
+      <div class="modal-footer text-muted">
+        <span id="answer"></span>
+      </div>
     </div>
   </div>
 </div>
-
