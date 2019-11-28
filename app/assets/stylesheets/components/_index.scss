@@ -9,4 +9,9 @@
 @import "search_form";
 @import "tabs";
 @import "cards_grid";
-@import "container"
+@import "container";
+@import "footer";
+
+body{
+  margin-bottom: 90px;
+}
