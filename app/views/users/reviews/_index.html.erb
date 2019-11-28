@@ -1,0 +1,13 @@
+<h2>Voici tes reviews</h2>
+<% @reviews.each do |review| %>
+  <div class="card-product user-<%=review.id%>">
+    <img src="https://cdn.pixabay.com/photo/2018/01/13/19/39/fashion-3080644_1280.jpg">
+    <div class="card-product-infos">
+      <h2><%= review.wine.appellation %></h2>
+      <p><%= review.content %></p>
+      <span class="justify-content-around">
+        <%= link_to "Supprimer", "#", remote: true, class: "btn-ghost" %>
+      </span>
+    </div>
+  </div>
+<% end %>

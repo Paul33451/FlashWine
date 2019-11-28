@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :users do
     resources :answers, only: [:index]
     resources :reviews, only: [:index]
+    resources :recommendations, only: [:index]
   end
 
   # wine related routes:
