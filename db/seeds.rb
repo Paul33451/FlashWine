@@ -98,10 +98,26 @@ option_1 = Option.new(title: "Rouge", right: false, question: question_1)
 option_2 = Option.new(title: "Gris", right: false, question: question_1)
 option_3 = Option.new(title: "Blanc", right: false, question: question_1)
 option_4 = Option.new(title: "Violet", right: true, question: question_1)
+
 option_5 = Option.new(title: "Parce que le raisin c'est bon", right: true, question: question_2)
 option_6 = Option.new(title: "Parce que c'est de toute les couleurs", right: false, question: question_2)
 option_7 = Option.new(title: "Je n'aime pas le vin", right: false, question: question_2)
 option_8 = Option.new(title: "C'est pas la bonne réponse alors la choisis pas", right: false, question: question_2)
+
+option_9 = Option.new(title: "42 degrés", right: false, question: question_3)
+option_10 = Option.new(title: "6 degrés", right: false, question: question_3)
+option_11 = Option.new(title: "12 degrés", right: true, question: question_3)
+option_12 = Option.new(title: "Je sais pas et j'en rien à foutre tant que je suis saoul", right: false, question: question_3)
+
+option_13 = Option.new(title: "Franchement cool", right: true, question: question_4)
+option_14 = Option.new(title: "A l'image de cette dernière : naze", right: false, question: question_4)
+option_15 = Option.new(title: "J'en sais rien je réponds au pif", right: false, question: question_4)
+option_16 = Option.new(title: "Pas ouf", right: false, question: question_4)
+
+option_17 = Option.new(title: "Normale", right: false, question: question_5)
+option_18 = Option.new(title: "Plus d'idée de réponse non plus", right: false, question: question_5)
+option_19 = Option.new(title: "Mais on vous aime...", right: false, question: question_5)
+option_20 = Option.new(title: "...Fort", right: true, question: question_5)
 
 option_1.save!
 option_2.save!
@@ -111,6 +127,18 @@ option_5.save!
 option_6.save!
 option_7.save!
 option_8.save!
+option_9.save!
+option_10.save!
+option_11.save!
+option_12.save!
+option_13.save!
+option_14.save!
+option_15.save!
+option_16.save!
+option_17.save!
+option_18.save!
+option_19.save!
+option_20.save!
 
 puts "==========================="
 puts "Creating recommendations"

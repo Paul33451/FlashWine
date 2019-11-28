@@ -1,21 +1,13 @@
 <div class="container">
-
-<!--   <div class="form-group">
- -->    <%#= simple_form_for [@question, @answer] do |f| %>
-
-          <%#= f.association :option, :collection => @options, as: :radio_buttons %>
-
-      <%#= f.button :submit %>
-    <%# end %>
-<!--   </div>
-</div> -->
-
+  <div class="title-quiz text-center">
+    <h1><%= @question.quiz.title %></h1>
+  </div>
   <div class="container-fluid bg-info">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h3>
-            <span class="label label-warning" id="qid"><%= @question.position %></span><%= @question.content %>
+            <span class="label label-warning" id="qid"><%= @question.position %></span> <%= @question.content %>
           </h3>
         </div>
 
@@ -36,7 +28,9 @@
               <% end %>
             </div>
           </fieldset>
-          <%= f.button :submit, value: "Valider" %>
+          <div class="text-center">
+            <%= f.button :submit, value: "Valider", class:"btn-flat btn-quiz" %>
+          </div>
         <% end %>
       </div>
       <div class="modal-footer text-muted">
@@ -45,3 +39,14 @@
     </div>
   </div>
 </div>
+
+
+<!--   <div class="form-group">
+ -->    <%#= simple_form_for [@question, @answer] do |f| %>
+
+          <%#= f.association :option, :collection => @options, as: :radio_buttons %>
+
+      <%#= f.button :submit %>
+    <%# end %>
+<!--   </div>
+</div> -->
