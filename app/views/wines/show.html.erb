@@ -1,38 +1,35 @@
 <h2><%= @wine.name %> <%= @wine.year %></h2>
 
-<div class="container">
-
-  <div class="card-wine-summary">
-    <img src="https://images.unsplash.com/photo-1549873916-b1bb7dc758c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80">
+<%# Wine-card summary %>
+  <div class="container card-wine-summary">
+    <img class="w-50" src="https://images.unsplash.com/photo-1549873916-b1bb7dc758c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80">
     <div class="card-wine-infos">
       <p>Région : <%= @wine.region %></p>
       <p>Appellation : <%= @wine.appellation %></p>
       <p>Cépage : <%= @wine.cepage %></p>
       <p>Couleur : <%= @wine.color %></p>
-      <div>
-        <% if @wine.reviews.blank? == false %>
-          <p>Soyez le premier à donner votre avis sur <%= @wine.name %> ! !</p>
-        <% else %>
-          <%if @wine.average_rating.nan? == false %>
-            <div class="d-flex justify-content-between">
-              <div><p><i class="far fa-comment"></i>  <%= @wine.reviews.count %> avis </p></div>
-              <div class="star_card d-flex">
-                <%(@wine.average_rating).round.times do %>
-                  <p><i class="fas fa-star"></i></p>
-                <% end %>
-                <% (5 - @wine.average_rating).round.times do %>
-                  <p><i class="far fa-star"></i></p>
-                <% end %>
-              </div>
+      <div class="d-flex justify-content-between">
+        <div><p><i class="far fa-comment"></i>  <%= @wine.reviews.count %> avis </p></div>
+        <div>
+          <% if @wine.average_rating.nan? == true %>
+            <p>Soyez le premier à donner votre avis sur ce vin</p>
+          <% else %>
+            <div class="star_card d-flex">
+              <%(@wine.average_rating).round.times do %>
+                <p><i class="fas fa-star"></i></p>
+              <% end %>
+              <% (5 - @wine.average_rating).round.times do %>
+                <p><i class="far fa-star"></i></p>
+              <% end %>
             </div>
           <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<% if @wine.reviews.blank? == false %>
+<%# Index all reviews %>
+<% if @wine.average_rating.nan? == false %>
   <div class="container" id="reviews">
     <% @wine.reviews.each do |review| %>
       <%= render 'reviews/show', review: review %>
@@ -40,6 +37,7 @@
   </div>
 <%end%>
 
+ <%# Review form %>
 <div class="container">
   <p>Qu'avez-vous pensé de ce vin ?</p>
   <%= render 'reviews/form', wine: @wine, review: @review, class:"btn-flat"%>

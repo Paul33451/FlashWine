@@ -1,4 +1,22 @@
-<div class="d-flex">
+<%# Haut de la review %>
+<div class="d-flex justify-content-between">
+
+  <%# Avatar  %>
+  <% if review.user.photo.present? %>
+    <%= cl_tag review.user.photo, class: "avatar", alt: "photo" %>
+  <% else %>
+    <%= image_tag "https://www.flaticon.com/authors/smashicons", class: "avatar", alt: "avatar" %>
+  <% end %>
+
+  <%# Edit and Delete Icons %>
+  <div>
+    <% if review.user = current_user %>
+      <%= link_to '<i class="far fa-edit edit-delete-icons"></i>'.html_safe, edit_wine_review_path(@wine, review) %>
+      <%= link_to '<i class="far fa-trash-alt edit-delete-icons"></i>'.html_safe, review, method: :delete %>
+    <% end %>
+  </div>
+
+  <%# Etoiles  %>
   <div class="star_card d-flex">
     <%(@wine.average_rating).round.times do %>
       <p><i class="fas fa-star"></i></p>
@@ -7,11 +25,12 @@
       <p><i class="far fa-star"></i></p>
     <% end %>
   </div>
-
-    <p><%= review.content %></p>
-    <% if review.user = current_user %>
-      <%= link_to "Modifier cet avis", edit_wine_review_path(@wine, review), class:"btn-ghost" %>
-      <%= link_to "Supprimer cet avis", review, method: :delete, class:"btn-ghost" %>
-    <% end %>
-  </div>
 </div>
+
+<%# Bas de la review %>
+<p><%= review.content %></p>
+
+<hr class="separating-line">
+
+
+
