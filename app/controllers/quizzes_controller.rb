@@ -6,9 +6,10 @@ class QuizzesController < ApplicationController
   def show
     @quiz = Quiz.find(params[:id])
     @questions = @quiz.questions
-    @answers = current_user.answers
+    # @answers = current_user.answers
+    # @answers = @user.answers.where(user: @user)
     # .last.option.question.quiz.answers.where(user: current_user)
-    raise
+    # raise
   end
 end
 

@@ -7,7 +7,12 @@ class AnswersController < ApplicationController
 
   def create
     @question = Question.find(params[:question_id])
+
     @answer = Answer.new(answer_params)
+    @answer.option.question = @question
+    @answer.option = @question.options[answer_params[:option_id].to_i - 1]
+    # byebug
+
     @answer.user = current_user
     @answer.save!
     @quiz = current_user.answers.last.option.question.quiz
