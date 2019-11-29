@@ -2,23 +2,23 @@
     <% if user_signed_in? %>
       <%= link_to dashboard_path, class: "card col" do %>
       <%= image_tag "home_icone.svg" %>
-      <h5 class="card-title">Accueil</h5>
+      <h5 class="card-title">ACCUEIL</h5>
       <% end %>
     <% else %>
       <%= link_to new_user_session_path, class: "card col" do %>
       <%= image_tag "home_icone.svg" %>
-      <h5 class="card-title">Connexion</h5>
+      <h5 class="card-title">CONNEXION</h5>
       <% end %>
     <% end %>
 
     <%= link_to quizzes_path, class: "card col" do %>
       <%= image_tag "chrono.svg"%>
-      <h5 class="card-title">Quiz</h5>
+      <h5 class="card-title">QUIZ</h5>
     <% end %>
 
     <%= link_to wines_path, class: "card col" do %>
       <%= image_tag "cave_icone.svg" %>
-      <h5 class="card-title">Cave</h5>
+      <h5 class="card-title">CAVE</h5>
     <% end %>
 
 
