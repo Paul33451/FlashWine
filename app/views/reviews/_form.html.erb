@@ -1,5 +1,5 @@
 <%= simple_form_for([ wine, review ]) do |f| %>
-  <%= f.input :rating, label: "Note"  %>
-  <%= f.input :content, label: "Commentaire" %>
-  <%= f.button :submit, label: "VALIDER", class: "btn-flat" %>
+      <%= f.input :rating, as: :select, label: "Note", collection: ["1", "2", "3", "4", "5"] %>
+      <%= f.input :content, label: "Commentaire" %>
+  <%= f.button :submit, label: "VALIDER", class: "btn-pink" %>
 <% end %>
