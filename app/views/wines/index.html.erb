@@ -1,22 +1,16 @@
 <h1>Ma cave</h1>
 
-<%= form_tag wines_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Chercher un vin"
-  %>
-  <%= submit_tag "Trouver", class: "btn btn-flat" %>
-<% end %>
-
 <% @wines.each do |wine| %>
   <div class="card-product">
     <%=link_to wine_path(wine), class:"card-product" do%>
-      <img src="https://images.unsplash.com/photo-1549873916-b1bb7dc758c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80">
+      <% if wine.photo.present? %>
+       <%= image_tag wine.photo, class:"wine-index-photo"%>
+      <%else%>
+        <img src="https://images.unsplash.com/photo-1549873916-b1bb7dc758c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80">
+      <% end %>
       <div class="card-product-infos">
         <h2><%=wine.name%> <%= wine.year%></h2>
         <p>Région : <%= wine.region %></p>
-        <p>Appellation : <%= wine.appellation %></p>
         <p>Couleur : <%= wine.color %></p>
         <div>
           <%if wine.average_rating.nan? == false %>
