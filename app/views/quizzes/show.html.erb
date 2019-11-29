@@ -1,11 +1,22 @@
-<h1><%= @quiz.title %> finish</h1>
+<div class="container">
+  <h1 class="quizz-title text-center m-5"><%= @quiz.title %> résultats</h1>
 
-<ul>
-  <% @answers.each do |answer| %>
-    <li><%= answer.option.question.content %></li>
+  <ul class="list-questions">
+    <% @questions.each do |question| %>
 
-    <p>Ta réponse : <%= answer.option.title %></p>
-    <p>La bonne réponse : <%= answer.option.question.options.where(right: true).first.title %></p>
+      <div class="question-responses m-5">
+        <div class="question">
+          <li><%= question.position %>. <%= question.content %></li>
+        </div>
 
-  <% end %>
-</ul>
+        <p>Ta réponse :
+            <%= question.answers.where(user: current_user).last.option.title %>
+        </p>
+
+        <p>La bonne réponse :
+          <%= question.options.find_by(right: true).title %>
+        </p>
+      </div>
+    <% end %>
+  </ul>
+</div>

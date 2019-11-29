@@ -6,12 +6,14 @@ class QuizzesController < ApplicationController
   def show
     @quiz = Quiz.find(params[:id])
     @questions = @quiz.questions
-    @answers = current_user.answers.last.option.question.quiz.answers.where(user: current_user)
-
+    # @answers = current_user.answers
+    # @answers = @user.answers.where(user: @user)
+    # .last.option.question.quiz.answers.where(user: current_user)
+    # raise
   end
 end
 
-# Toutes les réponses au dernier quiz :
+# Toutes les reponses au dernier quiz :
 # u.answers.last.option.question.quiz.answers.where(user: u)
 
- #bonne réponse de la question :  Answer.option.question.options.where(right: true)
+ #bonne reponse de la question :  Answer.option.question.options.where(right: true)
