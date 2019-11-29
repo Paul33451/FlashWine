@@ -5,13 +5,20 @@
 
 
 // FlashWine Colors :
+$dark-yellow: #FFDC00;
+$light-yellow: #FFF8DD;
+$green: #AACE7F;
+$pink: #EF5C62;
+$blue: #BFE7FA;
+$dark-gray: #292929;
 
-$dark-yellow: rgba(255, 220, 0, 1);
-$light-yellow: rgba(255, 248, 221, 1);
-$green: rgba(170, 206, 127, 1);
-$pink: rgba(239, 92, 98, 1);
-$blue: rgba(191, 231, 250, 1);
-$dark-gray: rgba(41, 41, 41, 1);
+// FlashWine Colors - RGBA format
+// $dark-yellow: rgba(255, 220, 0, 1);
+// $light-yellow: rgba(255, 248, 221, 1);
+// $green: rgba(170, 206, 127, 1);
+// $pink: rgba(239, 92, 98, 1);
+// $blue: rgba(191, 231, 250, 1);
+// $dark-gray: rgba(41, 41, 41, 1);
 
 // General style
 $font-family-sans-serif:  $body-font;
