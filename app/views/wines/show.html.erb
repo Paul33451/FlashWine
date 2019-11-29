@@ -3,30 +3,25 @@
 <%# Wine-card summary %>
   <div class="container card-wine-summary">
     <%# Picture of the wine  %>
-    <img class="w-50" src="https://images.unsplash.com/photo-1549873916-b1bb7dc758c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80">
+    <img class="w-50" src="https://images.unsplash.com/photo-1569919659476-f0852f6834b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80">
     <%# Description of the wine %>
     <div class="card-wine-infos h-100 align-content-around">
       <%#Text description  %>
       <div class="align-content-around">
-        <p>Région : <%= @wine.region %></p>
-        <p>Appellation : <%= @wine.appellation %></p>
-        <p>Cépage : <%= @wine.cepage %>
-          <%#  <ul>%>
-             <%# <%= @wine.cepage.each do |cepage|%>
-               <%# <li><%= cepage %></li> %>
-             <%# <% end %>
-           <%# </ul>
-        </p>
-        <p>Couleur : <%= @wine.color %></p>
+        <p><strong> Région : </strong><%= @wine.region %></p>
+        <p><strong> Appellation : </strong><%= @wine.appellation %></p>
+        <p><strong> Cépage : </strong><%= @wine.cepage %>
+        <p><strong> Couleur> : <%= @wine.color %></p>
       </div>
       <%# Stars rating  %>
-      <div class="d-flex justify-content-between">
+      <div class="justify-content-around">
         <div><p><i class="far fa-comment"></i>  <%= @wine.reviews.count %> avis </p></div>
         <div>
           <% if @wine.average_rating.nan? == true %>
             <p>Soyez le premier à donner votre avis sur ce vin</p>
           <% else %>
             <div class="star_card d-flex">
+              <p>Note moyenne </p>
               <%(@wine.average_rating.round).times do %>
                 <p><i class="fas fa-star"></i></p>
               <% end %>
@@ -40,17 +35,23 @@
     </div>
   </div>
 
+
+
 <%# Index of all reviews %>
-  <% if @wine.average_rating.nan? == false %>
-    <div class="container" id="reviews">
-      <% @wine.reviews.each do |review| %>
-        <%= render 'reviews/show', review: review %>
-      <% end %>
-    <%end%>
+  <hr class="separating-line">
+  <div class="container">
+    <% if @wine.average_rating.nan? == false %>
+      <h3><%= image_tag "comment_icone.svg", class:"mr-1", width: 25, height: 25 %>Avis sur ce vin</h3>
+      <div class="container" id="reviews">
+        <% @wine.reviews.each do |review| %>
+          <%= render 'reviews/show', review: review %>
+        <% end %>
+      <%end%>
+    </div>
   </div>
 
 <%# Form to add a review %>
 <div class="container">
-  <p><%= image_tag "plus.png", class:"mr-1", width: 40, height: 40 %>Qu'avez-vous pensé de ce vin ?</p>
+  <h3><%= image_tag "edit_comment_icone.svg", class:"mr-1", width: 25, height: 25 %>Comment l'avez-vous trouvé?</h3>
   <%= render 'reviews/form', wine: @wine, review: @review, class:"btn-flat"%>
 </div>
