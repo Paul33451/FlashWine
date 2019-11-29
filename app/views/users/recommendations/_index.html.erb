@@ -1,13 +1,13 @@
-<h2>Recommandations d'amis</h2>
+<h2>Recommandations</h2>
 <% @recommendations.each do |recommendation| %>
-  <div class="card-product user-<%=recommendation.id%>">
-    <img src="https://cdn.pixabay.com/photo/2018/01/13/19/39/fashion-3080644_1280.jpg">
+  <div class="card-product recommendation-<%=recommendation.id%>">
+    <%= cl_image_tag recommendation.sender.photo %>
     <div class="card-product-infos">
       <h2><%= recommendation.sender.first_name + " " + recommendation.sender.last_name %></h2>
       <p>Te recommande le <%= recommendation.wine.appellation %></p>
-      <span class="justify-content-around">
-        <%= link_to "Supprimer", "#", remote: true, class: "btn-ghost" %>
-      </span>
     </div>
+      <%= link_to "#", remote: true, class: "icon-btn" do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
   </div>
 <% end %>

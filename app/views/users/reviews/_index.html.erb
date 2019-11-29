@@ -1,13 +1,13 @@
-<h2>Voici tes reviews</h2>
+<h2>Ma cave</h2>
 <% @reviews.each do |review| %>
-  <div class="card-product user-<%=review.id%>">
-    <img src="https://cdn.pixabay.com/photo/2018/01/13/19/39/fashion-3080644_1280.jpg">
+  <div class="card-product review-<%=review.id%>">
+    <img src="https://www.cdiscount.com/pdt2/x/1/4/1/700x700/confmargaux14/rw/chateau-confidence-de-margaux-2014-margaux-vin-r.jpg" alt="">
     <div class="card-product-infos">
       <h2><%= review.wine.appellation %></h2>
       <p><%= review.content %></p>
-      <span class="justify-content-around">
-        <%= link_to "Supprimer", "#", remote: true, class: "btn-ghost" %>
-      </span>
     </div>
+      <%= link_to review_path(review), method: 'delete', remote: true, class: "icon-btn" do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
   </div>
 <% end %>
