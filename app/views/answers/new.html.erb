@@ -6,12 +6,10 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h3>
-            <div class="d-flex">
-            <div class="label label-warning" id="qid"><%= @question.position %></div>
-            <div><%= @question.content %></div>
-            </div>
-          </h3>
+          <div class="d-flex">
+          <div class="label label-warning" id="qid"><%= @question.position %></div>
+          <div class="question-title"><%= @question.content %></div>
+          </div>
         </div>
 
         <%= simple_form_for [@question, @answer] do |f| %>
