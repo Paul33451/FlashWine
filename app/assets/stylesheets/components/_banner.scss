@@ -1,10 +1,11 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 100px 0;
+  padding: 40px 0;
   width:100%;
-  height:100px;
+  height:200px;
   padding-left:8px;
+  box-shadow: 5px 5px 5px grey;
 }
 
 .banner h1 {
@@ -17,5 +18,5 @@
 .banner p {
   font-size: 20px;
   color: white;
-  opacity: .7;
+  opacity: .8;
 }
