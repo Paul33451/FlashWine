@@ -1,5 +1,14 @@
 <h1>Ma cave</h1>
 
+<%= form_tag wines_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Chercher un vin"
+  %>
+  <%= submit_tag "Trouver", class: "btn btn-flat" %>
+<% end %>
+
 <% @wines.each do |wine| %>
   <div class="card-product">
     <%=link_to wine_path(wine), class:"card-product" do%>
