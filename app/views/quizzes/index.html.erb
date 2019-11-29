@@ -2,8 +2,7 @@
   <h1>Liste des quiz</h1>
 
   <% @quizzes.each do |quiz| %>
-    <% @question = quiz.questions.find_by(position: 1) %>
-    <%= link_to new_question_answer_path(@question) do %>
+    <%= link_to new_question_answer_path(question_id: quiz.questions.find_by(position: 1).id) do %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
         <%= quiz.title %>
       </div>
