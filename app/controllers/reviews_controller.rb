@@ -50,7 +50,6 @@ class ReviewsController < ApplicationController
     @wine = @review.wine
     @review.user = current_user
     @review.destroy
-    redirect_to wine_path(@wine)
   end
 
   private
