@@ -4,8 +4,8 @@
 }
 
 #illustration-home{
-  height: 200px;
-  width: 80%;
+  height: 100%;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -34,4 +34,8 @@
   font-size: 14px;
   color:#bfbfbf;
   font-family: Roboto;
+}
+
+.align-banner-home{
+  align-items: start;
 }
