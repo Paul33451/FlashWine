@@ -5,8 +5,9 @@
 
 #illustration-home{
   height: 100%;
-  width: 100%;
+  width: 200px;
   object-fit: cover;
+  opacity: 0.4;
 }
 
 .h2-bloc-home{
@@ -38,4 +39,9 @@
 
 .align-banner-home{
   align-items: start;
+}
+
+.text-cat-center{
+  margin-right: 35px;
+  margin-left: 35px
 }
