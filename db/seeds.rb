@@ -1,3 +1,18 @@
+puts "==========================="
+puts "Destroy seed"
+puts "==========================="
+
+# User.destroy_all
+# Wine.destroy_all
+# Review.destroy_all
+# Quiz.destroy_all
+# Question.destroy_all
+# Option.destroy_all
+# Recommendation.destroy_all
+
+puts "==========================="
+puts "Seed destroyed !!!"
+puts "==========================="
 
 # Users
 puts "==========================="

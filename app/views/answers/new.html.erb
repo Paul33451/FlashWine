@@ -7,7 +7,10 @@
       <div class="modal-content">
         <div class="modal-header">
           <h3>
-            <span class="label label-warning" id="qid"><%= @question.position %></span> <%= @question.content %>
+            <div class="d-flex">
+            <div class="label label-warning" id="qid"><%= @question.position %></div>
+            <div><%= @question.content %></div>
+            </div>
           </h3>
         </div>
 

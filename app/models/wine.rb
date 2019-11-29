@@ -1,7 +1,7 @@
 class Wine < ApplicationRecord
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   validates :name, uniqueness: { scope: :year}
-  has_many :quizzes
+  has_many :quizzes, dependent: :destroy
 
   def average_rating
     wine_grades = self.reviews.map do |review|

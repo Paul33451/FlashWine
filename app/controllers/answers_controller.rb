@@ -12,9 +12,9 @@ class AnswersController < ApplicationController
     @answer.save!
     @quiz = current_user.answers.last.option.question.quiz
 
-    if @question.id <= 5
+    if @question.id < 5
       redirect_to new_question_answer_path(@question.id + 1)
-    else
+    else @question.id == 5
       redirect_to quiz_path(@quiz)
     end
   end
