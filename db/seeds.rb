@@ -2,13 +2,16 @@ puts "==========================="
 puts "Destroy seed"
 puts "==========================="
 
+# puts "users"
 # User.destroy_all
+# puts "wine"
 # Wine.destroy_all
+# puts "review"
 # Review.destroy_all
 # Quiz.destroy_all
 # Question.destroy_all
 # Option.destroy_all
-# Recommendation.destroy_all
+# # Recommendation.destroy_all
 
 puts "==========================="
 puts "Seed destroyed !!!"
@@ -151,21 +154,21 @@ option_18.save!
 option_19.save!
 option_20.save!
 
-puts "==========================="
-puts "Creating recommendations"
-puts "==========================="
+# puts "==========================="
+# puts "Creating recommendations"
+# puts "==========================="
 
-recommendation_1 = Recommendation.new(wine: rocher, sender: alice, recipient: bob)
-recommendation_2 = Recommendation.new(wine: mouton_cadet, sender: bob, recipient: dede)
-recommendation_3 = Recommendation.new(wine: coteaux_bourguignons, sender: alice, recipient: eric)
-recommendation_4 = Recommendation.new(wine: margaux, sender: charlie, recipient: alice)
-recommendation_5 = Recommendation.new(wine: margaux, sender: alice, recipient: charlie)
+# recommendation_1 = Recommendation.new(wine: rocher, sender: alice, recipient: bob)
+# recommendation_2 = Recommendation.new(wine: mouton_cadet, sender: bob, recipient: dede)
+# recommendation_3 = Recommendation.new(wine: coteaux_bourguignons, sender: alice, recipient: eric)
+# recommendation_4 = Recommendation.new(wine: margaux, sender: charlie, recipient: alice)
+# recommendation_5 = Recommendation.new(wine: margaux, sender: alice, recipient: charlie)
 
-recommendation_1.save!
-recommendation_2.save!
-recommendation_3.save!
-recommendation_4.save!
-recommendation_5.save!
+# recommendation_1.save!
+# recommendation_2.save!
+# recommendation_3.save!
+# recommendation_4.save!
+# recommendation_5.save!
 
 
 puts "==========================="
