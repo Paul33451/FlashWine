@@ -15,15 +15,9 @@
 
 
 
-<%= render 'users/reviews/index' %>
-<%= render 'users/recommendations/index' %>
 
 
 
-      <h2>Amis</h2>
-      <div class="d-flex justify-content-center p-4">
-        <%= link_to 'Ajouter un ami', users_path, class: "btn-ghost" %>
-      </div>
   <% if @user.requested_friends.size > 0 %>
     <div class="cards">
       <% @user.requested_friends.each do |request| %>
@@ -46,7 +40,51 @@
     </div>
   <% end %>
 
-<% current_user.friends.each do |friend| %>
+
+
+
+<% if @user.requested_friends.size > 0 %>
+  <button class="accordion">Demandes</button>
+  <div class="panel">
+    <div class="cards">
+      <% @user.requested_friends.each do |request| %>
+        <div class="card-product user-<%=request.id%>">
+          <%= cl_image_tag request.photo %>
+          <div class="card-product-infos">
+            <h2><%= request.first_name %></h2>
+            <p>souhaite devenir votre ami</p>
+            <span class="d-flex justify-content-around">
+              <%= link_to accept_friend_path(request), remote: true, class: "friends-btn" do %>
+              <i class="fas fa-check"></i>
+              <% end %>
+              <%= link_to reject_friend_path(request), remote: true, class: "friends-btn" do %>
+              <i class="fas fa-times"></i>
+              <% end %>
+            </span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<% if @user.reviews != [] %>
+  <button class="accordion">Mes vins</button>
+  <div class="panel">
+    <%= render 'users/reviews/index' %>
+  </div>
+<% end %>
+
+<% if @user.recommendations != [] %>
+  <button class="accordion">Suggestions</button>
+  <div class="panel">
+    <%= render 'users/recommendations/index' %>
+  </div>
+<% end %>
+
+<button class="accordion">Amis</button>
+<div class="panel">
+  <% current_user.friends.each do |friend| %>
   <div class="card-product user-<%=friend.id%>">
     <img src="https://cdn.pixabay.com/photo/2018/01/13/19/39/fashion-3080644_1280.jpg">
     <div class="card-product-infos">
@@ -59,3 +97,9 @@
         <% end %>
   </div>
 <% end %>
+</div>
+
+
+      <div class="d-flex justify-content-center p-4">
+        <%= link_to 'Ajouter un ami', users_path, class: "btn-ghost" %>
+      </div>
