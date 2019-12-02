@@ -1,20 +1,18 @@
 <div class="dash-banner" >
-  <h2>Bonjour <%= @user.first_name %></h2>
-  <%= cl_image_tag current_user.photo, class: "w-25 rounded-circle" %>
-  <p>Niveau : <%= current_user.level %></p>
-  <div class="progress">
-  <div class="progress-bar bg-info" role="progressbar" style="width: <%= current_user.score.present? ? current_user.score / 10 : 0 %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+  <div class="avatar-container">
+    <%= cl_image_tag current_user.photo %>
   </div>
-<!--   <div class="level">
-    <i class="fas fa-wine-glass u"></i>
-    <i class="fas fa-wine-glass y"></i>
-    <i class="fas fa-wine-glass t"></i>
-    <i class="fas fa-wine-glass r"></i>
-    <i class="fas fa-wine-glass e"></i>
-    <i class="fas fa-wine-glass z"></i>
-    <i class="fas fa-wine-glass a"></i>
-  </div> -->
+  <h4>Bienvenu <%= @user.first_name %></h4>
+    <p>Niveau <%= current_user.level %></p>
+    <div class="progress ">
+      <div class="progress-bar text-center" role="progressbar" style="width: <%= current_user.score.present? ? current_user.score % 200 / 2 : 0 %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <%= link_to edit_user_registration_path do %>
+      <i class="fas fa-edit edit"></i>
+    <% end %>
   </div>
+ </div>
+
 
 
 <%= render 'users/reviews/index' %>

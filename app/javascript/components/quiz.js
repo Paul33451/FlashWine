@@ -12,6 +12,4 @@ const activeClass = () => {
 
 
 export { activeClass }
-
 // active focus a ajouter dans class de label
-

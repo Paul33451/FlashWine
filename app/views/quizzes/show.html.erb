@@ -1,22 +1,33 @@
 <div class="container">
-  <h1 class="quizz-title text-center m-5"><%= @quiz.title %> résultats</h1>
+  <div class="img-quiz">
+  <%= image_tag "ill_quizz_flash_wine.png" %>
+  </div>
+  <h1 class="quizz-title text-center m-5"><%= @quiz.title %> correction</h1>
 
-  <ul class="list-questions">
+  <div class="correction">
     <% @questions.each do |question| %>
 
       <div class="question-responses m-5">
         <div class="question">
-          <li><%= question.position %>. <%= question.content %></li>
+          <p><%= question.position %>. <%=question.content %>
+            <% if question.answers.where(user: current_user).last.option.right == true %>
+              <i class="fas fa-check-circle"></i>
+            <% else %>
+              <i class="fas fa-times-circle"></i>
+            <% end %>
+          </p>
         </div>
 
-        <p>Ta réponse :
-            <%= question.answers.where(user: current_user).last.option.title %>
-        </p>
+        <div class="responses">
+          <p class="user-answer <%= question.answers.where(user: current_user).last.option.right ? 'right-answer' : 'wrong-answer' %>">Ta réponse :
+              <%= question.answers.where(user: current_user).last.option.title %>
+          </p>
 
-        <p>La bonne réponse :
-          <%= question.options.find_by(right: true).title %>
-        </p>
+          <p class="right-answer <%= 'right-answer' if question.answers.where(user: current_user).last.option.right == true %>">La bonne réponse :
+              <%= question.options.find_by(right: true).title %>
+          </p>
+        </div>
       </div>
     <% end %>
-  </ul>
+  </div>
 </div>

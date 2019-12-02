@@ -1,48 +1,44 @@
 .dash-banner {
+  position: relative;
   height: 210px;
-  padding: 5px 10px;
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.pixabay.com/photo/2018/01/31/14/17/wine-cellar-3121221_1280.jpg);
+  padding: 10px 10px;
+  background-image: url(vignes.jpg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
 }
-.dash-banner h2 {
+.edit {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 25px;
   color: white;
-  text-align: left;
-  font-weight: 400;
+}
+.dash-banner h4 {
+  color: white;
+  font-weight: bold;
 }
 .dash-banner p {
   color: white;
   margin-bottom: 0;
 }
+.progress-bar {
+background: linear-gradient(right, #EF4249, #F0666C);
+}
 .progress {
   width: 50%;
+  offset: 25%;
+  margin: auto;
 }
 .level {
   position: absolute;
-  top: 190px;
   right: 10px;
 }
+.avatar-container img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
 
 
-.a {
-  font-size: 80px;
-}
-.z{
-  font-size: 70px;
-}
-.e {
-  font-size: 60px;
-}
-.r {
-  font-size: 50px;
-}
-.t {
-  font-size: 40px;
-    color: white;
-}
-.y {
-  font-size: 30px;
-    color: white;
-}
-.u {
-  font-size: 20px;
-  color: white;
-}
