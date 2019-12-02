@@ -1,11 +1,12 @@
 .footer-container {
+
   width: 375px;
   height: 70px;
   margin: 10px auto 10px auto;
   position: center;
   background-color: white;
   padding-top: 5px;
-  border: 1px solid $pink;
+  border-top: 1px solid $pink;
   z-index: 1000;
   display: flex;
   justify-content: space-around;
@@ -19,8 +20,8 @@
 }
 
 .footer-container img {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   color: $pink;
   align-items: center;
   justify-content: center;
