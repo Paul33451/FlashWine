@@ -1,13 +1,14 @@
-<h2>Recommandations</h2>
 <% @recommendations.each do |recommendation| %>
-  <div class="card-product recommendation-<%=recommendation.id%>">
-    <%= cl_image_tag recommendation.sender.photo %>
-    <div class="card-product-infos">
-      <h2><%= recommendation.sender.first_name + " " + recommendation.sender.last_name %></h2>
-      <p>Te recommande le <%= recommendation.wine.appellation %></p>
-    </div>
-      <%= link_to "#", remote: true, class: "icon-btn" do %>
-        <i class="far fa-trash-alt"></i>
-      <% end %>
+<div class="notification">
+      <%= cl_image_tag recommendation.sender.photo, class:"avatar-large" %>
+  <div class="notification-content">
+    <p><small>Une date ?</small></p>
+    <p><strong><%= recommendation.sender.fullname %></strong> te recommande le <strong><%= recommendation.wine.name %></strong></p>
   </div>
+
+  <div class="notification-actions">
+    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+  </div>
+</div>
 <% end %>
