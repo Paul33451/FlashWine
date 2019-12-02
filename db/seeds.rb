@@ -2,13 +2,16 @@ puts "==========================="
 puts "Destroy seed"
 puts "==========================="
 
+# puts "users"
 # User.destroy_all
+# puts "wine"
 # Wine.destroy_all
+# puts "review"
 # Review.destroy_all
 # Quiz.destroy_all
 # Question.destroy_all
 # Option.destroy_all
-# Recommendation.destroy_all
+# # Recommendation.destroy_all
 
 puts "==========================="
 puts "Seed destroyed !!!"
@@ -43,7 +46,7 @@ puts "==========================="
 
 rocher = Wine.new(region:"Bordeaux", appellation:"Saint-Emilion Grand Cru", cepage:"Merlot, Cabernet franc, Cabernet sauvignon", color:"Rouge", name:"Château du Rocher", year:2016, photo:"https://media.lepetitballon.com/catalog/product/cache/1/image/280x600/040ec09b1e35df139433887a97daa66f/c/h/chateaux-du-rocher.jpg")
 
-mouton_cadet = Wine.new(region:"Bordeaux", appellation:"Sauternes", cepage:"Sémillon 80% / Sauvignon 20% ", color:"liquoreux", name:"Mouton Cadet", year:1892, photo:"https://produits.bienmanger.com/29409-0w0h0_Mouton_Cadet_Rouge.jpg")
+mouton_cadet = Wine.new(region:"Loire", appellation:"Sauternes", cepage:"Sémillon 80% / Sauvignon 20% ", color:"rosé", name:"Mouton Cadet", year:1892, photo:"https://produits.bienmanger.com/29409-0w0h0_Mouton_Cadet_Rouge.jpg")
 
 coteaux_bourguignons = Wine.new(region:"Bourgogne", appellation:"Coteaux Bourguignons", cepage:" Pinot Noir 100% ", color:"rouge", name:"Jean de Laurere", year:2016, photo:"https://media.lepetitballon.com/catalog/product/cache/1/image/280x600/040ec09b1e35df139433887a97daa66f/j/e/jean-de-laurere-coteaux_bourguignon-2016.jpg")
 
@@ -151,21 +154,21 @@ option_18.save!
 option_19.save!
 option_20.save!
 
-puts "==========================="
-puts "Creating recommendations"
-puts "==========================="
+# puts "==========================="
+# puts "Creating recommendations"
+# puts "==========================="
 
-recommendation_1 = Recommendation.new(wine: rocher, sender: alice, recipient: bob)
-recommendation_2 = Recommendation.new(wine: mouton_cadet, sender: bob, recipient: dede)
-recommendation_3 = Recommendation.new(wine: coteaux_bourguignons, sender: alice, recipient: eric)
-recommendation_4 = Recommendation.new(wine: margaux, sender: charlie, recipient: alice)
-recommendation_5 = Recommendation.new(wine: margaux, sender: alice, recipient: charlie)
+# recommendation_1 = Recommendation.new(wine: rocher, sender: alice, recipient: bob)
+# recommendation_2 = Recommendation.new(wine: mouton_cadet, sender: bob, recipient: dede)
+# recommendation_3 = Recommendation.new(wine: coteaux_bourguignons, sender: alice, recipient: eric)
+# recommendation_4 = Recommendation.new(wine: margaux, sender: charlie, recipient: alice)
+# recommendation_5 = Recommendation.new(wine: margaux, sender: alice, recipient: charlie)
 
-recommendation_1.save!
-recommendation_2.save!
-recommendation_3.save!
-recommendation_4.save!
-recommendation_5.save!
+# recommendation_1.save!
+# recommendation_2.save!
+# recommendation_3.save!
+# recommendation_4.save!
+# recommendation_5.save!
 
 
 puts "==========================="
