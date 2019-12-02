@@ -1,7 +1,9 @@
 .dash-banner {
   height: 210px;
   padding: 5px 10px;
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.pixabay.com/photo/2018/01/31/14/17/wine-cellar-3121221_1280.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(vignes.jpg);
+  background-size: cover;
+  background-position: center;
 }
 .dash-banner h2 {
   color: white;
@@ -19,6 +21,14 @@
   position: absolute;
   top: 190px;
   right: 10px;
+}
+.avatar-container {
+  width: 50px;
+  height: 50px;
+}
+.avatar-container img {
+  border-radius: 50%;
+  width: 100px;
 }
 
 
