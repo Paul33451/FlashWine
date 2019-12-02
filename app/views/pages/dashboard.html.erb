@@ -5,7 +5,7 @@
   <h4>Bienvenu <%= @user.first_name %></h4>
     <p>Niveau <%= current_user.level %></p>
     <div class="progress ">
-      <div class="progress-bar text-center" role="progressbar" style="width: <%= current_user.score.present? ? current_user.score / 10 : 0 %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      <div class="progress-bar text-center" role="progressbar" style="width: <%= current_user.score.present? ? current_user.score % 200 / 2 : 0 %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
     <%= link_to edit_user_registration_path do %>
       <i class="fas fa-edit edit"></i>
