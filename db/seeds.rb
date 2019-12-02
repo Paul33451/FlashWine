@@ -81,9 +81,12 @@ puts "==========================="
 puts "Creating Quiz"
 puts "==========================="
 
-quiz_1 = Quiz.new(title: "Quizz du niveau 1", wine: margaux)
+quiz_1 = Quiz.new(title: "Les vins de bordeaux", wine: margaux)
+
+quiz_2 = Quiz.new(title: "Le vin blanc", wine: margaux)
 
 quiz_1.save!
+quiz_2.save!
 
 # Question
 puts "==========================="
@@ -102,6 +105,9 @@ question_3.save!
 question_4.save!
 question_5.save!
 
+question_6 = Question.new(content: "Pourquoi le blanc est il blanc", position: 1, quiz: quiz_2)
+
+question_6.save!
 
 # Options
 puts "==========================="
@@ -153,6 +159,16 @@ option_17.save!
 option_18.save!
 option_19.save!
 option_20.save!
+
+option_21 = Option.new(title: "Parce que ...", right: false, question: question_6)
+option_22 = Option.new(title: "A cause du raisin blanc", right: true, question: question_6)
+option_23 = Option.new(title: "A cause du sulfate", right: false, question: question_6)
+option_24 = Option.new(title: "Parce qu'il est plus sucré", right: false, question: question_6)
+
+option_21.save!
+option_22.save!
+option_23.save!
+option_24.save!
 
 # puts "==========================="
 # puts "Creating recommendations"
