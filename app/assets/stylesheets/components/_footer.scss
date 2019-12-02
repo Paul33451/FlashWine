@@ -1,12 +1,11 @@
 .footer-container {
-
   width: 375px;
   height: 70px;
   margin: 10px auto 10px auto;
   position: center;
   background-color: white;
   padding-top: 5px;
-  border-top: 1px solid $pink;
+  border-top: 1px solid $bordeaux;
   z-index: 1000;
   display: flex;
   justify-content: space-around;
@@ -15,7 +14,7 @@
 
 .footer-container > .card {
   border: none;
-  color: $pink;
+  color: $bordeaux;
   text-align: center
 }
 

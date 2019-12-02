@@ -1,5 +1,4 @@
-<div class="container">
-  <h1>Liste des quiz</h1>
+<h1>Liste des quiz</h1>
 
   <% @quizzes.each do |quiz| %>
     <%= link_to new_question_answer_path(question_id: quiz.questions.find_by(position: 1).id) do %>

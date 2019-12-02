@@ -3,18 +3,16 @@
   overflow: hidden;
   height: 120px;
   width: 350px;
-  margin: 10px auto;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  margin-bottom: 0;
-  margin-top: 8px;
+  margin: 14px auto 0 auto;
 }
 
 .card-product img {
   height: 100%;
-  width: 120px;
+  width: 100px;
   object-fit: cover;
 }
 
@@ -22,7 +20,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-  color: $pink;
+  color: #D32B60;
   text-align: left;
 }
 
