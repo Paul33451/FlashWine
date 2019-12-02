@@ -4,7 +4,15 @@
 // 3. You can override them below!
 
 
-// FlashWine Colors :
+// FlashWine Colors (NEW - 2/12/2019):
+$gray: #7A94A0;
+$blue: #AED4E6;
+$bordeaux: #6D071A;
+$pink: #AF7595;
+$purple: #8C2155;
+$dark-gray: #292929;
+
+// FlashWine Colors (OLD - not to be used)
 $dark-yellow: #FFDC00;
 $light-yellow: #FFF8DD;
 $green: #AACE7F;
@@ -25,7 +33,6 @@ $font-family-sans-serif:  $body-font;
 $headings-font-family:    $headers-font;
 // $body-bg:                 $light-yellow;
 $font-size-base: 2rem;
-
 
 $body-color: $dark-gray;
 $primary:    $blue;
