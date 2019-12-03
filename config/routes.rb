@@ -32,6 +32,11 @@ Rails.application.routes.draw do
   get "/delete/:user_id", to: "users#delete", as: 'delete_friend'
   get "dashboard", to: "pages#dashboard", as: 'dashboard'
   #user related namespaced routes:
+
+
+  # lectures routes :
+  resources :lectures , only: [:show, :index]
+
   resources :recommendations, only: [:create]
 end
 
