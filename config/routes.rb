@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get "/home", to: "pages#home"
 
-  namespace :users do
+  namespace :users, only: [] do
     resources :answers, only: [:index]
     resources :reviews, only: [:index]
     resources :recommendations, only: [:index]
@@ -32,5 +32,6 @@ Rails.application.routes.draw do
   get "/delete/:user_id", to: "users#delete", as: 'delete_friend'
   get "dashboard", to: "pages#dashboard", as: 'dashboard'
   #user related namespaced routes:
-
+  resources :recommendations, only: [:create]
 end
+
