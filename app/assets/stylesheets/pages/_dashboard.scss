@@ -50,7 +50,7 @@ background: linear-gradient(right, #EF4249, #F0666C);
 
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
-  background-color: #eee;
+  background: linear-gradient(bottom, #A9A9A9, #D3D3D3);
   color: #444;
   cursor: pointer;
   padding: 18px;
@@ -71,6 +71,19 @@ background: linear-gradient(right, #EF4249, #F0666C);
   background-color: white;
   display: none;
   overflow: hidden;
-    margin: 0;
-
+  margin: 0;
 }
+
+
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
