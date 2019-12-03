@@ -10,6 +10,9 @@
     <%= link_to edit_user_registration_path do %>
       <i class="fas fa-edit edit"></i>
     <% end %>
+    <%= link_to users_path do %>
+      <i class="fas fa-user-friends add"></i>
+    <% end %>
   </div>
  </div>
 
@@ -84,22 +87,21 @@
 
 <button class="accordion">Amis</button>
 <div class="panel">
-  <% current_user.friends.each do |friend| %>
-  <div class="card-product user-<%=friend.id%>">
-    <img src="https://cdn.pixabay.com/photo/2018/01/13/19/39/fashion-3080644_1280.jpg">
-    <div class="card-product-infos">
-      <h2><%= friend.first_name + " " + friend.last_name %></h2>
-      <p>souhaite devenir votre ami</p>
-
-    </div>
-        <%= link_to delete_friend_path(friend), remote: true, class: "icon-btn" do %>
-          <i class="far fa-trash-alt"></i>
-        <% end %>
+  <div class="d-flex justify-content-center p-4">
+    <%= link_to 'Ajouter un ami', users_path, class: "btn-ghost" %>
   </div>
-<% end %>
+  <% current_user.friends.each do |friend| %>
+    <div class="card-product user-<%=friend.id%>">
+      <img src="https://cdn.pixabay.com/photo/2018/01/13/19/39/fashion-3080644_1280.jpg">
+      <div class="card-product-infos">
+        <h2><%= friend.first_name + " " + friend.last_name %></h2>
+        <p>souhaite devenir votre ami</p>
+
+      </div>
+          <%= link_to delete_friend_path(friend), remote: true, class: "icon-btn" do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+    </div>
+  <% end %>
 </div>
 
-
-      <div class="d-flex justify-content-center p-4">
-        <%= link_to 'Ajouter un ami', users_path, class: "btn-ghost" %>
-      </div>
