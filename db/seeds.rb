@@ -81,12 +81,19 @@ puts "==========================="
 puts "Creating Quiz"
 puts "==========================="
 
-quiz_1 = Quiz.new(title: "Les vins de bordeaux", wine: margaux)
-
-quiz_2 = Quiz.new(title: "Le vin blanc", wine: margaux)
+quiz_1 = Quiz.new(title: "Les couleurs du vin", wine: margaux, photo: "quiz1-couleurs.jpg")
+quiz_2 = Quiz.new(title: "Grands crus classés", wine: margaux, photo:"quiz2-crus.jpg")
+quiz_3 = Quiz.new(title: "Accords mets-vins", wine: margaux, photo:"quiz5-mets.jpg")
+quiz_4 = Quiz.new(title: "Terroirs et cépages", wine: margaux, photo:"/quiz3-terroirs.jpg")
+quiz_5 = Quiz.new(title: "Tout sur le bouchon", wine: margaux, photo:"quiz4-bouchons.jpg")
+quiz_6 = Quiz.new(title: "La biodynamie", wine: margaux, photo: "quiz6-biodynamie.jpg")
 
 quiz_1.save!
 quiz_2.save!
+quiz_3.save!
+quiz_4.save!
+quiz_5.save!
+quiz_6.save!
 
 # Question
 puts "==========================="
@@ -105,35 +112,54 @@ question_3.save!
 question_4.save!
 question_5.save!
 
-question_6 = Question.new(content: "Pourquoi le blanc est il blanc", position: 1, quiz: quiz_2)
-
+question_6 = Question.new(content: "Question à venir [...] ", position: 1, quiz: quiz_2)
 question_6.save!
+
+question_7 = Question.new(content: "Question à venir [...]", position: 1, quiz: quiz_3)
+question_7.save!
+
+question_8 = Question.new(content: "Question à venir [...]", position: 1, quiz: quiz_4)
+question_8.save!
+
+question_9 = Question.new(content: "Question à venir [...]", position: 1, quiz: quiz_5)
+question_9.save!
+
+question_10 = Question.new(content: "Question à venir [...]", position: 1, quiz: quiz_5)
+question_10.save!
+
+question_11 = Question.new(content: "Question à venir [...]", position: 1, quiz: quiz_6)
+question_11.save!
 
 # Options
 puts "==========================="
 puts "Creating Options"
 puts "==========================="
 
+#Options for question 1 :
 option_1 = Option.new(title: "Rouge", right: false, question: question_1)
 option_2 = Option.new(title: "Gris", right: false, question: question_1)
 option_3 = Option.new(title: "Blanc", right: false, question: question_1)
 option_4 = Option.new(title: "Violet", right: true, question: question_1)
 
+#Options for question 2 :
 option_5 = Option.new(title: "Parce que le raisin c'est bon", right: true, question: question_2)
 option_6 = Option.new(title: "Parce que c'est de toute les couleurs", right: false, question: question_2)
 option_7 = Option.new(title: "Je n'aime pas le vin", right: false, question: question_2)
 option_8 = Option.new(title: "C'est pas la bonne réponse alors la choisis pas", right: false, question: question_2)
 
+#Options for question 3 :
 option_9 = Option.new(title: "42 degrés", right: false, question: question_3)
 option_10 = Option.new(title: "6 degrés", right: false, question: question_3)
 option_11 = Option.new(title: "12 degrés", right: true, question: question_3)
 option_12 = Option.new(title: "Je sais pas et j'en rien à foutre tant que je suis saoul", right: false, question: question_3)
 
+#Options for question 4 :
 option_13 = Option.new(title: "Franchement cool", right: true, question: question_4)
 option_14 = Option.new(title: "A l'image de cette dernière : naze", right: false, question: question_4)
 option_15 = Option.new(title: "J'en sais rien je réponds au pif", right: false, question: question_4)
 option_16 = Option.new(title: "Pas ouf", right: false, question: question_4)
 
+#Options for question 5 :
 option_17 = Option.new(title: "Normale", right: false, question: question_5)
 option_18 = Option.new(title: "Plus d'idée de réponse non plus", right: false, question: question_5)
 option_19 = Option.new(title: "Mais on vous aime...", right: false, question: question_5)
@@ -160,6 +186,7 @@ option_18.save!
 option_19.save!
 option_20.save!
 
+#Options for question 6 :
 option_21 = Option.new(title: "Parce que ...", right: false, question: question_6)
 option_22 = Option.new(title: "A cause du raisin blanc", right: true, question: question_6)
 option_23 = Option.new(title: "A cause du sulfate", right: false, question: question_6)
@@ -169,6 +196,61 @@ option_21.save!
 option_22.save!
 option_23.save!
 option_24.save!
+
+#Options for question 7 :
+option_25 = Option.new(title: "Réponse 1 [...]", right: false, question: question_7)
+option_26 = Option.new(title: "Réponse 2 [...]", right: false, question: question_7)
+option_27 = Option.new(title: "Réponse 3 [...]", right: false, question: question_7)
+option_28 = Option.new(title: "Réponse 4 [...]", right: true, question: question_7)
+
+option_25.save!
+option_26.save!
+option_27.save!
+option_28.save!
+
+#Options for question 8 :
+option_29 = Option.new(title: "Réponse 1 [...]", right: false, question: question_7)
+option_30 = Option.new(title: "Réponse 2 [...]", right: false, question: question_7)
+option_31 = Option.new(title: "Réponse 3 [...]", right: false, question: question_7)
+option_32 = Option.new(title: "Réponse 4 [...]", right: true, question: question_7)
+
+option_29.save!
+option_30.save!
+option_31.save!
+option_32.save!
+
+#Options for question 9 :
+option_33 = Option.new(title: "Réponse 1 [...]", right: false, question: question_9)
+option_34 = Option.new(title: "Réponse 2 [...]", right: false, question: question_9)
+option_35 = Option.new(title: "Réponse 3 [...]", right: false, question: question_9)
+option_36 = Option.new(title: "Réponse 4 [...]", right: true, question: question_9)
+
+option_33.save!
+option_34.save!
+option_35.save!
+option_36.save!
+
+#Options for question 10 :
+option_37 = Option.new(title: "Réponse 1 [...]", right: false, question: question_10)
+option_38 = Option.new(title: "Réponse 2 [...]", right: false, question: question_10)
+option_39 = Option.new(title: "Réponse 3 [...]", right: false, question: question_10)
+option_40 = Option.new(title: "Réponse 4 [...]", right: true, question: question_10)
+
+option_37.save!
+option_38.save!
+option_39.save!
+option_40.save!
+
+#Options for question 11 :
+option_41 = Option.new(title: "Réponse 1 [...]", right: false, question: question_11)
+option_42 = Option.new(title: "Réponse 2 [...]", right: false, question: question_11)
+option_43 = Option.new(title: "Réponse 3 [...]", right: false, question: question_11)
+option_44 = Option.new(title: "Réponse 4 [...]", right: true, question: question_11)
+
+option_41.save!
+option_42.save!
+option_43.save!
+option_44.save!
 
 # puts "==========================="
 # puts "Creating recommendations"
