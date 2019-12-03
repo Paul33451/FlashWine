@@ -27,14 +27,20 @@
     <% end %>
 
     <% if user_signed_in? %>
-      <%= link_to edit_user_registration_path, class: "card col" do %>
-      <%= image_tag "profile_icone.svg" %>
-      <h5 class="card-title">Profil</h5>
-      <% end %>
+      <div class="card col dropup">
+        <button class="">
+          <%= image_tag "profile_icone.svg" %>
+          <h5 class="card-title">Profil</h5>
+        </button>
+        <div class="dropup-content">
+          <%= link_to 'Modifier', edit_user_registration_path %>
+          <%= link_to 'Déconnexion', destroy_user_session_path, method:'delete' %>
+        </div>
+      </div>
     <% else %>
       <%= link_to new_user_session_path, class: "card col" do %>
-      <%= image_tag "profile_icone.svg" %>
-      <h5 class="card-title">Profil</h5>
+        <%= image_tag "profile_icone.svg" %>
+        <h5 class="card-title">Connexion</h5>
       <% end %>
     <% end %>
 
