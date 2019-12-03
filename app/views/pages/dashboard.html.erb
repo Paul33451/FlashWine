@@ -14,9 +14,6 @@
     <%= link_to edit_user_registration_path do %>
       <i class="fas fa-edit edit"></i>
     <% end %>
-    <%= link_to users_path do %>
-      <i class="fas fa-user-friends add"></i>
-    <% end %>
   </div>
  </div>
 
@@ -75,12 +72,12 @@
   </div>
 <% end %>
 
-<% if @user.reviews != [] %>
+
   <button class="accordion">Mes vins</button>
   <div class="panel">
     <%= render 'users/reviews/index' %>
   </div>
-<% end %>
+
 
 <% if @user.recommendations != [] %>
   <button class="accordion">Suggestions</button>

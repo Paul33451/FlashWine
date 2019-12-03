@@ -6,6 +6,39 @@
     <img class="w-50" src="https://images.unsplash.com/photo-1569919659476-f0852f6834b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80">
     <%# Description of the wine %>
     <div class="card-wine-infos h-100 align-content-around">
+
+      <%# CTA Reco  %>
+      <a class="btn btn-flat" data-toggle="modal" data-target="#open-modal">Book now</a>
+
+      <div class="modal modal_size center-block" id="open-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Sélectionnez un ami</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+                <div class="modal-body">
+                  <%= simple_form_for @recommendation, url: recommendations_path(wine_id: @wine.id) do |f| %>
+                    <div class="simple-group">
+                      <%= f.input :recipient_id, collection: current_user.friends, label_method: :first_name, value_method: :id, class: 'form-control' %>
+                    </div>
+
+                  <%= f.submit class: 'btn btn-primary' %>
+                 <% end %>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
       <%#Text description  %>
       <div class="align-content-around">
         <p><strong> Région : </strong><%= @wine.region %></p>
