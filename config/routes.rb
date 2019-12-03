@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   # wine related routes:
   # wine and reviews related routes:
-  resources :wines, only: [:index, :show] do
+  resources :wines, only: [:index, :show, :create] do
     resources :reviews, only: [:new, :index, :create, :edit, :update]
   end
   resources :reviews, only: [:show, :destroy]

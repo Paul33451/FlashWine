@@ -12,5 +12,4 @@ class RecommendationsController < ApplicationController
       redirect_to wine_path(@wine)
     end
   end
-
 end

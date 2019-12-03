@@ -1,6 +1,7 @@
 class Wine < ApplicationRecord
   has_many :reviews, dependent: :destroy
   validates :name, uniqueness: { scope: :year}
+  validates :name, presence: :true
 
   has_many :quizzes, dependent: :destroy
   # validates :cepage, presence: true, inclusion: { in: ["Merlot", "Malbec", "Chardonnay", "Chenin", "Cabernet franc", "Cabernet Sauvignon", "Muscadet"] }
