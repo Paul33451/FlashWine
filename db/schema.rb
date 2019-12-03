@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_03_090926) do
+ActiveRecord::Schema.define(version: 2019_12_03_124353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,23 @@ ActiveRecord::Schema.define(version: 2019_12_03_090926) do
     t.integer "blocker_id"
     t.integer "status"
     t.index ["friendable_id", "friend_id"], name: "index_friendships_on_friendable_id_and_friend_id", unique: true
+  end
+
+  create_table "infos", force: :cascade do |t|
+    t.string "title"
+    t.string "content"
+    t.bigint "lecture_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lecture_id"], name: "index_infos_on_lecture_id"
+  end
+
+  create_table "lectures", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "photo"
+    t.integer "requirement"
   end
 
   create_table "options", force: :cascade do |t|
@@ -68,6 +85,8 @@ ActiveRecord::Schema.define(version: 2019_12_03_090926) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+    t.bigint "lecture_id"
+    t.index ["lecture_id"], name: "index_quizzes_on_lecture_id"
     t.index ["wine_id"], name: "index_quizzes_on_wine_id"
   end
 
@@ -152,8 +171,10 @@ ActiveRecord::Schema.define(version: 2019_12_03_090926) do
 
   add_foreign_key "answers", "options"
   add_foreign_key "answers", "users"
+  add_foreign_key "infos", "lectures"
   add_foreign_key "options", "questions"
   add_foreign_key "questions", "quizzes"
+  add_foreign_key "quizzes", "lectures"
   add_foreign_key "quizzes", "wines"
   add_foreign_key "recommendations", "users", column: "recipient_id"
   add_foreign_key "recommendations", "users", column: "sender_id"

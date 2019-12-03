@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  root to: 'pages#home_v3'
 
-  get "/home", to: "pages#home"
+  get "/home", to: "pages#home_v3"
 
-  namespace :users do
+  namespace :users, only: [] do
     resources :answers, only: [:index]
     resources :reviews, only: [:index]
     resources :recommendations, only: [:index]
@@ -33,4 +33,10 @@ Rails.application.routes.draw do
   get "dashboard", to: "pages#dashboard", as: 'dashboard'
   #user related namespaced routes:
 
+
+  # lectures routes :
+  resources :lectures , only: [:show, :index]
+
+  resources :recommendations, only: [:create]
 end
+

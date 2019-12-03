@@ -1,6 +1,10 @@
 <div class="dash-banner" >
   <div class="avatar-container">
-    <%= cl_image_tag current_user.photo %>
+    <% if current_user.photo.present? %>
+      <%= cl_image_tag current_user.photo %>
+    <% else %>
+      <%= image_tag "https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png", alt: "default avatar" %>
+    <% end %>
   </div>
   <h4>Bienvenu <%= @user.first_name %></h4>
     <p>Niveau <%= current_user.level %></p>
@@ -9,9 +13,6 @@
     </div>
     <%= link_to edit_user_registration_path do %>
       <i class="fas fa-edit edit"></i>
-    <% end %>
-    <%= link_to users_path do %>
-      <i class="fas fa-user-friends add"></i>
     <% end %>
   </div>
  </div>
@@ -71,12 +72,12 @@
   </div>
 <% end %>
 
-<% if @user.reviews != [] %>
+
   <button class="accordion">Mes vins</button>
   <div class="panel">
     <%= render 'users/reviews/index' %>
   </div>
-<% end %>
+
 
 <% if @user.recommendations != [] %>
   <button class="accordion">Suggestions</button>
