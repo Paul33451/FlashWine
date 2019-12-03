@@ -34,5 +34,5 @@ Rails.application.routes.draw do
   #user related namespaced routes:
 
   # lectures routes :
-  resources :lectures , only [:show, :index]
+  resources :lectures , only: [:show, :index]
 end

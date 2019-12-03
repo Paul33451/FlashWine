@@ -2,16 +2,18 @@ puts "==========================="
 puts "Destroy seed"
 puts "==========================="
 
-# puts "users"
-# User.destroy_all
-# puts "wine"
-# Wine.destroy_all
-# puts "review"
-# Review.destroy_all
-# Quiz.destroy_all
-# Question.destroy_all
-# Option.destroy_all
-# # Recommendation.destroy_all
+Recommendation.destroy_all
+puts "review"
+Review.destroy_all
+Quiz.destroy_all
+Question.destroy_all
+Option.destroy_all
+Lecture.destroy_all
+Info.destroy_all
+puts "users"
+User.destroy_all
+puts "wine"
+Wine.destroy_all
 
 puts "==========================="
 puts "Seed destroyed !!!"
@@ -170,44 +172,58 @@ option_22.save!
 option_23.save!
 option_24.save!
 
-# puts "==========================="
-# puts "Creating recommendations"
-# puts "==========================="
+puts "==========================="
+puts "Creating recommendations"
+puts "==========================="
 
-# recommendation_1 = Recommendation.new(wine: rocher, sender: alice, recipient: bob)
-# recommendation_2 = Recommendation.new(wine: mouton_cadet, sender: bob, recipient: dede)
-# recommendation_3 = Recommendation.new(wine: coteaux_bourguignons, sender: alice, recipient: eric)
-# recommendation_4 = Recommendation.new(wine: margaux, sender: charlie, recipient: alice)
-# recommendation_5 = Recommendation.new(wine: margaux, sender: alice, recipient: charlie)
+recommendation_1 = Recommendation.new(wine: rocher, sender: alice, recipient: bob)
+recommendation_2 = Recommendation.new(wine: mouton_cadet, sender: bob, recipient: dede)
+recommendation_3 = Recommendation.new(wine: coteaux_bourguignons, sender: alice, recipient: eric)
+recommendation_4 = Recommendation.new(wine: margaux, sender: charlie, recipient: alice)
+recommendation_5 = Recommendation.new(wine: margaux, sender: alice, recipient: charlie)
 
-# recommendation_1.save!
-# recommendation_2.save!
-# recommendation_3.save!
-# recommendation_4.save!
-# recommendation_5.save!
+recommendation_1.save!
+recommendation_2.save!
+recommendation_3.save!
+recommendation_4.save!
+recommendation_5.save!
 
 
 puts "==========================="
 puts "Lectures created"
 puts "==========================="
 
-cours_1 = Lecture.new(title: 'Pour commencer', photo: 'https://cdn.pixabay.com/photo/2016/10/22/20/34/wine-1761613_1280.jpg')
-cours_2 = Lecture.new(title: 'Découvrir le vin rouge', photo: 'https://cdn.pixabay.com/photo/2017/06/26/12/49/red-wine-2443699_1280.jpg')
+cours_1 = Lecture.new(title: 'Pour commencer', requirement: 0, photo: 'https://cdn.pixabay.com/photo/2016/10/22/20/34/wine-1761613_1280.jpg')
+cours_2 = Lecture.new(title: 'Découvrir le vin rouge', requirement: 400, photo: 'https://cdn.pixabay.com/photo/2017/06/26/12/49/red-wine-2443699_1280.jpg')
+
+cours_1.save
+cours_2.save
 
 puts "==========================="
 puts "Lecture content created"
 puts "==========================="
 
-info_1 = Info.new(field: 'Fruit', content: 'Raisin', lecture: cours_1)
-info_2 = Info.new(field: "Degrés d'alcool moyen", content: '12°', lecture: cours_1)
-info_3 = Info.new(field: 'Durée de fabrication', content: '1 an', lecture: cours_1)
-info_4 = Info.new(field: "Quantité d'eau", content: '85%', lecture: cours_1)
-info_5 = Info.new(field: 'Origine', content: 'Moyen Orient', lecture: cours_1)
-info_6 = Info.new(field: 'Raison', content: 'Noir', lecture: cours_2)
-info_7 = Info.new(field: 'Meilleure région', content: 'Bordeaux', lecture: cours_2)
-info_8 = Info.new(field: 'Stockage', content: "12°, 70% d'humidité, sombre, calme", lecture: cours_2)
-info_9 = Info.new(field: 'Meilleure année', content: '1997', lecture: cours_2)
-info_10 = Info.new(field: 'Quantité max pour conduire', content: '2 verres', lecture: cours_2)
+info_1 = Info.new(title: 'Fruit', content: 'Raisin', lecture: cours_1)
+info_2 = Info.new(title: "Degrés d'alcool moyen", content: '12°', lecture: cours_1)
+info_3 = Info.new(title: 'Durée de fabrication', content: '1 an', lecture: cours_1)
+info_4 = Info.new(title: "Quantité d'eau", content: '85%', lecture: cours_1)
+info_5 = Info.new(title: 'Origine', content: 'Moyen Orient', lecture: cours_1)
+info_6 = Info.new(title: 'Raison', content: 'Noir', lecture: cours_2)
+info_7 = Info.new(title: 'Meilleure région', content: 'Bordeaux', lecture: cours_2)
+info_8 = Info.new(title: 'Stockage', content: "12°, 70% d'humidité, sombre, calme", lecture: cours_2)
+info_9 = Info.new(title: 'Meilleure année', content: '1997', lecture: cours_2)
+info_10 = Info.new(title: 'Quantité max pour conduire', content: '2 verres', lecture: cours_2)
+
+info_1.save
+info_2.save
+info_3.save
+info_4.save
+info_5.save
+info_6.save
+info_7.save
+info_8.save
+info_9.save
+info_10.save
 
 puts "==========================="
 puts "Tout bon !!!!!"
