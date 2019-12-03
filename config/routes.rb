@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  root to: 'pages#home_v3'
 
-  get "/home", to: "pages#home"
+  get "/home", to: "pages#home_v3"
 
   namespace :users do
     resources :answers, only: [:index]
