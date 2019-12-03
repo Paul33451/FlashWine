@@ -10,21 +10,20 @@
       <%# CTA Reco  %>
       <a class="btn btn-flat" data-toggle="modal" data-target="#open-modal">Book now</a>
 
-      <div class="modal" id="open-modal" tabindex="-1" role="dialog">
+      <div class="modal modal_size center-block" id="open-modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Sélectionner un ami</h5>
+              <h5 class="modal-title">Sélectionnez un ami</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
 
                 <div class="modal-body">
-                  <%= form_for(@recommendation) do |f| %>
-                    <div class="form-group">
-                      <%= f.label :name %>
-                      <%= f.text_field :recipient_id, class: 'form-control' %>
+                  <%= simple_form_for @recommendation, url: recommendations_path(wine_id: @wine.id) do |f| %>
+                    <div class="simple-group">
+                      <%= f.input :recipient_id, collection: current_user.friends, label_method: :first_name, value_method: :id, class: 'form-control' %>
                     </div>
 
                   <%= f.submit class: 'btn btn-primary' %>
