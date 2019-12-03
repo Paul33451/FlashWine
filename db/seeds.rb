@@ -188,6 +188,28 @@ option_24.save!
 
 
 puts "==========================="
+puts "Lectures created"
+puts "==========================="
+
+cours_1 = Lecture.new(title: 'Pour commencer', photo: 'https://cdn.pixabay.com/photo/2016/10/22/20/34/wine-1761613_1280.jpg')
+cours_2 = Lecture.new(title: 'Découvrir le vin rouge', photo: 'https://cdn.pixabay.com/photo/2017/06/26/12/49/red-wine-2443699_1280.jpg')
+
+puts "==========================="
+puts "Lecture content created"
+puts "==========================="
+
+info_1 = Info.new(field: 'Fruit', content: 'Raisin', lecture: cours_1)
+info_2 = Info.new(field: "Degrés d'alcool moyen", content: '12°', lecture: cours_1)
+info_3 = Info.new(field: 'Durée de fabrication', content: '1 an', lecture: cours_1)
+info_4 = Info.new(field: "Quantité d'eau", content: '85%', lecture: cours_1)
+info_5 = Info.new(field: 'Origine', content: 'Moyen Orient', lecture: cours_1)
+info_6 = Info.new(field: 'Raison', content: 'Noir', lecture: cours_2)
+info_7 = Info.new(field: 'Meilleure région', content: 'Bordeaux', lecture: cours_2)
+info_8 = Info.new(field: 'Stockage', content: "12°, 70% d'humidité, sombre, calme", lecture: cours_2)
+info_9 = Info.new(field: 'Meilleure année', content: '1997', lecture: cours_2)
+info_10 = Info.new(field: 'Quantité max pour conduire', content: '2 verres', lecture: cours_2)
+
+puts "==========================="
 puts "Tout bon !!!!!"
 puts "==========================="
 

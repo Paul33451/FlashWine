@@ -33,4 +33,6 @@ Rails.application.routes.draw do
   get "dashboard", to: "pages#dashboard", as: 'dashboard'
   #user related namespaced routes:
 
+  # lectures routes :
+  resources :lectures , only [:show, :index]
 end
