@@ -37,6 +37,6 @@ Rails.application.routes.draw do
   # lectures routes :
   resources :lectures , only: [:show, :index]
 
-  resources :recommendations, only: [:create]
+  resources :recommendations, only: [:create, :destroy]
 end
 
