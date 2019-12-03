@@ -50,20 +50,21 @@ background: linear-gradient(right, #EF4249, #F0666C);
 
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
-  background: linear-gradient(bottom, #A9A9A9, #D3D3D3);
+  background: white;
   color: #444;
   cursor: pointer;
   padding: 18px;
   width: 100%;
   text-align: left;
-  border: none;
+  border: 1px solid;
+  border-color: #E8E9EB;
   outline: none;
   transition: 0.4s;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .accordion:hover {
-  background-color: #ccc;
+  background-color: white;
 }
 
 /* Style the accordion panel. Note: hidden by default */
