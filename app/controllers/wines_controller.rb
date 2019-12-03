@@ -13,5 +13,6 @@ class WinesController < ApplicationController
   def show
     @wine = Wine.find(params[:id])
     @review = Review.new
+    @recommendation = Recommendation.new
   end
 end
