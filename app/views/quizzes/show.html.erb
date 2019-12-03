@@ -1,6 +1,6 @@
 <div class="container">
   <div class="img-quiz">
-  <%= image_tag "ill_quizz_flash_wine.png" %>
+    <%= image_tag "ill_quizz_flash_wine.png" %>
   </div>
   <h1 class="quizz-title text-center m-5"><%= @quiz.title %> correction</h1>
 
@@ -12,6 +12,7 @@
           <p><%= question.position %>. <%=question.content %>
             <% if question.answers.where(user: current_user).last.option.right == true %>
               <i class="fas fa-check-circle"></i>
+              <% @count_good_answer += 1 %>
             <% else %>
               <i class="fas fa-times-circle"></i>
             <% end %>
@@ -30,4 +31,110 @@
       </div>
     <% end %>
   </div>
+
+    <!-- Circle result -->
+  <div class="circle-result">
+    <% if @count_good_answer == 5 %>
+      <!-- 5/5 -->
+      <div class="col-sm-3 col-md-4 col-6 circle-progress-block">
+        <div id="circleProgress2" class="progressbar-js-circle border rounded p-3">
+          <svg viewBox="0 0 100 100" style="display: block; width: 100%;">
+            <path d="M 50,50 m 0,-48 a 48,48 0 1 1 0,96 a 48,48 0 1 1 0,-96" stroke="#eee" stroke-width="4" fill-opacity="0"></path>
+            <path d="M 50,50 m 0,-48 a 48,48 0 1 1 0,96 a 48,48 0 1 1 0,-96" stroke="rgb(108,185,124)" stroke-width="4" fill-opacity="0" style="stroke-dasharray: 301.635, 301.635; stroke-dashoffset: 0;"></path>
+          </svg>
+          <div class="progressbar-text" style="position: absolute; left: 50%; top: 50%; padding: 0px; margin: 0px; transform: translate(-50%, -50%); color: rgb(0, 0, 0); font-size: 2rem;">5/5
+          </div>
+        </div>
+      </div>
+      <div>
+        <p>Félicitation le quiz est validé ! <i class="fas fa-trophy"></i></p>
+      </div>
+
+      <% elsif @count_good_answer == 4 %>
+      <!-- 4/5 -->
+      <div class="col-sm-3 col-md-4 col-6 circle-progress-block">
+        <div id="circleProgress2" class="progressbar-js-circle border rounded p-3">
+          <svg viewBox="0 0 100 100" style="display: block; width: 100%;">
+            <path d="M 50,50 m 0,-48 a 48,48 0 1 1 0,96 a 48,48 0 1 1 0,-96" stroke="#eee" stroke-width="4" fill-opacity="0"></path>
+            <path d="M 50,50 m 0,-48 a 48,48 0 1 1 0,96 a 48,48 0 1 1 0,-96" stroke="rgb(108,185,124)" stroke-width="4" fill-opacity="0" style="stroke-dasharray: 301.635, 301.635; stroke-dashoffset: 60;"></path>
+          </svg>
+          <div class="progressbar-text" style="position: absolute; left: 50%; top: 50%; padding: 0px; margin: 0px; transform: translate(-50%, -50%); color: rgb(0, 0, 0); font-size: 2rem;">4/5
+          </div>
+        </div>
+      </div>
+      <div>
+        <p>Félicitation le quiz est validé ! <i class="fas fa-trophy"></i></p>
+      </div>
+
+      <% elsif @count_good_answer == 3 %>
+      <!-- 3/5 -->
+      <div class="col-sm-3 col-md-4 col-6 circle-progress-block">
+        <div id="circleProgress2" class="progressbar-js-circle border rounded p-3">
+          <svg viewBox="0 0 100 100" style="display: block; width: 100%;">
+            <path d="M 50,50 m 0,-48 a 48,48 0 1 1 0,96 a 48,48 0 1 1 0,-96" stroke="#eee" stroke-width="4" fill-opacity="0"></path>
+            <path d="M 50,50 m 0,-48 a 48,48 0 1 1 0,96 a 48,48 0 1 1 0,-96" stroke="rgb(108,185,124)" stroke-width="4" fill-opacity="0" style="stroke-dasharray: 301.635, 301.635; stroke-dashoffset: 122;"></path>
+          </svg>
+          <div class="progressbar-text" style="position: absolute; left: 50%; top: 50%; padding: 0px; margin: 0px; transform: translate(-50%, -50%); color: rgb(0, 0, 0); font-size: 2rem;">3/5
+          </div>
+        </div>
+      </div>
+      <div>
+        <p>Félicitation le quiz est validé ! <i class="fas fa-trophy"></i></p>
+      </div>
+
+      <% elsif @count_good_answer == 2 %>
+      <!-- 2/5 -->
+      <div class="col-sm-3 col-md-4 col-6 circle-progress-block">
+        <div id="circleProgress3" class="progressbar-js-circle border rounded p-3">
+          <svg viewBox="0 0 100 100" style="display: block; width: 100%;">
+            <path d="M 50,50 m 0,-48 a 48,48 0 1 1 0,96 a 48,48 0 1 1 0,-96" stroke="#eee" stroke-width="4" fill-opacity="0"></path>
+            <path d="M 50,50 m 0,-48 a 48,48 0 1 1 0,96 a 48,48 0 1 1 0,-96" stroke="rgb(198,145,145)" stroke-width="4" fill-opacity="0" style="stroke-dasharray: 301.635, 301.635; stroke-dashoffset: 181;"></path>
+          </svg>
+          <div class="progressbar-text" style="position: absolute; left: 50%; top: 50%; padding: 0px; margin: 0px; transform: translate(-50%, -50%); color: rgb(0, 0, 0); font-size: 2rem;">2/5
+          </div>
+        </div>
+      </div>
+      <div>
+        <p>Dommage, réessaye le quiz ! <i class="fas fa-redo"></i></p>
+      </div>
+
+      <% elsif @count_good_answer == 1 %>
+      <!-- 1/5 -->
+      <div class="col-sm-3 col-md-4 col-6 circle-progress-block">
+        <div id="circleProgress3" class="progressbar-js-circle border rounded p-3">
+          <svg viewBox="0 0 100 100" style="display: block; width: 100%;">
+            <path d="M 50,50 m 0,-48 a 48,48 0 1 1 0,96 a 48,48 0 1 1 0,-96" stroke="#eee" stroke-width="4" fill-opacity="0"></path>
+            <path d="M 50,50 m 0,-48 a 48,48 0 1 1 0,96 a 48,48 0 1 1 0,-96" stroke="rgb(198,145,145)" stroke-width="4" fill-opacity="0" style="stroke-dasharray: 301.635, 301.635; stroke-dashoffset: 240;"></path>
+          </svg>
+          <div class="progressbar-text" style="position: absolute; left: 50%; top: 50%; padding: 0px; margin: 0px; transform: translate(-50%, -50%); color: rgb(0, 0, 0); font-size: 2rem;">1/5
+          </div>
+        </div>
+      </div>
+      <div>
+        <p>Dommage, réessaye le quiz ! <i class="fas fa-redo"></i></p>
+      </div>
+
+      <% else %>
+      <!-- 0/5 -->
+      <div class="col-sm-3 col-md-4 col-6 circle-progress-block">
+        <div id="circleProgress3" class="progressbar-js-circle border rounded p-3">
+          <svg viewBox="0 0 100 100" style="display: block; width: 100%;">
+            <path d="M 50,50 m 0,-48 a 48,48 0 1 1 0,96 a 48,48 0 1 1 0,-96" stroke="#eee" stroke-width="4" fill-opacity="0"></path>
+            <path d="M 50,50 m 0,-48 a 48,48 0 1 1 0,96 a 48,48 0 1 1 0,-96" stroke="rgb(198,145,145)" stroke-width="4" fill-opacity="0" style="stroke-dasharray: 301.635, 301.635; stroke-dashoffset: 301.635;"></path>
+          </svg>
+          <div class="progressbar-text" style="position: absolute; left: 50%; top: 50%; padding: 0px; margin: 0px; transform: translate(-50%, -50%); color: rgb(0, 0, 0); font-size: 2rem;">0/5
+          </div>
+        </div>
+      </div>
+      <div>
+        <p>Dommage, réessaye le quiz ! <i class="fas fa-redo"></i></p>
+      </div>
+    <% end %>
+  </div>
+  <!-- Fin circle result -->
+
 </div>
+
+
+
+
