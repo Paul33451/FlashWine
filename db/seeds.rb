@@ -83,12 +83,12 @@ puts "==========================="
 puts "Creating Quiz"
 puts "==========================="
 
-quiz_1 = Quiz.new(title: "Les base de la dégustation", wine: margaux, photo: "quiz1-couleurs.jpg")
-quiz_2 = Quiz.new(title: "Grands crus classés", wine: margaux, photo:"quiz2-crus.jpg")
-quiz_3 = Quiz.new(title: "Accords mets-vins", wine: margaux, photo:"quiz5-mets.jpg")
-quiz_4 = Quiz.new(title: "Terroirs et cépages", wine: margaux, photo:"/quiz3-terroirs.jpg")
-quiz_5 = Quiz.new(title: "Tout sur le bouchon", wine: margaux, photo:"quiz4-bouchons.jpg")
-quiz_6 = Quiz.new(title: "La biodynamie", wine: margaux, photo: "quiz6-biodynamie.jpg")
+quiz_1 = Quiz.new(title: "Les base de la dégustation", wine: margaux, photo: "quiz1-couleurs.png")
+quiz_2 = Quiz.new(title: "Grands crus classés", wine: margaux, photo:"quiz2-crus.png")
+quiz_3 = Quiz.new(title: "Accords mets-vins", wine: margaux, photo:"quiz5-mets.png")
+quiz_4 = Quiz.new(title: "Terroirs et cépages", wine: margaux, photo:"/quiz3-terroirs.png")
+quiz_5 = Quiz.new(title: "Tout sur le bouchon", wine: margaux, photo:"quiz4-bouchons.png")
+quiz_6 = Quiz.new(title: "La biodynamie", wine: margaux, photo: "quiz6-biodynamie.png")
 
 quiz_1.save!
 quiz_2.save!
