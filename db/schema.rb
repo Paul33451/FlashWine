@@ -84,8 +84,8 @@ ActiveRecord::Schema.define(version: 2019_12_03_124353) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "photo"
     t.bigint "lecture_id"
+    t.string "photo"
     t.index ["lecture_id"], name: "index_quizzes_on_lecture_id"
     t.index ["wine_id"], name: "index_quizzes_on_wine_id"
   end
