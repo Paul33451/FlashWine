@@ -1,89 +1,88 @@
-<div class="wines-index">
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1491924778227-f225b115dd5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80);">
-    <h1 >Ma cave</h1>
-  </div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1491924778227-f225b115dd5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80);">
+  <h1 >Ma cave</h1>
+</div>
 
 
-  <%# Search form  %>
-  <div class="search_form">
-    <%= simple_form_for :query, url: wines_path, class:"search_form form-row align-items-center", method: :get do |f| %>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="w-25 ">
-            <label>Année</label>
-            <%= f.input_field :year,class:"form-control"%>
-        </div>
-        <div class="w-25">
-            <label>Couleur</label>
-            <%= f.input_field :color, collection: $colors, as: :select, class:"form-control"%>
-        </div>
-        <div class="w-50 ">
-          <label>Région</label>
-            <%= f.input_field :region, placeholder: "Région", collection: $regions, as: :select, class:"form-control" %>
-        </div>
+<%# Search form  %>
+<div class="search_form">
+  <%= simple_form_for :query, url: wines_path, class:"search_form form-row align-items-center", method: :get do |f| %>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="w-25 ">
+          <label>Année</label>
+          <%= f.input_field :year,class:"form-control"%>
       </div>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="w-75">
-          <label>Nom</label>
-          <%= f.input_field :name, class:"form-control"%>
-        </div>
-        <div class="w-25">
-          <label></label>
-          <%= f.submit "Trouver", class: "btn btn-flat" %>
-        </div>
+      <div class="w-25">
+          <label>Couleur</label>
+          <%= f.input_field :color, collection: $colors, as: :select, class:"form-control"%>
+      </div>
+      <div class="w-50 ">
+        <label>Région</label>
+          <%= f.input_field :region, placeholder: "Région", collection: $regions, as: :select, class:"form-control" %>
+      </div>
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="w-75">
+        <label>Nom</label>
+        <%= f.input_field :name, class:"form-control"%>
+      </div>
+      <div class="w-25">
+        <label></label>
+        <%= f.submit "Trouver", class: "btn btn-flat" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%# If no wine is found : %>
+<% if @wines.count == 0  %>
+    <div class="display-inline">
+      <p>Aucun vin ne correspond à votre recherche</p>
+      <%= link_to "Ajouter un vin", "wines#new", class: "search_form btn-flat new-wine" %>
+    </div>
+<%# If wines are found : %>
+<% else %>
+    <p class="ml-3"><%= @wines.count %> vins trouvés : </p>
+    <% @wines.each do |wine| %>
+      <div class="card-product">
+        <%=link_to wine_path(wine), class:"card-product" do%>
+          <%# Display photo %>
+          <% if wine.photo.present? %>
+           <%= image_tag wine.photo, class:"wine-index-photo"%>
+          <%else%>
+            <img src="https://images.unsplash.com/photo-1549873916-b1bb7dc758c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80">
+          <% end %>
+          <%# Display product infos  %>
+          <div class="card-product-infos">
+            <h2><%=wine.name%> <%= wine.year%></h2>
+            <p class="wines-index">Région : <%= wine.region %></p>
+            <p class="wines-index">Couleur : <%= wine.color %></p>
+            <%# Rating information : %>
+            <div>
+              <%if wine.average_rating.nan? == false %>
+                <div class="d-flex justify-content-between">
+                  <%# Number of reviews : %>
+                  <div>
+                    <p><i class="far fa-comment"></i>  <%= wine.reviews.count %> avis </p>
+                  </div>
+                  <%# Number of stars : %>
+                  <div class="star_card d-flex">
+                    <%#Full stars  %>
+                    <%(wine.average_rating).round.times do %>
+                      <p><i class="fas fa-star"></i></p>
+                    <% end %>
+                     <%# Empty stars : %>
+                    <% (5 - wine.average_rating).round.times do %>
+                      <p><i class="far fa-star"></i></p>
+                    <% end %>
+                  </div>
+                </div>
+               <%else %>
+                <p>Soyez le premier à donner votre avis !</p>
+              <% end %>
+          </div>
+          </div>
+        <% end %>
       </div>
     <% end %>
-  </div>
+<%end%>
 
-  <%# If no wine is found : %>
-  <% if @wines.count == 0  %>
-      <div class="display-inline">
-        <p>Aucun vin ne correspond à votre recherche</p>
-        <%= link_to "Ajouter un vin", "wines#new", class: "search_form btn-flat new-wine" %>
-      </div>
-  <%# If wines are found : %>
-  <% else %>
-      <p><%= @wines.count %> vins trouvés : </p>
-      <% @wines.each do |wine| %>
-        <div class="card-product">
-          <%=link_to wine_path(wine), class:"card-product" do%>
-            <%# Display photo %>
-            <% if wine.photo.present? %>
-             <%= image_tag wine.photo, class:"wine-index-photo"%>
-            <%else%>
-              <img src="https://images.unsplash.com/photo-1549873916-b1bb7dc758c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80">
-            <% end %>
-            <%# Display product infos  %>
-            <div class="card-product-infos">
-              <h2><%=wine.name%> <%= wine.year%></h2>
-              <p>Région : <%= wine.region %></p>
-              <p>Couleur : <%= wine.color %></p>
-              <%# Rating information : %>
-              <div>
-                <%if wine.average_rating.nan? == false %>
-                  <div class="d-flex justify-content-between">
-                    <%# Number of reviews : %>
-                    <div>
-                      <p><i class="far fa-comment"></i>  <%= wine.reviews.count %> avis </p>
-                    </div>
-                    <%# Number of stars : %>
-                    <div class="star_card d-flex">
-                      <%#Full stars  %>
-                      <%(wine.average_rating).round.times do %>
-                        <p><i class="fas fa-star"></i></p>
-                      <% end %>
-                       <%# Empty stars : %>
-                      <% (5 - wine.average_rating).round.times do %>
-                        <p><i class="far fa-star"></i></p>
-                      <% end %>
-                    </div>
-                  </div>
-                 <%else %>
-                  <p>Soyez le premier à donner votre avis !</p>
-                <% end %>
-            </div>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-  <%end%>
-</div>
