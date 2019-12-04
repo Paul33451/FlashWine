@@ -9,7 +9,7 @@
       <% end %>
 
     <%# User Name %>
-      <%= review.user.first_name %>  <%= review.user.last_name%>
+      <strong><%= review.user.first_name %></strong>
     </div>
 
     <%# Edit and Delete Icons %>
@@ -22,21 +22,19 @@
       <% end %>
     </div>
 
-  <%# Etoiles  %>
+  <%# Etoiles de la review%>
   <div class="star_card d-flex w-25">
-    <%(@wine.average_rating.round).times do %>
+    <%(review.rating.round).times do %>
       <p><i class="fas fa-star light-stars"></i></p>
     <% end %>
-    <% (5 - @wine.average_rating.round).times do %>
+    <% (5 - review.rating.round).times do %>
       <p><i class="far fa-star light-stars"></i></p>
     <% end %>
   </div>
+
 </div>
 
 <%# Bas de la review %>
 <p><%= review.content %></p>
 
 <hr class="separating-line">
-
-
-
