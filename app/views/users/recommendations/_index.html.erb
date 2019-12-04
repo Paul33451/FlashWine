@@ -1,16 +1,15 @@
 <% @recommendations.each do |recommendation| %>
-<div class="notification">
-      <%= cl_image_tag recommendation.sender.photo, class:"avatar-large" %>
+<div class="notification recommendation-<%=recommendation.id%>">
+  <%= cl_image_tag recommendation.sender.photo, class:"avatar-large" %>
   <%= link_to wine_path(recommendation.wine) do %>
     <div class="notification-content">
       <p><small>21/11/2019 (à config)</small></p>
       <p><strong><%= recommendation.sender.fullname %></strong> te recommande le <strong><%= recommendation.wine.name %></strong></p>
     </div>
   <% end %>
-<!--
-  <div class="notification-actions">
-    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
-  </div> -->
+  <%= link_to recommendation_path(recommendation), method: 'delete', remote: true, class: "icon-btn" do %>
+    <i class="far fa-trash-alt"></i>
+  <% end %>
+
 </div>
 <% end %>
