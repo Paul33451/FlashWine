@@ -3,7 +3,7 @@
 
   <% @quizzes.each do |quiz| %>
     <%= link_to new_question_answer_path(question_id: quiz.questions.find_by(position: 1).id), class:"link-card" do %>
-      <div class="card-category mb-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/assets/<%= quiz.photo %>')">
+      <div class="card-category mb-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./../..assets/images/quiz1-couleurs.png')">
 
         <div class="trophy-space col-2">
           <% if quiz.answers.where(user_id: current_user.id).size == 0%>

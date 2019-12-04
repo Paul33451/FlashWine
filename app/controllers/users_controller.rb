@@ -6,12 +6,14 @@ class UsersController < ApplicationController
   def index
     @users = User.where.not(id: current_user.id).where.not(id: current_user.friends.ids)
     if params[:query].present?
-      first_name_query = "first_name @@ :first_name"
-      last_name_query = "last_name @@ :last_name"
-      email_query = "email @@ :email"
-      @users = @users.where(first_name_query, first_name: "%#{params[:query][:first_name]}%") unless params[:query][:first_name].blank?
-      @users = @users.where(last_name_query, last_name: "%#{params[:query][:last_name]}%") unless params[:query][:last_name].blank?
-      @users = @users.where(email_query, email: "%#{params[:query][:email]}%") unless params[:query][:email].blank?
+      sql_query = " \
+        users.first_name @@ :query \
+        OR users.last_name @@ :query \
+        OR users.email @@ :query \
+      "
+      @users = User.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @users = User.all
     end
   end
 
