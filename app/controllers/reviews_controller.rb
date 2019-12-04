@@ -38,6 +38,8 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    @review = Review.find(params[:id])
+    @wine = @review.wine
     if @review.update(review_params)
       redirect_to wine_path(@wine)
     else

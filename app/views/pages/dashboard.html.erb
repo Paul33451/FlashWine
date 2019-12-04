@@ -1,4 +1,18 @@
+<!-- header -->
 <div class="dash-banner" >
+  <div class="profile">
+    <div class="dropup">
+      <button class="edit">
+        <%= image_tag "profile_icone.svg" %>
+      </button>
+
+
+      <div class="dropup-content">
+        <%= link_to 'Modifier', edit_user_registration_path %>
+        <%= link_to 'Déconnexion', destroy_user_session_path, method:'delete' %>
+      </div>
+    </div>
+  </div>
   <div class="avatar-container">
     <% if current_user.photo.present? %>
       <%= cl_image_tag current_user.photo %>
@@ -6,47 +20,20 @@
       <%= image_tag "https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png", alt: "default avatar" %>
     <% end %>
   </div>
+
+
+
   <h4>Bienvenu <%= @user.first_name %></h4>
     <p>Niveau <%= current_user.level %></p>
     <div class="progress ">
       <div class="progress-bar text-center" role="progressbar" style="width: <%= current_user.score.present? ? current_user.score % 200 / 2 : 0 %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
-    <%= link_to edit_user_registration_path do %>
-      <i class="fas fa-edit edit"></i>
-    <% end %>
+
+
   </div>
  </div>
 
-
-
-
-
-
-  <% if @user.requested_friends.size > 0 %>
-    <div class="cards">
-      <% @user.requested_friends.each do |request| %>
-        <div class="card-product user-<%=request.id%>">
-          <%= cl_image_tag request.photo %>
-          <div class="card-product-infos">
-            <h2><%= request.first_name %></h2>
-            <p>souhaite devenir votre ami</p>
-            <span class="d-flex justify-content-around">
-              <%= link_to accept_friend_path(request), remote: true, class: "friends-btn" do %>
-              <i class="fas fa-check"></i>
-              <% end %>
-              <%= link_to reject_friend_path(request), remote: true, class: "friends-btn" do %>
-              <i class="fas fa-times"></i>
-              <% end %>
-            </span>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-
-
-
-
+<!-- Demandes en amis -->
 <% if @user.requested_friends.size > 0 %>
   <button class="accordion">Demandes</button>
   <div class="panel">
@@ -72,13 +59,13 @@
   </div>
 <% end %>
 
-
+<!-- Mes reviews de vin -->
   <button class="accordion">Mes vins</button>
   <div class="panel">
     <%= render 'users/reviews/index' %>
   </div>
 
-
+<!-- Mes suggestion reçues -->
 <% if @user.recommendations != [] %>
   <button class="accordion">Suggestions</button>
   <div class="panel">
@@ -86,6 +73,7 @@
   </div>
 <% end %>
 
+<!-- Mes amis -->
 <button class="accordion">Amis</button>
 <div class="panel">
   <div class="d-flex justify-content-center p-4">
@@ -97,11 +85,10 @@
       <div class="card-product-infos">
         <h2><%= friend.first_name + " " + friend.last_name %></h2>
         <p>souhaite devenir votre ami</p>
-
       </div>
-          <%= link_to delete_friend_path(friend), remote: true, class: "icon-btn" do %>
-            <i class="far fa-trash-alt"></i>
-          <% end %>
+        <%= link_to delete_friend_path(friend), remote: true, class: "icon-btn" do %>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
     </div>
   <% end %>
 </div>

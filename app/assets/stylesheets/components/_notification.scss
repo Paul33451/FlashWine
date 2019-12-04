@@ -3,12 +3,14 @@
   align-items: center;
   background: white;
   padding: 8px 16px;
-  border: 1px solid rgb(235,235,235);
+  // border: 1px solid rgb(235,235,235);
+  position: relative;
 }
 
 .notification .notification-content {
   flex-grow: 1;
   padding: 0 24px;
+  color: black;
 }
 
 .notification p {
@@ -19,7 +21,7 @@
 
 .notification a {
   text-decoration: none;
-  color: black;
+  // color: black;
 }
 
 .notification small {
