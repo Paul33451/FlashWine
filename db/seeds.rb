@@ -24,15 +24,15 @@ puts "==========================="
 puts "Creating Users"
 puts "==========================="
 
-valentin = User.new(first_name:"Valentin", last_name:"Dausse", user_name:"Val", email:"valentin@gmail.com", password: "azerty", score: 100, photo: "https://kitt.lewagon.com/placeholder/users/vdausse")
+valentin = User.new(first_name:"Valentin", last_name:"Dausse", user_name:"Val", email:"valentin@gmail.com", password: "azerty", score: 0, photo: "https://kitt.lewagon.com/placeholder/users/vdausse")
 
-paul = User.new(first_name:"Paul", last_name:"Manche", user_name:"Polo", email:"paul@gmail.com", password: "azerty", score: 300, photo: "https://kitt.lewagon.com/placeholder/users/Paul33451")
+paul = User.new(first_name:"Paul", last_name:"Manche", user_name:"Polo", email:"paul@gmail.com", password: "azerty", score: 0, photo: "https://kitt.lewagon.com/placeholder/users/Paul33451")
 
-noemie = User.new(first_name:"Noemie", last_name:"Pierart", user_name:"Nono", email:"noemie@gmail.com", password: "azerty", score: 500, photo: "https://kitt.lewagon.com/placeholder/users/NoemiePierart")
+noemie = User.new(first_name:"Noemie", last_name:"Pierart", user_name:"Nono", email:"noemie@gmail.com", password: "azerty", score: 0, photo: "https://kitt.lewagon.com/placeholder/users/NoemiePierart")
 
-lucas = User.new(first_name:"Lucas", last_name:"Dubernet", user_name:"Lulu", email:"lucas@gmail.com", password: "azerty", score: 700, photo: "https://kitt.lewagon.com/placeholder/users/DubernardL")
+lucas = User.new(first_name:"Lucas", last_name:"Dubernet", user_name:"Lulu", email:"lucas@gmail.com", password: "azerty", score: 0, photo: "https://kitt.lewagon.com/placeholder/users/DubernardL")
 
-jojo = User.new(first_name:"Jonathan", last_name:"Serafini", user_name:"Jojo", email:"jojo@gmail.com", password: "azerty", score: 900, photo: "https://kitt.lewagon.com/placeholder/users/Joz84")
+jojo = User.new(first_name:"Jonathan", last_name:"Serafini", user_name:"Jojo", email:"jojo@gmail.com", password: "azerty", score: 0, photo: "https://kitt.lewagon.com/placeholder/users/Joz84")
 
 
 valentin.save!
