@@ -1,33 +1,33 @@
-.card-wine-summary {
-  overflow: hidden;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  margin-bottom: 12px;
+.card-title-show {
+ color: $bordeaux;
 }
 
-.card-wine-summary img {
-  height: 100%;
-  object-fit: cover;
-  width: 200px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 10px
+.reviews-show-wine {
+  margin: 20px 70px 20px 30px;
+  font-size: 18px;
 }
 
-.wine-index-photo {
-  object-fit: cover;
-}
-.card-wine-infos{
-
+.title-avis {
+  text-align: center;
 }
 
-.card-wine-summary .card-wine-infos{
-  padding: 16px;
+.btn-recommandation {
+  color: white !important;
 }
 
-h2 {
-  text-align: left;
-  color: $bordeaux;
-  font-weight: bold;
-  padding-left: 10px;
+.card-wine-show {
+  margin: 0 70px 20px 10px;
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+}
+
+.card-wine-show .card-body {
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+  padding-left: 16px;
+  margin-bottom: -10px;
 }

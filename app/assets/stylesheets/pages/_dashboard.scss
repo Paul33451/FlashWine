@@ -2,17 +2,24 @@
   position: relative;
   height: 210px;
   padding: 10px 10px;
-  background-image: url(vignes.jpg);
+  background-image: url(vignes.png);
   background-size: cover;
   background-position: center;
   text-align: center;
 }
 .edit {
-  position: absolute;
-  top: 10px;
+  top: 0px;
   right: 10px;
   font-size: 25px;
   color: white;
+}
+.profile {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+.edit img {
+  width: 35px;
 }
 .add {
   position: absolute;

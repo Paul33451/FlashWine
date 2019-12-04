@@ -1,60 +1,22 @@
-<h2><%= @wine.name %> <%= @wine.year %></h2>
-
-<%# Wine-card summary %>
-  <div class="container card-wine-summary">
-    <%# Picture of the wine  %>
-    <img class="w-50" src="https://images.unsplash.com/photo-1569919659476-f0852f6834b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80">
-    <%# Description of the wine %>
-    <div class="card-wine-infos h-100 align-content-around">
-
-      <%# CTA Reco  %>
-      <a class="btn btn-flat" data-toggle="modal" data-target="#open-modal">Book now</a>
-
-      <div class="modal modal_size center-block" id="open-modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Sélectionnez un ami</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-
-                <div class="modal-body">
-                  <%= simple_form_for @recommendation, url: recommendations_path(wine_id: @wine.id) do |f| %>
-                    <div class="simple-group">
-                      <%= f.input :recipient_id, collection: current_user.friends, label_method: :first_name, value_method: :id, class: 'form-control' %>
-                    </div>
-
-                  <%= f.submit class: 'btn btn-primary' %>
-                 <% end %>
-
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <%#Text description  %>
-      <div class="align-content-around">
-        <p><strong> Région : </strong><%= @wine.region %></p>
-        <p><strong> Appellation : </strong><%= @wine.appellation %></p>
-        <p><strong> Cépage : </strong><%= @wine.cepage %>
-        <p><strong> Couleur> : <%= @wine.color %></p>
-      </div>
-      <%# Stars rating  %>
+<div class="card card-wine-show" style="width: 35rem;">
+  <img src="https://images.unsplash.com/photo-1569919659476-f0852f6834b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" class="card-img-top" alt="vin">
+  <div class="card-body">
+    <h4 class="card-title card-title-show"><strong><%= @wine.name %> <%= @wine.year %></strong></h4>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><strong> Région : </strong><%= @wine.region %></li>
+    <li class="list-group-item"><strong> Appellation : </strong><%= @wine.appellation %></li>
+    <li class="list-group-item"><strong> Cépage : </strong><%= @wine.cepage %></li>
+    <li class="list-group-item"><strong> Couleur : </strong><%= @wine.color %></li>
+    <li class="list-group-item"><strong> Note : </strong>
+      <!-- Calcule Etoile moyenne -->
       <div class="justify-content-around">
-        <div><p><i class="far fa-comment"></i>  <%= @wine.reviews.count %> avis </p></div>
+        <p><i class="far fa-comment"></i>  <%= @wine.reviews.count %> avis</p>
         <div>
           <% if @wine.average_rating.nan? == true %>
             <p>Soyez le premier à donner votre avis sur ce vin</p>
           <% else %>
             <div class="star_card d-flex">
-              <p>Note moyenne </p>
               <%(@wine.average_rating.round).times do %>
                 <p><i class="fas fa-star"></i></p>
               <% end %>
@@ -62,34 +24,65 @@
                 <p><i class="far fa-star"></i></p>
               <% end %>
             </div>
-              <div>
-                <a class="btn btn-flat" href="#">Recommender</a>
-              </div>
           <% end %>
         </div>
       </div>
+      <!-- Fin calcule Etoile moyenne -->
+    </li>
+  </ul>
+  <div class="card-body">
+    <a class="btn btn-flat btn-recommandation" data-toggle="modal" data-target="#open-modal">Recommander</a>
+  </div>
+</div>
+
+<%# CTA Reco  %>
+<div class="modal modal_size center-block" id="open-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Sélectionnez un ami</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+          <div class="modal-body">
+            <%= simple_form_for @recommendation, url: recommendations_path(wine_id: @wine.id) do |f| %>
+              <div class="simple-group">
+                <%= f.input :recipient_id, collection: current_user.friends, label_method: :first_name, value_method: :id, class: 'form-control' %>
+              </div>
+
+            <%= f.submit class: 'btn btn-primary' %>
+           <% end %>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
     </div>
   </div>
-
-
+</div>
 
 <%# Index of all reviews %>
+<div class="reviews-show-wine">
   <hr class="separating-line">
-  <div class="container">
-    <% if @wine.average_rating.nan? == false %>
-      <h3><%= image_tag "comment_icone.svg", class:"mr-1", width: 25, height: 25 %>Avis sur ce vin</h3>
-      <div class="container" id="reviews">
-        <% @wine.reviews.each do |review| %>
-          <div class="review-<%= review.id %>">
-            <%= render 'reviews/show', review: review %>
-          </div>
-        <% end %>
-      <%end%>
+  <% if @wine.average_rating.nan? == false %>
+    <h3 class="title-avis"><%= image_tag "comment_icone.svg", class:"mr-1", width: 25, height: 25 %>Les Avis</h3>
+    <hr class="separating-line">
+    <div id="reviews">
+      <% @wine.reviews.each do |review| %>
+        <div class="review-<%= review.id %>">
+          <%= render 'reviews/show', review: review %>
+        </div>
+      <% end %>
     </div>
-  </div>
+  <%end%>
 
 <%# Form to add a review %>
-<div class="container">
-  <h3><%= image_tag "edit_comment_icone.svg", class:"mr-1", width: 25, height: 25 %>Comment l'avez-vous trouvé?</h3>
-  <%= render 'reviews/form', wine: @wine, review: @review, class:"btn-flat"%>
+
+  <h3 class="title-avis"><%= image_tag "edit_comment_icone.svg", class:"mr-1", width: 25, height: 25 %>Votre avis</h3>
+  <hr class="separating-line">
+  <%= render 'reviews/form', wine: @wine, review: @review, class:"btn btn-flat"%>
+
 </div>

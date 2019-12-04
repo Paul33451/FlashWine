@@ -83,12 +83,14 @@ puts "==========================="
 puts "Creating Quiz"
 puts "==========================="
 
+
 quiz_1 = Quiz.new(title: "Les bases de la dégustation", wine: margaux, photo: "quiz1-couleurs.jpg")
 quiz_2 = Quiz.new(title: "Les Régions viticoles en France", wine: margaux, photo:"quiz2-crus.jpg")
 quiz_3 = Quiz.new(title: "Les cépages", wine: margaux, photo:"quiz5-mets.jpg")
 quiz_4 = Quiz.new(title: "Les Grands Crus Classés de Bordeaux", wine: margaux, photo:"/quiz3-terroirs.jpg")
 quiz_5 = Quiz.new(title: "Les appellations de Bordeaux", wine: margaux, photo:"quiz4-bouchons.jpg")
 quiz_6 = Quiz.new(title: "Les appellations de Bourgogne", wine: margaux, photo: "quiz6-biodynamie.jpg")
+
 
 quiz_1.save!
 quiz_2.save!
@@ -242,8 +244,6 @@ option_40 = Option.new(title: "Corse", right: false, question: question_10)
 
 #######Options for quiz 3 :
 
-
-
 option_1.save!
 option_2.save!
 option_3.save!
@@ -265,60 +265,6 @@ option_18.save!
 option_19.save!
 option_20.save!
 
-#Options for question 6 :
-option_21 = Option.new(title: "3", right: false, question: question_6)
-option_22 = Option.new(title: "10", right: true, question: question_6)
-option_23 = Option.new(title: "13", right: false, question: question_6)
-option_24 = Option.new(title: "15", right: false, question: question_6)
-
-option_21.save!
-option_22.save!
-option_23.save!
-option_24.save!
-
-#Options for question 7 :
-option_25 = Option.new(title: "Le Bordeaux", right: false, question: question_7)
-option_26 = Option.new(title: "La Savoie", right: false, question: question_7)
-option_27 = Option.new(title: "Le Villeneuvois", right: false, question: question_7)
-option_28 = Option.new(title: "La Corse", right: true, question: question_7)
-
-option_25.save!
-option_26.save!
-option_27.save!
-option_28.save!
-
-#Options for question 8 :
-option_29 = Option.new(title: "Le Jura", right: false, question: question_8)
-option_30 = Option.new(title: "La Savoie", right: false, question: question_8)
-option_31 = Option.new(title: "Le Sud-Ouest", right: false, question: question_8)
-option_32 = Option.new(title: "Le Languedoc-Roussillon", right: true, question: question_8)
-
-option_29.save!
-option_30.save!
-option_31.save!
-option_32.save!
-
-#Options for question 9 :
-option_33 = Option.new(title: "Alsace", right: false, question: question_9)
-option_34 = Option.new(title: "Champagne", right: false, question: question_9)
-option_35 = Option.new(title: "Bordeaux", right: false, question: question_9)
-option_36 = Option.new(title: "Provence", right: true, question: question_9)
-
-option_33.save!
-option_34.save!
-option_35.save!
-option_36.save!
-
-#Options for question 10 :
-option_37 = Option.new(title: "Bourgogne", right: false, question: question_10)
-option_38 = Option.new(title: "Beaujolais", right: false, question: question_10)
-option_39 = Option.new(title: "Bordeaux", right: false, question: question_10)
-option_40 = Option.new(title: "Corse", right: true, question: question_10)
-
-option_37.save!
-option_38.save!
-option_39.save!
-option_40.save!
 
 #Options for question 11 :
 option_41 = Option.new(title: "Une manière de faire le vin", right: false, question: question_11)
