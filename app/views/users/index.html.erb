@@ -2,32 +2,23 @@
   <h1>Ma communauté</h1>
 </div>
 
-<div class="container">
-<div class="form-friends">
-  <%= simple_form_for :query, url: users_path, class:"search_form form-row align-items-center", method: :get do |f| %>
-      <h2>Chercher un ami</h2>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="w-50 ml-2 mr-2 ">
-          <%= f.input_field :first_name, placeholder: "Prénom", class:"form-control"%>
-        </div>
-        <div class="w-50 ml-2 mr-2">
-          <%= f.input_field :last_name, placeholder: "Nom", class:"form-control"%>
-        </div>
-      </div>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="w-75 ml-2 mr-2">
-          <%= f.input_field :email, placeholder: "Email", class:"form-control"%>
-        </div>
-          <div class="w-25 ml-2 mr-2">
-          <label></label>
-          <%= f.submit "Trouver", class: "btn btn-flat" %>
-          </div>
-        </div>
-      <% end %>
+<p>Chercher un ami</p>
+<div class="d-flex">
+  <%= form_tag wines_path, method: :get do %>
+    <div class="w-75">
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Entrer un prénom ou nom ou email"
+      %>
     </div>
-  </div>
+    <div class="w-25">
+      <%= submit_tag "Trouver", class: "btn btn-flat" %>
+    </div>
+  <% end %>
+</div>
 
-  <h2>Mes amis</h2>
+<h2>Mes amis</h2>
   <% @users.each do |user| %>
     <div class="card-friend d-flex">
       <img class="avatar-small col-3" src="https://cdn.pixabay.com/photo/2018/01/13/19/39/fashion-3080644_1280.jpg">
@@ -35,5 +26,5 @@
       <%= link_to 'Ajouter', add_friend_path(user), method: :get, remote: true, class: "user-#{user.id} btn-ghost col-3" %>
     </div>
   <% end %>
-</div>
+
 
