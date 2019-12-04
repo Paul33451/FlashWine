@@ -3,4 +3,5 @@ class Quiz < ApplicationRecord
   has_many :questions, dependent: :destroy
   has_many :options, through: :questions, dependent: :destroy
   has_many :answers, through: :options, dependent: :destroy
+
 end
