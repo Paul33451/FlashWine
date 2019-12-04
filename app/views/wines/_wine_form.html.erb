@@ -1,0 +1,10 @@
+ <%= simple_form_for @wine , url: wines_path do |f| %>
+                    <%= f.input :name %>
+                    <%= f.input :year %>
+                    <%= f.input :appellation %>
+                    <%= f.input :cepage %>
+                    <%= f.input :color %>
+                    <%= f.input :flavour %>
+                    <%= f.input :photo %>
+                    <%= f.submit "Ajouter", class: "btn btn-primary" %>
+                  <% end %>

@@ -83,7 +83,7 @@ puts "==========================="
 puts "Creating Quiz"
 puts "==========================="
 
-quiz_1 = Quiz.new(title: "Les couleurs du vin", wine: margaux, photo: "quiz1-couleurs.jpg")
+quiz_1 = Quiz.new(title: "Les base de la dégustation", wine: margaux, photo: "quiz1-couleurs.jpg")
 quiz_2 = Quiz.new(title: "Grands crus classés", wine: margaux, photo:"quiz2-crus.jpg")
 quiz_3 = Quiz.new(title: "Accords mets-vins", wine: margaux, photo:"quiz5-mets.jpg")
 quiz_4 = Quiz.new(title: "Terroirs et cépages", wine: margaux, photo:"/quiz3-terroirs.jpg")
@@ -102,11 +102,11 @@ puts "==========================="
 puts "Creating Questions"
 puts "==========================="
 
-question_1 = Question.new(content: "Quel vin n'est pas un vrai vin ?", position: 1, quiz: quiz_1)
-question_2 = Question.new(content: "Pourquoi le vin c'est bon ?", position: 2, quiz: quiz_1)
-question_3 = Question.new(content: "En moyenne quel est le degres d'alcool contenu dans un teille de vin ?", position: 3, quiz: quiz_1)
-question_4 = Question.new(content: "Comment trouvez vous les questions ?", position: 4, quiz: quiz_1)
-question_5 = Question.new(content: "J'ai plus trop d'idée de question la ...", position: 5, quiz: quiz_1)
+question_1 = Question.new(content: "Quelle étape n’existe pas en dégustation ?", position: 1, quiz: quiz_1)
+question_2 = Question.new(content: "Que pouvons-nous examiner lors de visuel olfactif d’un vin?", position: 2, quiz: quiz_1)
+question_3 = Question.new(content: "D’où viennent les arômes primaires?", position: 3, quiz: quiz_1)
+question_4 = Question.new(content: " Lequel de ces 4 types d’arômes n’existe pas?", position: 4, quiz: quiz_1)
+question_5 = Question.new(content: "Laquelle de ces impressions peut-on retrouver lors de l’examen gustatif?", position: 5, quiz: quiz_1)
 
 question_1.save!
 question_2.save!
@@ -138,34 +138,34 @@ puts "Creating Options"
 puts "==========================="
 
 #Options for question 1 :
-option_1 = Option.new(title: "Rouge", right: false, question: question_1)
-option_2 = Option.new(title: "Gris", right: false, question: question_1)
-option_3 = Option.new(title: "Blanc", right: false, question: question_1)
-option_4 = Option.new(title: "Violet", right: true, question: question_1)
+option_1 = Option.new(title: "L’examen visuel", right: false, question: question_1)
+option_2 = Option.new(title: "L’examen olfactif", right: false, question: question_1)
+option_3 = Option.new(title: "L’examen facultatif", right: true, question: question_1)
+option_4 = Option.new(title: "L’examin gustatif", right: false, question: question_1)
 
 #Options for question 2 :
-option_5 = Option.new(title: "Parce que le raisin c'est bon", right: true, question: question_2)
-option_6 = Option.new(title: "Parce que c'est de toute les couleurs", right: false, question: question_2)
-option_7 = Option.new(title: "Je n'aime pas le vin", right: false, question: question_2)
-option_8 = Option.new(title: "C'est pas la bonne réponse alors la choisis pas", right: false, question: question_2)
+option_5 = Option.new(title: "Le prix", right: false, question: question_2)
+option_6 = Option.new(title: " Le poids du verre", right: false, question: question_2)
+option_7 = Option.new(title: "La brillance", right: true, question: question_2)
+option_8 = Option.new(title: "Le bruit", right: false, question: question_2)
 
 #Options for question 3 :
-option_9 = Option.new(title: "42 degrés", right: false, question: question_3)
-option_10 = Option.new(title: "6 degrés", right: false, question: question_3)
-option_11 = Option.new(title: "12 degrés", right: true, question: question_3)
-option_12 = Option.new(title: "Je sais pas et j'en rien à foutre tant que je suis saoul", right: false, question: question_3)
+option_9 = Option.new(title: "Du nez", right: false, question: question_3)
+option_10 = Option.new(title: "Du cépage", right: true, question: question_3)
+option_11 = Option.new(title: "D’ajout d’arômes lors de la macération", right: false, question: question_3)
+option_12 = Option.new(title: "Ces arômes n’existent pas", right: false, question: question_3)
 
 #Options for question 4 :
-option_13 = Option.new(title: "Franchement cool", right: true, question: question_4)
-option_14 = Option.new(title: "A l'image de cette dernière : naze", right: false, question: question_4)
-option_15 = Option.new(title: "J'en sais rien je réponds au pif", right: false, question: question_4)
-option_16 = Option.new(title: "Pas ouf", right: false, question: question_4)
+option_13 = Option.new(title: "Les arômes primaires", right: false, question: question_4)
+option_14 = Option.new(title: "Les arômes du second dégrés", right: true, question: question_4)
+option_15 = Option.new(title: "Les arômes secondaires", right: false, question: question_4)
+option_16 = Option.new(title: "Les arômes tertiaires", right: false, question: question_4)
 
 #Options for question 5 :
-option_17 = Option.new(title: "Normale", right: false, question: question_5)
-option_18 = Option.new(title: "Plus d'idée de réponse non plus", right: false, question: question_5)
-option_19 = Option.new(title: "Mais on vous aime...", right: false, question: question_5)
-option_20 = Option.new(title: "...Fort", right: true, question: question_5)
+option_17 = Option.new(title: "La partiale", right: false, question: question_5)
+option_18 = Option.new(title: "L’attaque", right: true, question: question_5)
+option_19 = Option.new(title: "La demi-finale", right: false, question: question_5)
+option_20 = Option.new(title: "La contre attaque", right: false, question: question_5)
 
 option_1.save!
 option_2.save!
