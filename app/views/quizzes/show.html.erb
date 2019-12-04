@@ -2,35 +2,14 @@
   <div class="img-quiz">
     <%= image_tag "ill_quizz_flash_wine.png" %>
   </div>
-  <h1 class="quizz-title text-center m-5"><%= @quiz.title %> correction</h1>
+  <h1 class="quizz-title text-center mt-5 mb-5"><%= @quiz.title %> correction</h1>
 
-  <div class="correction">
-    <% @questions.each do |question| %>
-
-      <div class="question-responses m-5">
-        <div class="question">
-          <p><%= question.position %>. <%=question.content %>
-            <% if question.answers.where(user: current_user).last.option.right == true %>
-              <i class="fas fa-check-circle"></i>
-              <% @count_good_answer += 1 %>
-            <% else %>
-              <i class="fas fa-times-circle"></i>
-            <% end %>
-          </p>
-        </div>
-
-        <div class="responses">
-          <p class="user-answer <%= question.answers.where(user: current_user).last.option.right ? 'right-answer' : 'wrong-answer' %>">Ta réponse :
-              <%= question.answers.where(user: current_user).last.option.title %>
-          </p>
-
-          <p class="right-answer <%= 'right-answer' if question.answers.where(user: current_user).last.option.right == true %>">La bonne réponse :
-              <%= question.options.find_by(right: true).title %>
-          </p>
-        </div>
-      </div>
+  <!-- count good answers -->
+  <% @questions.each do |question| %>
+    <% if question.answers.where(user: current_user).last.option.right == true %>
+      <% @count_good_answer += 1 %>
     <% end %>
-  </div>
+  <% end %>
 
   <!-- Circle result -->
   <div class="circle-result">
@@ -130,7 +109,36 @@
         <p>Dommage, réessaye le quiz ! <i class="fas fa-redo"></i></p>
       </div>
     <% end %>
+    <div class="winning-score">
+      <p><%= @score_quiz %> points d'exp gagnés !</p>
+    </div>
   </div>
   <!-- Fin circle result -->
 
+  <div class="correction">
+    <% @questions.each do |question| %>
+
+      <div class="question-responses m-5">
+        <div class="question">
+          <p><%= question.position %>. <%=question.content %>
+            <% if question.answers.where(user: current_user).last.option.right == true %>
+              <i class="fas fa-check-circle"></i>
+            <% else %>
+              <i class="fas fa-times-circle"></i>
+            <% end %>
+          </p>
+        </div>
+
+        <div class="responses">
+          <p class="user-answer <%= question.answers.where(user: current_user).last.option.right ? 'right-answer' : 'wrong-answer' %>">Ta réponse :
+              <%= question.answers.where(user: current_user).last.option.title %>
+          </p>
+
+          <p class="right-answer <%= 'right-answer' if question.answers.where(user: current_user).last.option.right == true %>">La bonne réponse :
+              <%= question.options.find_by(right: true).title %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
