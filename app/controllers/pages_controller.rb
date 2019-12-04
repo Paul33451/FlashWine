@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @recommendation = Recommendation.new
     @user = current_user
     @recommendations = Recommendation.where(recipient_id: current_user)
     @reviews = Review.where(user_id: current_user)

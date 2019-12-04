@@ -1,3 +1,4 @@
+<!-- header -->
 <div class="dash-banner" >
   <div class="avatar-container">
     <% if current_user.photo.present? %>
@@ -17,36 +18,7 @@
   </div>
  </div>
 
-
-
-
-
-
-  <% if @user.requested_friends.size > 0 %>
-    <div class="cards">
-      <% @user.requested_friends.each do |request| %>
-        <div class="card-product user-<%=request.id%>">
-          <%= cl_image_tag request.photo %>
-          <div class="card-product-infos">
-            <h2><%= request.first_name %></h2>
-            <p>souhaite devenir votre ami</p>
-            <span class="d-flex justify-content-around">
-              <%= link_to accept_friend_path(request), remote: true, class: "friends-btn" do %>
-              <i class="fas fa-check"></i>
-              <% end %>
-              <%= link_to reject_friend_path(request), remote: true, class: "friends-btn" do %>
-              <i class="fas fa-times"></i>
-              <% end %>
-            </span>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-
-
-
-
+<!-- Demandes en amis -->
 <% if @user.requested_friends.size > 0 %>
   <button class="accordion">Demandes</button>
   <div class="panel">
@@ -72,13 +44,13 @@
   </div>
 <% end %>
 
-
+<!-- Mes reviews de vin -->
   <button class="accordion">Mes vins</button>
   <div class="panel">
     <%= render 'users/reviews/index' %>
   </div>
 
-
+<!-- Mes suggestion reçues -->
 <% if @user.recommendations != [] %>
   <button class="accordion">Suggestions</button>
   <div class="panel">
@@ -86,6 +58,7 @@
   </div>
 <% end %>
 
+<!-- Mes amis -->
 <button class="accordion">Amis</button>
 <div class="panel">
   <div class="d-flex justify-content-center p-4">
@@ -97,11 +70,10 @@
       <div class="card-product-infos">
         <h2><%= friend.first_name + " " + friend.last_name %></h2>
         <p>souhaite devenir votre ami</p>
-
       </div>
-          <%= link_to delete_friend_path(friend), remote: true, class: "icon-btn" do %>
-            <i class="far fa-trash-alt"></i>
-          <% end %>
+        <%= link_to delete_friend_path(friend), remote: true, class: "icon-btn" do %>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
     </div>
   <% end %>
 </div>

@@ -80,7 +80,9 @@
       <h3><%= image_tag "comment_icone.svg", class:"mr-1", width: 25, height: 25 %>Avis sur ce vin</h3>
       <div class="container" id="reviews">
         <% @wine.reviews.each do |review| %>
-          <%= render 'reviews/show', review: review %>
+          <div class="review-<%= review.id %>">
+            <%= render 'reviews/show', review: review %>
+          </div>
         <% end %>
       <%end%>
     </div>
