@@ -24,22 +24,22 @@ puts "==========================="
 puts "Creating Users"
 puts "==========================="
 
-alice = User.new(first_name:"Alice", last_name:"Denis", user_name:"Aliçounette", email:"alice@gmail.com", password: "azerty", score: 100)
+valentin = User.new(first_name:"Valentin", last_name:"Dausse", user_name:"Val", email:"valentin@gmail.com", password: "azerty", score: 0, photo: "https://kitt.lewagon.com/placeholder/users/vdausse")
 
-bob = User.new(first_name:"Bob", last_name:"Lebricoleur", user_name:"Boby", email:"bob@gmail.com", password: "azerty", score: 300)
+paul = User.new(first_name:"Paul", last_name:"Manche", user_name:"Polo", email:"paul@gmail.com", password: "azerty", score: 0, photo: "https://kitt.lewagon.com/placeholder/users/Paul33451")
 
-charlie = User.new(first_name:"charlie", last_name:"Ztheron", user_name:"charleazy", email:"charlie@gmail.com", password: "azerty", score: 500)
+noemie = User.new(first_name:"Noemie", last_name:"Pierart", user_name:"Nono", email:"noemie@gmail.com", password: "azerty", score: 0, photo: "https://kitt.lewagon.com/placeholder/users/NoemiePierart")
 
-dede = User.new(first_name:"Dédé", last_name:"Lecochon", user_name:"Dédé", email:"dédé@gmail.com", password: "azerty", score: 700)
+lucas = User.new(first_name:"Lucas", last_name:"Dubernet", user_name:"Lulu", email:"lucas@gmail.com", password: "azerty", score: 0, photo: "https://kitt.lewagon.com/placeholder/users/DubernardL")
 
-eric = User.new(first_name:"Eric", last_name:"Cartman", user_name:"Riri", email:"Eric@gmail.com", password: "azerty", score: 900)
+jojo = User.new(first_name:"Jonathan", last_name:"Serafini", user_name:"Jojo", email:"jojo@gmail.com", password: "azerty", score: 0, photo: "https://kitt.lewagon.com/placeholder/users/Joz84")
 
 
-alice.save!
-bob.save!
-charlie.save!
-dede.save!
-eric.save!
+valentin.save!
+paul.save!
+noemie.save!
+lucas.save!
+jojo.save!
 
 # Wines
 puts "==========================="
@@ -66,11 +66,11 @@ puts "==========================="
 puts "Creating Reviews"
 puts "==========================="
 
-review_1 = Review.new(wine: margaux, content:"Préparez vos papilles et allez déguster un le Château Margaux 2016, Premier Grand Cru Classé du Médoc.", user: alice, rating: 5)
+review_1 = Review.new(wine: margaux, content:"Préparez vos papilles et allez déguster un le Château Margaux 2016, Premier Grand Cru Classé du Médoc.", user: valentin, rating: 5)
 
-review_2 = Review.new(wine: rocher, content:"Si vous avez 60000€ dans vos poches, allez déguster le Château Rocher. Bonne chance pour trouver la bouteille.", user: bob, rating: 4)
+review_2 = Review.new(wine: rocher, content:"Si vous avez 60000€ dans vos poches, allez déguster le Château Rocher. Bonne chance pour trouver la bouteille.", user: lucas, rating: 4)
 
-review_3 = Review.new(wine: mouton_cadet, content:"Si vous avez 60000€ dans vos poches, allez déguster ce Château. Bonne chance pour trouver la bouteille.", user: charlie, rating: 3)
+review_3 = Review.new(wine: mouton_cadet, content:"Si vous avez 60000€ dans vos poches, allez déguster ce Château. Bonne chance pour trouver la bouteille.", user: paul, rating: 3)
 
 review_1.save!
 review_2.save!
@@ -84,12 +84,12 @@ puts "Creating Quiz"
 puts "==========================="
 
 
-quiz_1 = Quiz.new(title: "Les bases de la dégustation", wine: margaux, photo: "quiz1-couleurs.jpg")
-quiz_2 = Quiz.new(title: "Les Régions viticoles en France", wine: margaux, photo:"quiz2-crus.jpg")
-quiz_3 = Quiz.new(title: "Les cépages", wine: margaux, photo:"quiz5-mets.jpg")
-quiz_4 = Quiz.new(title: "Les Grands Crus Classés de Bordeaux", wine: margaux, photo:"/quiz3-terroirs.jpg")
-quiz_5 = Quiz.new(title: "Les appellations de Bordeaux", wine: margaux, photo:"quiz4-bouchons.jpg")
-quiz_6 = Quiz.new(title: "Les appellations de Bourgogne", wine: margaux, photo: "quiz6-biodynamie.jpg")
+quiz_1 = Quiz.new(title: "Les bases de la dégustation", wine: margaux, photo: "quiz1-couleurs.png")
+quiz_2 = Quiz.new(title: "Les Régions viticoles en France", wine: margaux, photo:"quiz2-crus.png")
+quiz_3 = Quiz.new(title: "Les cépages", wine: margaux, photo:"quiz5-mets.png")
+quiz_4 = Quiz.new(title: "Les Grands Crus Classés de Bordeaux", wine: margaux, photo:"/quiz3-terroirs.png")
+quiz_5 = Quiz.new(title: "Les appellations de Bordeaux", wine: margaux, photo:"quiz4-bouchons.png")
+quiz_6 = Quiz.new(title: "Les appellations de Bourgogne", wine: margaux, photo: "quiz6-biodynamie.png")
 
 
 quiz_1.save!
@@ -325,11 +325,11 @@ puts "==========================="
 puts "Creating recommendations"
 puts "==========================="
 
-recommendation_1 = Recommendation.new(wine: rocher, sender: alice, recipient: bob)
-recommendation_2 = Recommendation.new(wine: mouton_cadet, sender: bob, recipient: dede)
-recommendation_3 = Recommendation.new(wine: coteaux_bourguignons, sender: alice, recipient: eric)
-recommendation_4 = Recommendation.new(wine: margaux, sender: charlie, recipient: alice)
-recommendation_5 = Recommendation.new(wine: margaux, sender: alice, recipient: charlie)
+recommendation_1 = Recommendation.new(wine: rocher, sender: paul, recipient: noemie)
+recommendation_2 = Recommendation.new(wine: mouton_cadet, sender: valentin, recipient: jojo)
+recommendation_3 = Recommendation.new(wine: coteaux_bourguignons, sender: valentin, recipient: jojo)
+recommendation_4 = Recommendation.new(wine: margaux, sender: paul, recipient: valentin)
+recommendation_5 = Recommendation.new(wine: margaux, sender: lucas, recipient: jojo)
 
 recommendation_1.save!
 recommendation_2.save!
