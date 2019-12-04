@@ -1,10 +1,21 @@
 <div class="container">
-  <h1 class="title-quizzes">Liste des quiz</h1>
+  <h2 class="title-quizzes">Liste des quiz</h2>
 
   <% @quizzes.each do |quiz| %>
     <%= link_to new_question_answer_path(question_id: quiz.questions.find_by(position: 1).id), class:"link-card" do %>
-      <div class="card-category mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        <%= quiz.title %>
+      <div class="card-category mb-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/assets/<%= quiz.photo %>')">
+
+        <div class="trophy-space col-2">
+          <% if quiz.answers.where(user_id: current_user.id).size == 0%>
+          <% else %>
+            <div class="trophy-icon">
+              <p><i class="fas fa-award"></i></p>
+            </div>
+          <% end %>
+        </div>
+        <div class="quiz-title text-center col-10">
+          <%= quiz.title%>
+        </div>
       </div>
     <% end %>
   <% end %>

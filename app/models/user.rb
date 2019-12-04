@@ -10,7 +10,7 @@ class User < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   def level
-    self.score / 200
+    self.score / 200 +  1
   end
 
   def fullname
