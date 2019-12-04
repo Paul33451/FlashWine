@@ -325,11 +325,11 @@ puts "==========================="
 puts "Creating recommendations"
 puts "==========================="
 
-recommendation_1 = Recommendation.new(wine: rocher, sender: alice, recipient: bob)
-recommendation_2 = Recommendation.new(wine: mouton_cadet, sender: bob, recipient: dede)
-recommendation_3 = Recommendation.new(wine: coteaux_bourguignons, sender: alice, recipient: eric)
-recommendation_4 = Recommendation.new(wine: margaux, sender: charlie, recipient: alice)
-recommendation_5 = Recommendation.new(wine: margaux, sender: alice, recipient: charlie)
+recommendation_1 = Recommendation.new(wine: rocher, sender: paul, recipient: noemie)
+recommendation_2 = Recommendation.new(wine: mouton_cadet, sender: valentin, recipient: jojo)
+recommendation_3 = Recommendation.new(wine: coteaux_bourguignons, sender: valentin, recipient: jojo)
+recommendation_4 = Recommendation.new(wine: margaux, sender: paul, recipient: valentin)
+recommendation_5 = Recommendation.new(wine: margaux, sender: lucas, recipient: jojo)
 
 recommendation_1.save!
 recommendation_2.save!
