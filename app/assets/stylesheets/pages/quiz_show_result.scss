@@ -1,10 +1,10 @@
 .quizz-title {
   font-size: 30px;
-  color: #9f0030;
+  color: $bordeaux;
 }
 
 .responses {
-  border-bottom: 1mm ridge #9f0030;
+  border-bottom: 1mm ridge $bordeaux;
 }
 
 .right-answer {
@@ -29,6 +29,7 @@
 
 .circle-result {
   text-align: center;
+  border-bottom: 1mm ridge $bordeaux;
 }
 
 .circle-progress-block {
@@ -42,4 +43,8 @@
 
 .fa-redo {
   color: red;
+}
+
+.progressbar-js-circle {
+  border: none !important;
 }
