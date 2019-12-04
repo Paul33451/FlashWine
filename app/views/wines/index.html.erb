@@ -2,8 +2,6 @@
   <h1 >Ma cave</h1>
 </div>
 
- <a class="btn btn-flat" data-toggle="modal" data-target="#add-wine-modal">Book now</a>
-
 <div class="modal modal_size center-block" id="add-wine-modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -13,31 +11,19 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-
                 <div class="modal-body">
-
                 <%= render "wine_form" %>
-
-
             </div>
             </div>
           </div>
         </div>
       </div>
 
-<%# Search form  %>
-<div class="search_form">
-  <%= simple_form_for :query, url: wines_path, class:"search_form form-row align-items-center", method: :get do |f| %>
-    <div class="d-flex justify-content-between align-items-center">
-      <div class="w-25 ">
-          <label>Année</label>
-          <%= f.input_field :year,class:"form-control"%>
-
   <%# Search form  %>
   <div class="search_form">
     <%= simple_form_for :query, url: wines_path, class:"search_form form-row align-items-center", method: :get do |f| %>
       <div class="d-flex justify-content-between align-items-center">
-        <div class="w-25 ">
+        <div class="w-25">
             <label>Année</label>
             <%= f.input_field :year,class:"form-control"%>
         </div>
@@ -49,25 +35,16 @@
           <label>Région</label>
             <%= f.input_field :region, placeholder: "Région", collection: $regions, as: :select, class:"form-control" %>
         </div>
-
       </div>
-      <div class="w-25">
-          <label>Couleur</label>
-          <%= f.input_field :color, collection: $colors, as: :select, class:"form-control"%>
-      </div>
-      <div class="w-50 ">
-        <label>Région</label>
-          <%= f.input_field :region, placeholder: "Région", collection: $regions, as: :select, class:"form-control" %>
-      </div>
-    </div>
-    <div class="d-flex justify-content-between align-items-center">
-      <div class="w-75">
-        <label>Nom</label>
-        <%= f.input_field :name, class:"form-control"%>
-      </div>
-      <div class="w-25">
-        <label></label>
-        <%= f.submit "Trouver", class: "btn btn-flat" %>
+      <div class="d-flex align-items-end">
+        <div class="w-75">
+          <label>Nom</label>
+          <%= f.input_field :name, class:"form-control"%>
+        </div>
+        <div class="w-25 mb-1 ml-3">
+          <label></label>
+          <%= f.submit "Trouver", class: "btn btn-flat" %>
+        </div>
       </div>
     </div>
   <% end %>
