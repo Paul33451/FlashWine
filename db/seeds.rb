@@ -84,12 +84,12 @@ puts "Creating Quiz"
 puts "==========================="
 
 
-quiz_1 = Quiz.new(title: "Les bases de la dégustation", wine: margaux, photo: "quiz1-couleurs.jpg")
-quiz_2 = Quiz.new(title: "Les Régions viticoles en France", wine: margaux, photo:"quiz2-crus.jpg")
-quiz_3 = Quiz.new(title: "Les cépages", wine: margaux, photo:"quiz5-mets.jpg")
-quiz_4 = Quiz.new(title: "Les Grands Crus Classés de Bordeaux", wine: margaux, photo:"/quiz3-terroirs.jpg")
-quiz_5 = Quiz.new(title: "Les appellations de Bordeaux", wine: margaux, photo:"quiz4-bouchons.jpg")
-quiz_6 = Quiz.new(title: "Les appellations de Bourgogne", wine: margaux, photo: "quiz6-biodynamie.jpg")
+quiz_1 = Quiz.new(title: "Les bases de la dégustation", wine: margaux, photo: "quiz1-couleurs.png")
+quiz_2 = Quiz.new(title: "Les Régions viticoles en France", wine: margaux, photo:"quiz2-crus.png")
+quiz_3 = Quiz.new(title: "Les cépages", wine: margaux, photo:"quiz5-mets.png")
+quiz_4 = Quiz.new(title: "Les Grands Crus Classés de Bordeaux", wine: margaux, photo:"/quiz3-terroirs.png")
+quiz_5 = Quiz.new(title: "Les appellations de Bordeaux", wine: margaux, photo:"quiz4-bouchons.png")
+quiz_6 = Quiz.new(title: "Les appellations de Bourgogne", wine: margaux, photo: "quiz6-biodynamie.png")
 
 
 quiz_1.save!
