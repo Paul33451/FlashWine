@@ -24,22 +24,22 @@ puts "==========================="
 puts "Creating Users"
 puts "==========================="
 
-alice = User.new(first_name:"Alice", last_name:"Denis", user_name:"Aliçounette", email:"alice@gmail.com", password: "azerty", score: 100)
+valentin = User.new(first_name:"Valentin", last_name:"Dausse", user_name:"Val", email:"valentin@gmail.com", password: "azerty", score: 100, photo: "https://kitt.lewagon.com/placeholder/users/vdausse")
 
-bob = User.new(first_name:"Bob", last_name:"Lebricoleur", user_name:"Boby", email:"bob@gmail.com", password: "azerty", score: 300)
+paul = User.new(first_name:"Paul", last_name:"Manche", user_name:"Polo", email:"paul@gmail.com", password: "azerty", score: 300, photo: "https://kitt.lewagon.com/placeholder/users/Paul33451")
 
-charlie = User.new(first_name:"charlie", last_name:"Ztheron", user_name:"charleazy", email:"charlie@gmail.com", password: "azerty", score: 500)
+noemie = User.new(first_name:"Noemie", last_name:"Pierart", user_name:"Nono", email:"noemie@gmail.com", password: "azerty", score: 500, photo: "https://kitt.lewagon.com/placeholder/users/NoemiePierart")
 
-dede = User.new(first_name:"Dédé", last_name:"Lecochon", user_name:"Dédé", email:"dédé@gmail.com", password: "azerty", score: 700)
+lucas = User.new(first_name:"Lucas", last_name:"Dubernet", user_name:"Lulu", email:"lucas@gmail.com", password: "azerty", score: 700, photo: "https://kitt.lewagon.com/placeholder/users/DubernardL")
 
-eric = User.new(first_name:"Eric", last_name:"Cartman", user_name:"Riri", email:"Eric@gmail.com", password: "azerty", score: 900)
+jojo = User.new(first_name:"Jonathan", last_name:"Serafini", user_name:"Jojo", email:"jojo@gmail.com", password: "azerty", score: 900, photo: "https://kitt.lewagon.com/placeholder/users/Joz84")
 
 
-alice.save!
-bob.save!
-charlie.save!
-dede.save!
-eric.save!
+valentin.save!
+paul.save!
+noemie.save!
+lucas.save!
+jojo.save!
 
 # Wines
 puts "==========================="
