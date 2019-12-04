@@ -1,19 +1,19 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 40px 0;
   width:375px;
-  height:50px;
-  padding-left:8px;
+  height:90px;
   margin-top: 5px;
-  margin-bottom: 200px;
+  margin-bottom: 5px;
+  display: flex;
 }
 
 .banner h1 {
   font-size: 30px;
   color: white;
   font-weight: bold;
-  text-align: center;
+  padding-top: 30px;
+  padding-left: 20px;
 }
 
 .banner p {
