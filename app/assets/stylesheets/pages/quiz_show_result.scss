@@ -1,10 +1,10 @@
 .quizz-title {
   font-size: 30px;
-  color: #9f0030;
+  color: $bordeaux;
 }
 
 .responses {
-  border-bottom: 1mm ridge #9f0030;
+  border-bottom: 1mm ridge $bordeaux;
 }
 
 .right-answer {
@@ -25,4 +25,26 @@
 
 .img-quiz {
   text-align: center;
+}
+
+.circle-result {
+  text-align: center;
+  border-bottom: 1mm ridge $bordeaux;
+}
+
+.circle-progress-block {
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.fa-trophy {
+  color: gold;
+}
+
+.fa-redo {
+  color: red;
+}
+
+.progressbar-js-circle {
+  border: none !important;
 }

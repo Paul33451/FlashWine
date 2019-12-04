@@ -10,10 +10,11 @@ class User < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   def level
-    self.score / 200
+    self.score / 200 +  1
   end
 
   def fullname
     return "#{self.first_name.capitalize} #{self.last_name.capitalize}"
   end
+
 end

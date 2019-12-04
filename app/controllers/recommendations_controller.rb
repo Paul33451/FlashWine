@@ -12,4 +12,10 @@ class RecommendationsController < ApplicationController
       redirect_to wine_path(@wine)
     end
   end
+
+
+  def destroy
+    @recommendation = Recommendation.find(params[:id])
+    @recommendation.delete
+  end
 end
