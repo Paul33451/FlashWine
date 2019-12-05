@@ -3,7 +3,7 @@
   <div class="profile">
     <div class="dropup">
       <button class="edit">
-        <%= image_tag "profile_icone.svg" %>
+        <i class="fas fa-cog"></i>
       </button>
 
 
@@ -81,7 +81,11 @@
   </div>
   <% current_user.friends.each do |friend| %>
     <div class="card-product user-<%=friend.id%>">
-      <img src="https://cdn.pixabay.com/photo/2018/01/13/19/39/fashion-3080644_1280.jpg">
+    <% if friend.photo.present? %>
+      <%= cl_image_tag friend.photo %>
+    <% else %>
+      <%= image_tag "https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png", alt: "default avatar" %>
+    <% end %>
       <div class="card-product-infos">
         <h2><%= friend.first_name + " " + friend.last_name %></h2>
         <p>souhaite devenir votre ami</p>
