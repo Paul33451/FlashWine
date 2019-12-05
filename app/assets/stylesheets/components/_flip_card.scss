@@ -1,7 +1,8 @@
 .flip {
-    width: 100%;
-    height: 100px;
-    perspective: 1000px;
+  width: 100%;
+  height: 100px;
+  perspective: 1000px;
+
 }
 .flip-inner {
     position: relative;
@@ -17,28 +18,37 @@
     backface-visibility: hidden;
 }
 .flip-back {
-  padding-top: 10px;
+  padding: 10px;
   width: 100%;
-  height: 100px;
+  height: 130px;
   perspective: 1000px;
   transform: rotateY(180deg);
-  background-color: black;
+  background-color: $purple;
+  display: table;
+
 }
 .flip-front {
-  padding-top: 10px;
+  padding: 10px;
   width: 100%;
-  height: 100px;
+  height: 130px;
   perspective: 1000px;
-  background-color: white;
-  border-bottom: 1px solid;
-  border-color: gray;
+  background-color: $pink;
+  display: table;
+    //   border-bottom: 1px solid;
+    // border-color: gray;
 }
 
 .flip-front h2 {
-  text-align: center;
-  color: black;
-}
-.flip-back h2 {
+  font-size: 30px;
   text-align: center;
   color: white;
+}
+.flip-back h2 {
+  font-size: 30px;
+  text-align: center;
+  color: white;
+}
+.title {
+  display: table-cell;
+  vertical-align: middle;
 }
