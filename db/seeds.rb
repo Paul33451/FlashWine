@@ -325,11 +325,28 @@ puts "==========================="
 puts "Lectures created"
 puts "==========================="
 
-cours_1 = Lecture.new(title: 'Pour commencer', requirement: 0, photo: 'https://cdn.pixabay.com/photo/2016/10/22/20/34/wine-1761613_1280.jpg')
-cours_2 = Lecture.new(title: 'Découvrir le vin rouge', requirement: 400, photo: 'https://cdn.pixabay.com/photo/2017/06/26/12/49/red-wine-2443699_1280.jpg')
+
+quiz_1 = Quiz.new(title: "Les bases de la dégustation", wine: margaux, photo: "quiz1-couleurs.png")
+quiz_2 = Quiz.new(title: "Les Régions viticoles en France", wine: margaux, photo:"quiz2-crus.png")
+quiz_3 = Quiz.new(title: "Les cépages des vins de France", wine: margaux, photo:"quiz5-mets.png")
+quiz_5 = Quiz.new(title: "Les appellations de Bordeaux", wine: margaux, photo:"quiz4-bouchons.png")
+quiz_6 = Quiz.new(title: "Les appellations de Bourgogne", wine: margaux, photo: "quiz6-biodynamie.png")
+
+
+cours_1 = Lecture.new(title: 'Bases de la dégustation', requirement: 0, photo: 'quiz1-couleurs.png')
+cours_2 = Lecture.new(title: 'Les régions viticoles en France', requirement: 0, photo: 'quiz2-crus.png')
+cours_3 = Lecture.new(title: 'Les cépages des vins de France', requirement: 0, photo: 'quiz5-mets.png')
+cours_4 = Lecture.new(title: 'Les appellations de Bordeaux', requirement: 0, photo: 'quiz4-bouchons.png')
+cours_5 = Lecture.new(title: 'Les appellations de Bourgogne', requirement: 0, photo: 'quiz6-biodynamie.png')
+cours_6 = Lecture.new(title: 'Le vin et ses raisins', requirement: 0, photo: 'https://www.lanutrition.fr/sites/default/files/styles/article_large/public/ressources/raisins_varietes.jpg?itok=zNYcwZFI')
 
 cours_1.save
 cours_2.save
+cours_3.save
+cours_4.save
+cours_5.save
+cours_6.save
+
 
 puts "==========================="
 puts "Lecture content created"
