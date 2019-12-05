@@ -11,7 +11,13 @@
     <li class="list-group-item"><strong> Appellation : </strong><%= @wine.appellation %></li>
     <li class="list-group-item"><strong> Cépage : </strong><%= @wine.cepage %></li>
     <li class="list-group-item"><strong> Couleur : </strong><%= @wine.color %></li>
-    <li class="list-group-item"><strong> Note : </strong>
+  </ul>
+      <!-- CTA recommendation -->
+    <div class="card-body button-form">
+      <a class="btn btn-flat btn-recommandation" data-toggle="modal" data-target="#open-modal">▸ Recommander à un amis</a>
+    </div>
+    <ul class="list-group">
+    <li class="list-group-item border-bloc-index"><strong> Note : </strong>
       <!-- Calcule Etoile moyenne -->
       <div class="justify-content-around">
         <p><i class="far fa-comment"></i>  <%= @wine.reviews.count %> avis</p>
@@ -33,9 +39,6 @@
       <!-- Fin calcule Etoile moyenne -->
     </li>
   </ul>
-  <div class="card-body">
-    <a class="btn btn-flat btn-recommandation" data-toggle="modal" data-target="#open-modal">Recommander</a>
-  </div>
 </div>
 
 <%# CTA Reco  %>
