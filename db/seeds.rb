@@ -64,15 +64,18 @@ puts "==========================="
 puts "Creating Reviews"
 puts "==========================="
 
-review_1 = Review.new(wine: margaux, content:"Préparez vos papilles et allez déguster un le Château Margaux 2016, Premier Grand Cru Classé du Médoc.", user: valentin, rating: 5)
+review_1 = Review.new(wine: guigall, content:"Vos papilles vont adorer ! Un vrai régal, même si le prix est un peu élevé.", user: valentin, rating: 3)
 
-review_2 = Review.new(wine: rocher, content:"Si vous avez 60000€ dans vos poches, allez déguster le Château Rocher. Bonne chance pour trouver la bouteille.", user: lucas, rating: 4)
+review_2 = Review.new(wine: guigall, content:"Très décevant, la qualité n'est pas au rendez-vous. ", user: lucas, rating: 1)
 
-review_3 = Review.new(wine: mouton_cadet, content:"Si vous avez 60000€ dans vos poches, allez déguster ce Château. Bonne chance pour trouver la bouteille.", user: paul, rating: 3)
+review_3 = Review.new(wine: guigall, content:"Une petite merveille, à déguster en toute occasion. Idéal pour accompagner vos meilleurs repas", user: paul, rating: 5)
+
+review_4 = Review.new(wine: guigall, content:"Une belle couleur et une superbe saveur, à découvrir sans tarder ", user: noemie, rating: 4)
 
 review_1.save!
 review_2.save!
 review_3.save!
+review_4.save!
 
 
 # Quiz
@@ -83,7 +86,7 @@ puts "==========================="
 
 quiz_1 = Quiz.new(title: "Les bases de la dégustation", wine: margaux, photo: "quiz1-couleurs.png")
 quiz_2 = Quiz.new(title: "Les Régions viticoles en France", wine: margaux, photo:"quiz2-crus.png")
-quiz_3 = Quiz.new(title: "Les cépages des vins de France", wine: margaux, photo:"quiz5-mets.png")
+quiz_3 = Quiz.new(title: "Les accords mets-vins", wine: margaux, photo:"quiz5-mets.png")
 quiz_5 = Quiz.new(title: "Les appellations de Bordeaux", wine: margaux, photo:"quiz4-bouchons.png")
 quiz_6 = Quiz.new(title: "Les appellations de Bourgogne", wine: margaux, photo: "quiz6-biodynamie.png")
 
@@ -110,7 +113,7 @@ question_3.save!
 question_4.save!
 question_5.save!
 
-question_6 = Question.new(content: "Combien y a t-il de grande région viticole en France ?", position: 1, quiz: quiz_2)
+question_6 = Question.new(content: "Combien y a t-il de grandes régions viticoles en France ?", position: 1, quiz: quiz_2)
 question_7 = Question.new(content: "Quelle région viticole n’existe pas ?", position: 2, quiz: quiz_2)
 question_8 = Question.new(content: "De quelle région viticole provient le Jurançon ?", position: 3, quiz: quiz_2)
 question_9 = Question.new(content: "Dans quelle région est produit le champagne ?", position: 4, quiz: quiz_2)
@@ -182,7 +185,7 @@ option_12 = Option.new(title: "Ces arômes n’existent pas", right: false, ques
 
 #Options for question 4 :
 option_13 = Option.new(title: "Les arômes primaires", right: false, question: question_4)
-option_14 = Option.new(title: "Les arômes du second dégrés", right: true, question: question_4)
+option_14 = Option.new(title: "Les arômes du second dégré", right: true, question: question_4)
 option_15 = Option.new(title: "Les arômes secondaires", right: false, question: question_4)
 option_16 = Option.new(title: "Les arômes tertiaires", right: false, question: question_4)
 
@@ -190,7 +193,7 @@ option_16 = Option.new(title: "Les arômes tertiaires", right: false, question: 
 option_17 = Option.new(title: "La partiale", right: false, question: question_5)
 option_18 = Option.new(title: "L’attaque", right: true, question: question_5)
 option_19 = Option.new(title: "La demi-finale", right: false, question: question_5)
-option_20 = Option.new(title: "La contre attaque", right: false, question: question_5)
+option_20 = Option.new(title: "La contre-attaque", right: false, question: question_5)
 
 #######Options for quiz 2 :
 
@@ -311,7 +314,7 @@ puts "==========================="
 recommendation_1 = Recommendation.new(wine: rocher, sender: paul, recipient: noemie)
 recommendation_2 = Recommendation.new(wine: mouton_cadet, sender: valentin, recipient: jojo)
 recommendation_3 = Recommendation.new(wine: coteaux_bourguignons, sender: valentin, recipient: jojo)
-recommendation_4 = Recommendation.new(wine: margaux, sender: paul, recipient: valentin)
+recommendation_4 = Recommendation.new(wine: guingall, sender: paul, recipient: valentin)
 recommendation_5 = Recommendation.new(wine: margaux, sender: lucas, recipient: jojo)
 
 recommendation_1.save!
@@ -336,10 +339,10 @@ puts "Lecture content created"
 puts "==========================="
 
 info_1 = Info.new(title: '🍇 Le fruit du vin', content: 'Raisin blanc ou noir', lecture: cours_1)
-info_2 = Info.new(title: "🍷 Les sens nécessaire à le gouter", content: "Grâce à l'odorat, la vue et le goût", lecture: cours_1)
+info_2 = Info.new(title: "🍷 Les sens nécessaires à le gouter", content: "Grâce à l'odorat, la vue et le goût", lecture: cours_1)
 info_3 = Info.new(title: "🌱 Qu'est ce que le cépage?", content: 'Définit le type de plan de vigne', lecture: cours_1)
 info_4 = Info.new(title: "🔍 Comment le determiner", content: "Par l'analyse de la feuille, des grappes et des baies", lecture: cours_1)
-info_5 = Info.new(title: "👃🏽 Qu'est ce que les aromes primaires", content: "Ce sont les premières détectées elles sont apportés par le cépage", lecture: cours_1)
+info_5 = Info.new(title: "👃🏽 Qu'est ce que les arômes primaires?", content: "Ce sont les premières détectées. Elles sont apportés par le cépage", lecture: cours_1)
 info_6 = Info.new(title: 'Raison', content: 'Noir', lecture: cours_2)
 info_7 = Info.new(title: 'Meilleure région', content: 'Bordeaux', lecture: cours_2)
 info_8 = Info.new(title: 'Stockage', content: "12°, 70% d'humidité, sombre, calme", lecture: cours_2)
