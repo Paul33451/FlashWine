@@ -44,19 +44,45 @@ puts "==========================="
 puts "Creating wines"
 puts "==========================="
 
-rocher = Wine.new(region:"Bordeaux", appellation:"Saint-Emilion Grand Cru", cepage:"Merlot, Cabernet franc, Cabernet sauvignon", color:"Rouge", name:"Château du Rocher", year:2016, photo:"https://media.lepetitballon.com/catalog/product/cache/1/image/280x600/040ec09b1e35df139433887a97daa66f/c/h/chateaux-du-rocher.jpg")
+rocher = Wine.new(region:"Bordeaux", appellation:"Saint-Emilion Grand Cru", cepage:"Merlot, Cabernet franc, Cabernet sauvignon", color:"Rouge", name:"Château du Rocher", year:2016, photo:"")
 
-mouton_cadet = Wine.new(region:"Loire", appellation:"Sauternes", cepage:"Sémillon 80% / Sauvignon 20% ", color:"rosé", name:"Mouton Cadet", year:1892, photo:"https://produits.bienmanger.com/29409-0w0h0_Mouton_Cadet_Rouge.jpg")
+mouton_cadet = Wine.new(region:"Loire", appellation:"Sauternes", cepage:"Sémillon 80% / Sauvignon 20% ", color:"rosé", name:"Mouton Cadet", year:1892, photo:"")
 
-coteaux_bourguignons = Wine.new(region:"Bourgogne", appellation:"Coteaux Bourguignons", cepage:" Pinot Noir 100% ", color:"rouge", name:"Jean de Laurere", year:2016, photo:"https://media.lepetitballon.com/catalog/product/cache/1/image/280x600/040ec09b1e35df139433887a97daa66f/j/e/jean-de-laurere-coteaux_bourguignon-2016.jpg")
+coteaux_bourguignons = Wine.new(region:"Bourgogne", appellation:"Coteaux Bourguignons", cepage:" Pinot Noir 100% ", color:"rouge", name:"Jean de Laurere", year:2016, photo:"")
 
-margaux = Wine.new(region:"Bordeaux", appellation:"Margaux", cepage:"Chenin 100%", color:"blanc", name:"Chateau Margaux", year:2016, photo:"https://static.millesima.com/s3/attachements/360/1001_2012NM_c/photobox/images/a_0_0_234_0_0.png")
+margaux = Wine.new(region:"Bordeaux", appellation:"Margaux", cepage:"Chenin 100%", color:"blanc", name:"Chateau Margaux", year:2016, photo:"")
+
+romanin = Wine.new(region:"Provence", appellation:"Les Baux de Provence", cepage:"Syrah, Grenache, Mourvèdre, Cabernet Sauvignon", color:"rouge", name:"Château Romanin", year:2008, photo:"")
+
+guigal = Wine.new(region:"Rhône", appellation:"Côtes du Rhône", cepage:"Syrah, Grenache, Mourvèdre", color:"rouge", name:"Guigal Côtes du Rhône", year:2016, photo:"")
+
+franc = Wine.new(region:"Bordeaux", appellation:"Bordeaux Supérieur", cepage:"Cabernet Franc 100%",color:"rouge", name:"Pur Franc", year:2015, photo:"")
+
+hautmayne = Wine.new(region:"Bordeaux", appellation:"Graves", cepage:"Sémillon, Sauvignon",color:"blanc", name:"Château Haut Mayne", year:2017, photo:"")
+
+uby = Wine.new(region:"Sud-Ouest", appellation:"Côtes de Gascogne", cepage:"Colombard 80% / Ugni blanc 20%",color:"blanc", name:"Domaine UBY N°3", year:2015, photo:"")
+
+naudin = Wine.new(region:"Loire", appellation:"Vouvray", cepage:"Chenin 100% ",color:"blanc", name:"Domaine Le Clos Naudin", year:2016, photo:"")
+
+french = Wine.new(region:"Bordeaux", appellation:"Bordeaux", cepage:"Merlot 80% / Cabernet Sauvignon 20% ",color:"rosé", name:"French Rosé", year:2017, photo:"")
+
+honoré = Wine.new(region:"Provence", appellation:"Côtes de Provence", cepage:"Grenache 40% / Cinsault 20% / Syrah 10% / Vermentino 10% / Carignan 10%",color:"rosé", name:"Tour Saint Honoré", year:2018, photo:"")
+
+tendem = Wine.new(region:"Languedoc-Roussion", appellation:"Languedoc", cepage:"Grenache / Syrah",color:"rosé", name:"Tendem", year:2018, photo:"")
 
 rocher.save!
 mouton_cadet.save!
 coteaux_bourguignons.save!
 margaux.save!
-
+romanin.save!
+guigal.save!
+franc.save!
+hautmayne.save!
+uby.save!
+naudin.save!
+french.save!
+honoré.save!
+tendem.save!
 
 
 # Reviews
