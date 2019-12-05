@@ -90,13 +90,13 @@ puts "==========================="
 puts "Creating Reviews"
 puts "==========================="
 
-review_1 = Review.new(wine: guigall, content:"Vos papilles vont adorer ! Un vrai régal, même si le prix est un peu élevé.", user: valentin, rating: 3)
+review_1 = Review.new(wine: guigal, content:"Vos papilles vont adorer ! Un vrai régal, même si le prix est un peu élevé.", user: valentin, rating: 3)
 
-review_2 = Review.new(wine: guigall, content:"Très décevant, la qualité n'est pas au rendez-vous. ", user: lucas, rating: 1)
+review_2 = Review.new(wine: guigal, content:"Très décevant, la qualité n'est pas au rendez-vous. ", user: lucas, rating: 1)
 
-review_3 = Review.new(wine: guigall, content:"Une petite merveille, à déguster en toute occasion. Idéal pour accompagner vos meilleurs repas", user: paul, rating: 5)
+review_3 = Review.new(wine: guigal, content:"Une petite merveille, à déguster en toute occasion. Idéal pour accompagner vos meilleurs repas", user: paul, rating: 5)
 
-review_4 = Review.new(wine: guigall, content:"Une belle couleur et une superbe saveur, à découvrir sans tarder ", user: noemie, rating: 4)
+review_4 = Review.new(wine: guigal, content:"Une belle couleur et une superbe saveur, à découvrir sans tarder ", user: noemie, rating: 4)
 
 review_1.save!
 review_2.save!
