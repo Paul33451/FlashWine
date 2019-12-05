@@ -59,11 +59,11 @@
       </div>
     </div>
 
-    <div class="modal modal_size center-block" id="add-wine" tabindex="-1" role="dialog">
+    <div class="modal modal_size center-block" id="add-wine" tabindex="-1" role="dialog" >
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content padding-simple" >
       <div class="modal-header">
-        <h5 class="modal-title">Sélectionnez un ami</h5>
+        <h5 class="modal-title modal-title-color center-block"> Ajoutez un vin !</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -77,7 +77,9 @@
                     <%= f.input :color %>
                     <%= f.input :flavour %>
                     <%= f.input :photo %>
-                    <%= f.submit "Ajouter", class: "btn btn-primary" %>
+                    <div class="text-center">
+                    <%= f.submit "Ajouter", class: "btn btn-primary button-form" %>
+                    </div>
                   <% end %>
 
       </div>
