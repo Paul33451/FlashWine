@@ -13,16 +13,21 @@
     <li class="list-group-item"><strong> Couleur : </strong><%= @wine.color %></li>
   </ul>
       <!-- CTA recommendation -->
-    <div class="card-body button-form">
-      <a class="btn btn-flat btn-recommandation" data-toggle="modal" data-target="#open-modal">▸ Recommander à un amis</a>
+    <div class="card-body">
+      <a class="btn btn-flat btn-recommandation button-form" data-toggle="modal" data-target="#open-modal"><span><i class="fas fa-share"></i></span> Recommander à un ami</a>
     </div>
+
+      <div >
     <ul class="list-group">
-    <li class="list-group-item border-bloc-index"><strong> Note : </strong>
-      <!-- Calcule Etoile moyenne -->
-      <div class="justify-content-around">
+      <li class="list-group-item border-bloc-index"><strong> Note : </strong>
+      </li>
+    </ul>
+    <div class="d-flex justify-content-around  mr-5">
+      <div>
         <p><i class="far fa-comment"></i>  <%= @wine.reviews.count %> avis</p>
-        <div>
-          <% if @wine.average_rating.nan? == true %>
+      </div>
+      <div>
+        <% if @wine.average_rating.nan? == true %>
             <p>Soyez le premier à donner votre avis sur ce vin</p>
           <% else %>
             <div class="star_card d-flex">
@@ -34,12 +39,10 @@
               <% end %>
             </div>
           <% end %>
-        </div>
       </div>
-      <!-- Fin calcule Etoile moyenne -->
-    </li>
-  </ul>
-</div>
+    </div>
+  </div>
+
 
 <%# CTA Reco  %>
 <div class="modal modal_size center-block" id="open-modal" tabindex="-1" role="dialog">
