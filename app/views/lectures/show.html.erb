@@ -1,12 +1,21 @@
-<div class="lecture-banner" style="background-image: url(https://cdn.pixabay.com/photo/2017/06/26/12/49/red-wine-2443699_1280.jpg)">
-  <h1><%= @lecture.title %></h1>
-</div>
-<div class="container">
-  <div class="infos">
-    <% @lecture.infos.each do |info| %>
-      <%= render 'flip', info: info %>
-    <% end %>
+<div class="back">
+  <div class="lecture">
+    <h2><%= @lecture.title %></h2>
+    <p><small>Touchez pour afficher la réponse*</small></p>
+  </div>
+  <div class="container">
+    <div class="infos">
+      <% @lecture.infos.each do |info| %>
+        <%= render 'flip', info: info %>
+      <% end %>
+    </div>
+    <div class="links">
+      <% if @lecture.quizzes[0].present? %>
+        <%= link_to "Quiz", class: "btn-flat" %>
+      <% else %>
+        <%= link_to "Je sais !", dashboard_path,class: "btn-flat" %>
+      <% end %>
+    </div>
   </div>
 </div>
-
 <%= render 'shared/footer' %>
