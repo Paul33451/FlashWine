@@ -1,0 +1,13 @@
+<%= simple_form_for @wine , url: wine_path(@wine.id) do |f| %>
+          <%= f.input :name, label:"Nom" %>
+          <%= f.input :year, label:"Millésime" %>
+          <%= f.input :appellation, label:"Appellation" %>
+          <%= f.input :region, label:"Région", collection: $regions %>
+          <%= f.input :cepage, label:"Cépage" %>
+          <%= f.input :color, label:"Couleur", collection: $colors %>
+          <%= f.input :flavour, label:"Arômes" %>
+          <%= f.input :photo, label:"Photo" %>
+          <div class="text-center">
+          <%= f.submit "Ajouter", class: "btn btn-primary button-form" %>
+          </div>
+        <% end %>

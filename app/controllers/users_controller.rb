@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.where.not(id: current_user.id).where.not(id: current_user.friends.ids)
     if params[:query].present?
       sql_query = " \
         users.first_name @@ :query \
@@ -13,7 +12,8 @@ class UsersController < ApplicationController
       "
       @users = User.where(sql_query, query: "%#{params[:query]}%")
     else
-      @users = User.all
+      @users = User.where.not(id: current_user.id).where.not(id: current_user.friends.ids)
+
     end
   end
 

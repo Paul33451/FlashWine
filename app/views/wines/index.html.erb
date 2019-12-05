@@ -87,8 +87,8 @@
       <div class="card-product">
         <%=link_to wine_path(wine), class:"card-product" do%>
           <%# Display photo %>
-            <% if current_user.photo.present? %>
-              <%= cl_image_tag current_user.photo %>
+            <% if wine.photo.present? %>
+              <%= cl_image_tag wine.photo %>
             <% else %>
               <%= image_tag "https://images.unsplash.com/photo-1549873916-b1bb7dc758c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80", alt: "default avatar" %>
             <% end %>
