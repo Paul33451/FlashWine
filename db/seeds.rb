@@ -28,7 +28,7 @@ paul = User.new(first_name:"Paul", last_name:"Manche", user_name:"Polo", email:"
 
 noemie = User.new(first_name:"Noemie", last_name:"Pierart", user_name:"Nono", email:"noemie@gmail.com", password: "azerty", score: 0)
 
-lucas = User.new(first_name:"Lucas", last_name:"Dubernet", user_name:"Lulu", email:"lucas@gmail.com", password: "azerty", score: 0)
+lucas = User.new(first_name:"Lucas", last_name:"Dubernard", user_name:"Lulu", email:"lucas@gmail.com", password: "azerty", score: 0)
 
 jojo = User.new(first_name:"Jonathan", last_name:"Serafini", user_name:"Jojo", email:"jojo@gmail.com", password: "azerty", score: 0)
 
