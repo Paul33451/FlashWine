@@ -1,8 +1,10 @@
-<div class="container">
-  <div class="img-quiz">
-    <%= image_tag "ill_quizz_flash_wine.png" %>
+<div class="banner banner-quiz" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path(@quiz.photo) %>);">
+  <div class="title-quiz text-center">
+    <h1><%= @quiz.title %></h1>
   </div>
-  <h1 class="quizz-title text-center mt-5 mb-5"><%= @quiz.title %> correction</h1>
+</div>
+
+<h2 class="results-title"><i class="fas fa-award">Résultats</h2>
 
   <!-- count good answers -->
   <% @questions.each do |question| %>
