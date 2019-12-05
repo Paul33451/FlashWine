@@ -1,7 +1,8 @@
 .flip {
   width: 100%;
-  height: 100px;
+  height: 90px;
   perspective: 1000px;
+  margin-bottom: 30px;
 
 }
 .flip-inner {
@@ -32,19 +33,19 @@
   width: 100%;
   height: 130px;
   perspective: 1000px;
-  background-color: $pink;
+  background-color: #EADCE0;
   display: table;
     //   border-bottom: 1px solid;
     // border-color: gray;
 }
 
 .flip-front h2 {
-  font-size: 30px;
+  font-size: 25px;
   text-align: center;
-  color: white;
+  color: black;
 }
 .flip-back h2 {
-  font-size: 30px;
+  font-size: 25px;
   text-align: center;
   color: white;
 }

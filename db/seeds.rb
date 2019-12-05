@@ -335,11 +335,11 @@ puts "==========================="
 puts "Lecture content created"
 puts "==========================="
 
-info_1 = Info.new(title: '🍇 Fruit', content: 'Raisin blanc ou noir', lecture: cours_1)
-info_2 = Info.new(title: "🍷 Goûter un vin", content: "Grâce à l'odorat, la vue et le goût", lecture: cours_1)
-info_3 = Info.new(title: '🌱 Cépage', content: 'Type de plan de vigne', lecture: cours_1)
-info_4 = Info.new(title: "🔍 Le définir", content: "L'analyse de la feuille, des grappes et des baies", lecture: cours_1)
-info_5 = Info.new(title: '👃🏽 Aromes primaires', content: 'Sont apportés par le cépage', lecture: cours_1)
+info_1 = Info.new(title: '🍇 Le fruit du vin', content: 'Raisin blanc ou noir', lecture: cours_1)
+info_2 = Info.new(title: "🍷 Les sens nécessaire à le gouter", content: "Grâce à l'odorat, la vue et le goût", lecture: cours_1)
+info_3 = Info.new(title: "🌱 Qu'est ce que le cépage?", content: 'Définit le type de plan de vigne', lecture: cours_1)
+info_4 = Info.new(title: "🔍 Comment le determiner", content: "Par l'analyse de la feuille, des grappes et des baies", lecture: cours_1)
+info_5 = Info.new(title: "👃🏽 Qu'est ce que les aromes primaires", content: "Ce sont les premières détectées elles sont apportés par le cépage", lecture: cours_1)
 info_6 = Info.new(title: 'Raison', content: 'Noir', lecture: cours_2)
 info_7 = Info.new(title: 'Meilleure région', content: 'Bordeaux', lecture: cours_2)
 info_8 = Info.new(title: 'Stockage', content: "12°, 70% d'humidité, sombre, calme", lecture: cours_2)
