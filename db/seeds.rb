@@ -5,9 +5,7 @@ puts "==========================="
 Recommendation.destroy_all
 puts "review"
 Review.destroy_all
-Quiz.destroy_all
-Question.destroy_all
-Option.destroy_all
+
 Lecture.destroy_all
 Info.destroy_all
 puts "users"
@@ -75,7 +73,6 @@ review_3 = Review.new(wine: mouton_cadet, content:"Si vous avez 60000€ dans vo
 review_1.save!
 review_2.save!
 review_3.save!
-
 
 
 # Quiz
@@ -352,11 +349,11 @@ puts "==========================="
 puts "Lecture content created"
 puts "==========================="
 
-info_1 = Info.new(title: 'Fruit', content: 'Raisin', lecture: cours_1)
-info_2 = Info.new(title: "Degrés d'alcool moyen", content: '12°', lecture: cours_1)
-info_3 = Info.new(title: 'Durée de fabrication', content: '1 an', lecture: cours_1)
-info_4 = Info.new(title: "Quantité d'eau", content: '85%', lecture: cours_1)
-info_5 = Info.new(title: 'Origine', content: 'Moyen Orient', lecture: cours_1)
+info_1 = Info.new(title: '🍇 Fruit', content: 'Raisin blanc ou noir', lecture: cours_1)
+info_2 = Info.new(title: "🍷 Goûter un vin", content: "Grâce à l'odorat, la vue et le goût", lecture: cours_1)
+info_3 = Info.new(title: '🌱 Cépage', content: 'Type de plan de vigne', lecture: cours_1)
+info_4 = Info.new(title: "🔍 Le définir", content: "L'analyse de la feuille, des grappes et des baies", lecture: cours_1)
+info_5 = Info.new(title: '👃🏽 Aromes primaires', content: 'Sont apportés par le cépage', lecture: cours_1)
 info_6 = Info.new(title: 'Raison', content: 'Noir', lecture: cours_2)
 info_7 = Info.new(title: 'Meilleure région', content: 'Bordeaux', lecture: cours_2)
 info_8 = Info.new(title: 'Stockage', content: "12°, 70% d'humidité, sombre, calme", lecture: cours_2)
