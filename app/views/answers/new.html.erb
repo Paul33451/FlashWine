@@ -1,13 +1,18 @@
-<div class="container">
+<div class="banner banner-quiz" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path(@question.quiz.photo) %>);">
   <div class="title-quiz text-center">
     <h1><%= @question.quiz.title %></h1>
   </div>
+</div>
+
+<div class="container">
   <div class="container-fluid bg-info">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <div class="d-flex">
-          <div class="label label-warning" id="qid"><%= @question.position %></div>
+          <span class="label label-warning" id="qid">
+            <%= @question.position %>
+          </span>
           <div class="question-title"><%= @question.content %></div>
           </div>
         </div>

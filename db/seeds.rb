@@ -91,7 +91,6 @@ quiz_4 = Quiz.new(title: "Les Grands Crus Classés de Bordeaux", wine: margaux, 
 quiz_5 = Quiz.new(title: "Les appellations de Bordeaux", wine: margaux, photo:"quiz4-bouchons.png")
 quiz_6 = Quiz.new(title: "Les appellations de Bourgogne", wine: margaux, photo: "quiz6-biodynamie.png")
 
-
 quiz_1.save!
 quiz_2.save!
 quiz_3.save!
