@@ -340,7 +340,7 @@ puts "==========================="
 recommendation_1 = Recommendation.new(wine: rocher, sender: paul, recipient: noemie)
 recommendation_2 = Recommendation.new(wine: mouton_cadet, sender: valentin, recipient: jojo)
 recommendation_3 = Recommendation.new(wine: coteaux_bourguignons, sender: valentin, recipient: jojo)
-recommendation_4 = Recommendation.new(wine: guingall, sender: paul, recipient: valentin)
+recommendation_4 = Recommendation.new(wine: guigal, sender: paul, recipient: valentin)
 recommendation_5 = Recommendation.new(wine: margaux, sender: lucas, recipient: jojo)
 
 recommendation_1.save!
