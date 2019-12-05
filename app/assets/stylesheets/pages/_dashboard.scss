@@ -1,3 +1,8 @@
+.logo-dashboard {
+  height: 50px;
+  float: left;
+}
+
 .dash-banner {
   position: relative;
   height: 210px;
@@ -13,7 +18,7 @@
   background: none;
   top: 0px;
   right: 10px;
-  font-size: 25px;
+  font-size: 40px;
   color: white;
 }
 .profile {
@@ -56,6 +61,11 @@ background: linear-gradient(right, #EF4249, #F0666C);
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
+  margin-left: 83px;
+}
+
+.avatar-container {
+  display: flex;
 }
 
 /* Style the buttons that are used to open and close the accordion panel */
