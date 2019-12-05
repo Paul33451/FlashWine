@@ -58,17 +58,14 @@
           <div class="modal-body">
             <%= simple_form_for @recommendation, url: recommendations_path(wine_id: @wine.id) do |f| %>
               <div class="simple-group">
-                <%= f.input :recipient_id, collection: current_user.friends, label_method: :first_name, value_method: :id, class: 'form-control' %>
+                <%= f.input :recipient_id, collection: current_user.friends, label: false, class: 'form-control' %>
               </div>
 
-            <%= f.submit class: 'btn btn-primary' %>
+            <%= f.submit class: 'btn btn-primary', value:"Envoyer"%>
            <% end %>
 
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+
     </div>
   </div>
 </div>
