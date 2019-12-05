@@ -1,8 +1,8 @@
 .flip {
   width: 100%;
-  height: 90px;
+  height: 110px;
   perspective: 1000px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 
 }
 .flip-inner {
@@ -21,22 +21,26 @@
 .flip-back {
   padding: 10px;
   width: 100%;
-  height: 130px;
+  height: 110px;
   perspective: 1000px;
   transform: rotateY(180deg);
   background-color: $purple;
   display: table;
+  margin-bottom: 50px;
+
 
 }
 .flip-front {
   padding: 10px;
   width: 100%;
-  height: 130px;
+  height: 110px;
   perspective: 1000px;
   background-color: #EADCE0;
   display: table;
-    //   border-bottom: 1px solid;
-    // border-color: gray;
+  border-bottom: 1px solid;
+  border-color: gray;
+  margin-bottom: 50px;
+
 }
 
 .flip-front h2 {
