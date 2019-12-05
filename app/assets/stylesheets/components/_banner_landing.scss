@@ -1,18 +1,32 @@
 .banner-landing {
   background-size: cover;
   background-position: center;
-  height: 300px;
+  height: 450px;
   padding: 20px;
+  text-align: center
 }
 
 .banner-landing h1 {
-  margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 40px;
   font-weight: bold;
+  padding-bottom: 180px;
+  text-align: center;
+  margin-top: 30px
 }
 
+.banner-landing h2 {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center
+}
+
+.banner-landing .btn {
+  text-align: center
+}
 // .banner-landing p {
 //   font-size: 15px;
 //   color: white;

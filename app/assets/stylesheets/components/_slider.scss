@@ -1,5 +1,6 @@
 .content-slider-white{
-  color: red;
+  color: $bordeaux;
+  font-size: 2.5rem;
 }
 
 .carousel-inner {
@@ -13,6 +14,13 @@
   color: #ad063b;
   font-size: bold;
 }
+
+.carousel-item img {
+  height: 100px;
+  margin-top: 40px;
+  padding-bottom: 20px
+}
+
 
 .carousel-control-prev {
   width: 60px;
@@ -35,6 +43,8 @@
 }
 
 .logo-landing {
-  text-align: center;
+  text-align: left;
   height: 120px;
+  width: 80px;
+  background-color: white
 }
