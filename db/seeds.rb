@@ -86,16 +86,13 @@ puts "==========================="
 
 quiz_1 = Quiz.new(title: "Les bases de la dégustation", wine: margaux, photo: "quiz1-couleurs.png")
 quiz_2 = Quiz.new(title: "Les Régions viticoles en France", wine: margaux, photo:"quiz2-crus.png")
-quiz_3 = Quiz.new(title: "Les cépages", wine: margaux, photo:"quiz5-mets.png")
-quiz_4 = Quiz.new(title: "Les Grands Crus Classés de Bordeaux", wine: margaux, photo:"/quiz3-terroirs.png")
+quiz_3 = Quiz.new(title: "Les cépages des vins de France", wine: margaux, photo:"quiz5-mets.png")
 quiz_5 = Quiz.new(title: "Les appellations de Bordeaux", wine: margaux, photo:"quiz4-bouchons.png")
 quiz_6 = Quiz.new(title: "Les appellations de Bourgogne", wine: margaux, photo: "quiz6-biodynamie.png")
-
 
 quiz_1.save!
 quiz_2.save!
 quiz_3.save!
-quiz_4.save!
 quiz_5.save!
 quiz_6.save!
 
@@ -137,17 +134,6 @@ question_12.save!
 question_13.save!
 question_14.save!
 question_15.save!
-
-question_16 = Question.new(content: "Comment s’appelle le classement officiel des vins de Bordeaux ?", position: 1, quiz: quiz_4)
-question_17 = Question.new(content: "Qui a ordonné  le classement de 1855 ?", position: 2, quiz: quiz_4)
-question_18 = Question.new(content: "Quel vin n’est pas un cru classé ?", position: 3, quiz: quiz_4)
-question_19 = Question.new(content: "Combien de changement a connu le classement officiel depuis sa créaton ?", position: 4, quiz: quiz_4)
-question_20 = Question.new(content: "Quel segment du classement n’existe pas ?", position: 5, quiz: quiz_4)
-question_16.save!
-question_17.save!
-question_18.save!
-question_19.save!
-question_20.save!
 
 question_21 = Question.new(content: "Laquelle de ces 4 appellations n’appartient pas à la région bordelaise ?", position: 1, quiz: quiz_5)
 question_22 = Question.new(content: "Laquelle de ces 4 appellations appartient à la sous-région “Médoc” ?", position: 2, quiz: quiz_5)
