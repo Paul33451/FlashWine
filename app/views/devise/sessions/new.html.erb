@@ -1,4 +1,8 @@
-<h2 class="text-center mb-5">Connexion</h2>
+<div class="banner-heading">
+  <%= render "devise/shared/logo_banner" %>
+  <h2 class="text-center pt-50 mb-5">Connexion</h2>
+</div>
+
 
 <div class="container-devise pl-5">
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -13,16 +17,15 @@
                     input_html: { autocomplete: "current-password" } %>
       </div>
       <br>
+            <div class="form-actions">
+        <%= f.button :submit, "Me connecter", class:"btn btn-flat mt-10" %>
+      </div>
+      <br>
       <div>
         <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
           <%= link_to "Mot de passe oublié?", new_password_path(resource_name), class:"btn-ghost" %><br />
            <% end %>
       </div>
-      <br>
-      <div class="form-actions">
-        <%= f.button :submit, "Me connecter", class:"btn btn-flat mt-10" %>
-      </div>
-
     <% end %>
 </div>
 
