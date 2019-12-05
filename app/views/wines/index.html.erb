@@ -2,23 +2,7 @@
   <h1 >Ma cave</h1>
 </div>
 
-<!-- <div class="modal modal_size center-block"  id="add-wine-modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Ajoutez un vin</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-                <div class="modal-body">
-                <%= render "wine_form" %>
-                </div>
-            </div>
-          </div>
-        </div>
-</div>
- -->
+
   <%# Search form  %>
   <div class="search_form">
     <%= simple_form_for :query, url: wines_path, class:"search_form form-row align-items-center", method: :get do |f| %>
@@ -52,32 +36,35 @@
 
 <%# If no wine is found : %>
 <% if @wines.count == 0  %>
-    <div class="display-inline">
+    <div class="display-inline text-center">
       <p>Aucun vin ne correspond à votre recherche</p>
-      <div class="card-body">
+      <div class="card-body text-center">
         <a class="btn btn-flat btn-recommandation" data-toggle="modal" data-target="#add-wine">Ajouter le vin</a>
       </div>
     </div>
 
-    <div class="modal modal_size center-block" id="add-wine" tabindex="-1" role="dialog">
+    <div class="modal modal_size center-block" id="add-wine" tabindex="-1" role="dialog" >
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content padding-simple" >
       <div class="modal-header">
-        <h5 class="modal-title">Sélectionnez un ami</h5>
+        <h5 class="modal-title modal-title-color center-block"> Ajoutez un vin !</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
 
          <%= simple_form_for @wine , url: wines_path do |f| %>
-                    <%= f.input :name %>
-                    <%= f.input :year %>
-                    <%= f.input :appellation %>
-                    <%= f.input :cepage %>
-                    <%= f.input :color %>
-                    <%= f.input :flavour %>
-                    <%= f.input :photo %>
-                    <%= f.submit "Ajouter", class: "btn btn-primary" %>
+                    <%= f.input :name, label:"Nom" %>
+                    <%= f.input :year, label:"Millésime" %>
+                    <%= f.input :appellation, label:"Appellation" %>
+                    <%= f.input :region, label:"Région", collection: $regions %>
+                    <%= f.input :cepage, label:"Cépage" %>
+                    <%= f.input :color, label:"Couleur", collection: $colors %>
+                    <%= f.input :flavour, label:"Arômes" %>
+                    <%= f.input :photo, label:"Photo" %>
+                    <div class="text-center">
+                    <%= f.submit "Ajouter", class: "btn btn-primary button-form" %>
+                    </div>
                   <% end %>
 
       </div>
@@ -100,11 +87,11 @@
       <div class="card-product">
         <%=link_to wine_path(wine), class:"card-product" do%>
           <%# Display photo %>
-          <% if wine.photo.present? %>
-           <%= image_tag wine.photo, class:"wine-index-photo"%>
-          <%else%>
-            <img src="https://images.unsplash.com/photo-1549873916-b1bb7dc758c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80">
-          <% end %>
+            <% if current_user.photo.present? %>
+              <%= cl_image_tag current_user.photo %>
+            <% else %>
+              <%= image_tag "https://images.unsplash.com/photo-1549873916-b1bb7dc758c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80", alt: "default avatar" %>
+            <% end %>
           <%# Display product infos  %>
           <div class="card-product-infos">
             <h2><%=wine.name%> <%= wine.year%></h2>

@@ -30,13 +30,6 @@
   width: 60px;
 }
 
-// .carousel-control-prev-icon {
-//  background-color: red;
-// }
-// .carousel-control-next-icon {
-//  background-color: red;
-// }
-
 .banner-landing {
   margin-bottom: 25px;
   vertical-align: middle;
@@ -46,5 +39,9 @@
   text-align: left;
   height: 120px;
   width: 80px;
-  background-color: white
+  background-color: white;
+}
+
+.carousel-item {
+  background-color: white !important;
 }
