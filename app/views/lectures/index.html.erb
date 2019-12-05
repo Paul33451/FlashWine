@@ -8,7 +8,7 @@
 
 
 <% @lectures.each do |lecture| %>
-  <div class="card-product">
+  <div class="">
     <%=link_to lecture_path(lecture), class:"card-product" do%>
       <%= image_tag lecture.photo, alt: "" %>
       <div class="card-product-infos">

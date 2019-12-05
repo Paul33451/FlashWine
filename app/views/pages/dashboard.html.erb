@@ -88,7 +88,6 @@
     <% end %>
       <div class="card-product-infos">
         <h2><%= friend.first_name + " " + friend.last_name %></h2>
-        <p>souhaite devenir votre ami</p>
       </div>
         <%= link_to delete_friend_path(friend), remote: true, class: "icon-btn" do %>
           <i class="far fa-trash-alt"></i>

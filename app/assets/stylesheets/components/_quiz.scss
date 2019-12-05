@@ -173,6 +173,7 @@ label .glyphicon {
   font-size: 17px;
   background-color: #cc4f74;
   color: white;
+  border: none !important;
 }
 
 .active::after {
@@ -185,4 +186,9 @@ label .glyphicon {
 
 .title-quiz {
   font-size: bold;
+}
+
+.btn-primary:hover {
+  background-color: $bordeaux !important;
+  border-color: $bordeaux !important;
 }
