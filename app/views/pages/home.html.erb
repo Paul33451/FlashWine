@@ -3,7 +3,11 @@
   <img src="/assets/logo_circle_black_bottles.png" class="banner-logo" alt="FlashWine logo">
   <h1>Flash Wine</h1>
   <h2> Découvrir le vin entre amis</h2>
-  <a class="btn btn-flat " href="#">C'est parti !</a>
+  <% if user_signed_in? %>
+      <%= link_to "C'est parti !", dashboard_path, class:"btn btn-flat" %>
+  <% else %>
+      <%= link_to "C'est parti !", new_user_session_path, class:"btn btn-flat"%>
+    <% end %>
 </div>
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
