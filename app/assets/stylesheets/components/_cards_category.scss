@@ -1,20 +1,20 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 90px;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 10px;
   display: flex;
   text-decoration: none;
+  padding: 10px;
+  height: 80px;
+  vertical-align: middle;
 }
 
 .trophy-icon {
   height: 35px;
   width: 35px;
   background-color: white;
-  margin-left: 10px;
-  margin-top: 10px;
   text-align: center;
   border-radius: 50%
 }
@@ -30,5 +30,4 @@
   font-weight: bold;
   text-decoration: none;
   padding-right: 60px;
-  padding-top: 40px;
 }

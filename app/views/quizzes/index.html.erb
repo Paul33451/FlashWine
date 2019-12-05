@@ -1,9 +1,11 @@
-<div class="container">
-  <h2 class="title-quizzes">Liste des quiz</h2>
+<div class="banner mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.flash80.com/images/quiz2.png);">
+  <h1>Les Quizzes</h1>
+</div>
 
+<div class="container">
   <% @quizzes.each do |quiz| %>
     <%= link_to new_question_answer_path(question_id: quiz.questions.find_by(position: 1).id), class:"link-card" do %>
-      <div class="card-category mb-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path(quiz.photo) %>)">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path(quiz.photo) %>)">
 
         <div class="trophy-space col-2">
           <% if quiz.answers.where(user_id: current_user.id).size == 0%>
