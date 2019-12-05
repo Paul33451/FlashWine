@@ -54,11 +54,13 @@ coteaux_bourguignons = Wine.new(region:"Bourgogne", appellation:"Coteaux Bourgui
 
 margaux = Wine.new(region:"Bordeaux", appellation:"Margaux", cepage:"Chenin 100%", color:"blanc", name:"Chateau Margaux", year:2016, photo:"https://static.millesima.com/s3/attachements/360/1001_2012NM_c/photobox/images/a_0_0_234_0_0.png")
 
+romanin = Wine.new(region:"Provence", appellation:"Les Baux de Provence", cepage:"Syrah, Grenache, Mourvèdre, Cabernet Sauvignon", color:"rouge", name:"Château Romanin", year:2008, photo:"https://www.1j1v.com/data/uploads/productimg/chateau-romanin-rouge-2006-G2.png")
+
 rocher.save!
 mouton_cadet.save!
 coteaux_bourguignons.save!
 margaux.save!
-
+romanin.save!
 
 
 # Reviews
