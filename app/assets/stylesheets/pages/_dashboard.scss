@@ -6,6 +6,7 @@
   background-size: cover;
   background-position: center;
   text-align: center;
+  border-radius: 0 0 5px 5px;
 }
 .edit {
   border: none;
@@ -70,6 +71,7 @@ background: linear-gradient(right, #EF4249, #F0666C);
   outline: none;
   transition: 0.4s;
   background-color: white !important;
+  border-radius: 0 0 5px 5px;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
