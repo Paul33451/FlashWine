@@ -5,3 +5,26 @@
   padding: 10px 20px;
   color: white;
 }
+
+.banner-logo {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-right: 70px;
+}
+
+.banner-logo img {
+  height: 50px
+}
+
+.banner-logo h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 24px;
+  color: $bordeaux;
+  width: 100%;
+   margin-right: 70px;
+}
+
+.banner-heading h2 {
+  margin-top: 70px;
+}
