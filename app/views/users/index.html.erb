@@ -17,16 +17,16 @@
   <% end %>
 </div>
 
-  <% @users.each do |user| %>
-    <div class="card-friend d-flex">
-      <% if user.photo.present? %>
-        <%= cl_image_tag user.photo, class: "avatar-small col-3" %>
-      <% else %>
-        <%= image_tag "https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png", class: "avatar-small col-3" %>
-      <% end %>
-      <p class="col-6"><strong><%= "#{user.first_name} #{user.last_name}" %></strong></p>
-      <%= link_to 'Ajouter', add_friend_path(user), method: :get, remote: true, class: "user-#{user.id} btn-ghost btn-small col-3" %>
-    </div>
-  <% end %>
+<% @users.each do |user| %>
+  <div class="card-friend d-flex">
+    <% if user.photo.present? %>
+      <%= cl_image_tag user.photo, class: "avatar-small col-3" %>
+    <% else %>
+      <%= image_tag "https://cdn.pixabay.com/photo/2017/02/25/22/04/user-icon-2098873_1280.png", class: "avatar-small col-3" %>
+    <% end %>
+    <p class="col-6"><strong><%= "#{user.first_name} #{user.last_name}" %></strong></p>
+    <%= link_to 'Ajouter', add_friend_path(user), method: :get, remote: true, class: "user-#{user.id} btn-ghost btn-small col-3" %>
+  </div>
+<% end %>
 
 <%= render 'shared/footer' %>

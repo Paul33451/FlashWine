@@ -69,6 +69,7 @@ background: linear-gradient(right, #EF4249, #F0666C);
   border-color: #E8E9EB;
   outline: none;
   transition: 0.4s;
+  background-color: white !important;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -82,6 +83,7 @@ background: linear-gradient(right, #EF4249, #F0666C);
   display: none;
   overflow: hidden;
   margin: 0;
+  margin-bottom: 10px;
 }
 
 
