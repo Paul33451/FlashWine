@@ -2,7 +2,7 @@
   <h1 >Ma cave</h1>
 </div>
 
-<div class="modal modal_size center-block" id="add-wine-modal" tabindex="-1" role="dialog">
+<!-- <div class="modal modal_size center-block"  id="add-wine-modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -13,12 +13,12 @@
             </div>
                 <div class="modal-body">
                 <%= render "wine_form" %>
-            </div>
+                </div>
             </div>
           </div>
         </div>
-      </div>
-
+</div>
+ -->
   <%# Search form  %>
   <div class="search_form">
     <%= simple_form_for :query, url: wines_path, class:"search_form form-row align-items-center", method: :get do |f| %>
@@ -54,8 +54,45 @@
 <% if @wines.count == 0  %>
     <div class="display-inline">
       <p>Aucun vin ne correspond à votre recherche</p>
-      <%= link_to "Ajouter un vin", "wines#new", class: "search_form btn-flat new-wine" %>
+      <div class="card-body">
+        <a class="btn btn-flat btn-recommandation" data-toggle="modal" data-target="#add-wine">Ajouter le vin</a>
+      </div>
     </div>
+
+    <div class="modal modal_size center-block" id="add-wine" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Sélectionnez un ami</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+         <%= simple_form_for @wine , url: wines_path do |f| %>
+                    <%= f.input :name %>
+                    <%= f.input :year %>
+                    <%= f.input :appellation %>
+                    <%= f.input :cepage %>
+                    <%= f.input :color %>
+                    <%= f.input :flavour %>
+                    <%= f.input :photo %>
+                    <%= f.submit "Ajouter", class: "btn btn-primary" %>
+                  <% end %>
+
+      </div>
+     <!--  <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+
+
+
 <%# If wines are found : %>
 <% else %>
     <p class="ml-3"><%= @wines.count %> vins trouvés : </p>
