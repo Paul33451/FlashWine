@@ -33,18 +33,32 @@ lucas = User.new(first_name:"Lucas", last_name:"Dubernard", user_name:"Lulu", em
 jojo = User.new(first_name:"Jonathan", last_name:"Serafini", user_name:"Jojo", email:"jojo@gmail.com", password: "azerty", score: 0)
 
 
-valentin.save!
-paul.save!
-noemie.save!
-lucas.save!
-jojo.save!
+alice = User.new(first_name:"Alice", last_name:"Roy", user_name:"Alice", email:"alice@gmail.com", password: "azerty", score: 0)
+
+arthur = User.new(first_name:"Arthur", last_name:"Menard", user_name:"Arthur", email:"arthur@gmail.com", password: "azerty", score: 0)
+
+mahdi = User.new(first_name:"Mahdi", last_name:"Lamriben", user_name:"Mahdi", email:"mahdi@gmail.com", password: "azerty", score: 0)
+
+marie = User.new(first_name:"Marie", last_name:"Bégué", user_name:"Marie", email:"marie@gmail.com", password: "azerty", score: 0)
+
+simon = User.new(first_name:"Simon", last_name:"Letellier", user_name:"Simon", email:"simon@gmail.com", password: "azerty", score: 0)
+
+adrien = User.new(first_name:"Adrien", last_name:"Peres", user_name:"Ad", email:"adrien@gmail.com", password: "azerty", score: 0)
+
+
+alice.save!
+arthur.save!
+mahdi.save!
+marie.save!
+simon.save!
+adrien.save!
 
 # Wines
 puts "==========================="
 puts "Creating wines"
 puts "==========================="
 
-rocher = Wine.new(region:"Bordeaux", appellation:"Saint-Emilion Grand Cru", cepage:"Merlot, Cabernet franc, Cabernet sauvignon", color:"Rouge", name:"Château du Rocher", year:2016, photo:"")
+rocher = Wine.new(region:"Bordeaux", appellation:"Saint-Emilion Grand Cru", cepage:"Merlot, Cabernet franc, Cabernet sauvignon", color:"rouge", name:"Château du Rocher", year:2016, photo:"")
 
 mouton_cadet = Wine.new(region:"Loire", appellation:"Sauternes", cepage:"Sémillon 80% / Sauvignon 20% ", color:"rosé", name:"Mouton Cadet", year:1892, photo:"")
 
