@@ -43,8 +43,7 @@ marie = User.new(first_name:"Marie", last_name:"Bégué", user_name:"Marie", ema
 
 simon = User.new(first_name:"Simon", last_name:"Letellier", user_name:"Simon", email:"simon@gmail.com", password: "azerty", score: 0)
 
-adrien = User.new(first_name:"Adrien", last_name:"Peres", user_name:"Ad", email:"adrien@gmail.com", password: "azerty", score: 0)
-
+adrien = User.new(first_name:"Adrien", last_name:"Perez", user_name:"Ad", email:"adrien@gmail.com", password: "azerty", score: 0)
 
 alice.save!
 arthur.save!
