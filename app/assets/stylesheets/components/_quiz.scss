@@ -194,6 +194,10 @@ label .glyphicon {
   border-color: $bordeaux !important;
 }
 
+.btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+    color: white;
+}
+
 .results-title {
   color: $bordeaux;
   font-size: 35px;

@@ -10,7 +10,8 @@
       <% end %>
     </div>
     <div class="card-product-infos">
-      <h2><%= review.wine.appellation %></h2>
+      <h2><%= review.wine.name %></h2>
+      <h2><%= review.wine.year %></h2>
       <p><%= review.content %></p>
     </div>
     <%= link_to review_path(review), method: 'delete', remote: true, class: "icon-btn" do %>
