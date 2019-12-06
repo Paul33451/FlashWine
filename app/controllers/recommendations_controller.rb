@@ -4,10 +4,10 @@ class RecommendationsController < ApplicationController
     @recommendation = Recommendation.new
     @recommendation.sender_id = current_user.id
     @recommendation.recipient_id = params["recommendation"][:recipient_id].to_i
-
-    @recommendation.wine = Wine.find(params[:wine_id].to_i)
+    @wine = Wine.find(params[:wine_id].to_i)
+    @recommendation.wine = @wine
     if @recommendation.save
-      redirect_to root_path
+      redirect_to wine_path(@wine)
     else
       redirect_to wine_path(@wine)
     end

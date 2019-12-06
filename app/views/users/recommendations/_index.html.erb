@@ -4,7 +4,7 @@
   <%= link_to wine_path(recommendation.wine) do %>
     <div class="notification-content">
       <p><small><%= recommendation.created_at.to_formatted_s(:short) %></small></p>
-      <p><strong><%= recommendation.sender.fullname %></strong> te recommande le <strong><%= recommendation.wine.name %></strong></p>
+      <p><strong><%= recommendation.sender.name %></strong> te recommande le <strong><%= recommendation.wine.name %></strong></p>
     </div>
   <% end %>
   <%= link_to recommendation_path(recommendation), method: 'delete', remote: true, class: "icon-btn" do %>

@@ -13,7 +13,7 @@ class User < ApplicationRecord
     self.score / 200 +  1
   end
 
-  def fullname
+  def name
     return "#{self.first_name.capitalize} #{self.last_name.capitalize}"
   end
 
