@@ -12,6 +12,7 @@ class WinesController < ApplicationController
   end
 
   def show
+    @users = current_user.friends
     @wine = Wine.find(params[:id])
     @review = Review.new
     @recommendation = Recommendation.new
